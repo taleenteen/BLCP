@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Open Thai Homepage",
+      "type": "shell",
+      "command": "start index.html",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Open English Homepage",
+      "type": "shell",
+      "command": "start index-en.html",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
