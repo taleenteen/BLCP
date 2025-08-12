@@ -89,6 +89,14 @@ img {
   background-color: #f6f6ff;
 }
 
+.low-yellow-bg {
+  background-color: #f4f7ec;
+}
+
+.light-blue-bg {
+  background-color: rgba(0, 102, 179, 0.1);
+}
+
 .first-bg {
   background-image: url("../assets/posts/index/first.png");
 
