@@ -1028,42 +1028,68 @@
             </section>
 
             <section class="index-bg">
-              <div id="carouselExampleIndicators" class="carousel slide p-0">
-                <div class="carousel-indicators p-0">
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button>
-                </div>
+              <div
+                id="customCarousel"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img
-                      src="/assets/carousel/main_page.png"
-                      class="d-block w-10 mt-n1"
-                      alt="..."
-                    />
+                    <div class="d-flex justify-content-center gap-5">
+                      <img
+                        src="assets/carousel/main_page.png"
+                        alt=""
+                        style="width: 467px; height: 262px"
+                      />
+                      <div class="text-center align-self-center">
+                        <h1>วิดีโอความรับผิดชอบต่อสังคม</h1>
+                        <h2>หอยหวานจากทะเล...สู่จาน</h2>
+                        <p>
+                          การผจญภัยครั้งใหม่ของ BLCP Junior Guide มาแล้วจ้า!
+                          <br />
+                          ครั้งนี้เด็กๆ จากโรงเรียนบ้านฉางกาญจนกุลวิทยา <br />
+                          จะพาทุกคนไปรู้จักกับ “หอยหวาน” สุดอร่อย <br />
+                          ผ่านการผจญภัยแสนสนุก
+                        </p>
+                      </div>
+                    </div>
                   </div>
+
+                  <!-- <div class="carousel-item">
+                    <div
+                      class="p-5 bg-secondary text-white d-flex justify-content-between align-items-center"
+                    >
+                      <div>
+                        <h2>สไลด์ที่สอง</h2>
+                        <p>สไลด์นี้มี Layout ที่แตกต่างออกไป</p>
+                      </div>
+                      <a href="#" class="btn btn-warning">ปุ่มสไลด์ 2</a>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="p-5 bg-dark text-white">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h3>สไลด์ที่สาม</h3>
+                          <p>สไลด์นี้ใช้ Bootstrap Grid</p>
+                        </div>
+                        <div class="col-md-6">
+                          <ul>
+                            <li>รายการที่ 1</li>
+                            <li>รายการที่ 2</li>
+                            <li>รายการที่ 3</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
                 </div>
+
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-target="#customCarousel"
                   data-bs-slide="prev"
                 >
                   <span
@@ -1075,7 +1101,7 @@
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-target="#customCarousel"
                   data-bs-slide="next"
                 >
                   <span
@@ -1087,13 +1113,331 @@
               </div>
             </section>
 
-            <section class="d-flex justify-content-between p-5">
-              <div class="light-blue-bg">hello</div>
+            <section class="d-flex justify-content-between gap-3 p-5">
+              <div
+                class="light-blue-bg d-flex flex-column justify-content-center align-items-center w-100 p-4 rounded-5"
+              >
+                <h1>ข่าวประชาสัมพันธ์</h1>
+                <div
+                  class="card rounded-5 mb-3 overflow-hidden w-100"
+                  style="max-width: 440px"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="assets/posts/news/index1-1.png"
+                        class="img-fluid rounded-start w-100 h-100 rounded-5"
+                        alt="ข่าว1"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <div
+                          class="d-flex flex-column justify-content-center align-items-center"
+                        >
+                          <h5 class="card-title f-card-title">
+                            รับสมัครแล้ววันนี้ ! <br />มัคคุเทศก์น้อยบีแอลซีพี
+                            ปีที่ 18 <br />สนใจสมัครคลิ๊กเลย
+                          </h5>
+                        </div>
 
-              <div class="light-blue-bg">hello</div>
+                        <p class="card-text">
+                          <button type="button" class="btn btn-primary">
+                            Primary
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="card rounded-5 mb-3 overflow-hidden w-100"
+                  style="max-width: 440px"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="assets/posts/news/index1-2.png"
+                        class="img-fluid rounded-start w-100 h-100 rounded-5"
+                        alt="ข่าว1"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <div
+                          class="d-flex flex-column justify-content-center align-items-center"
+                        >
+                          <h5 class="card-title f-card-title">
+                            โรงไฟฟ้าบีแอลซีพี <br />
+                            ต้นแบบการผลิตไฟฟ้าต้นทุนต่ำ <br />
+                            เพื่อประชาชน
+                          </h5>
+                        </div>
+
+                        <p class="card-text">
+                          <button type="button" class="btn btn-primary">
+                            Primary
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="light-blue-bg d-flex flex-column justify-content-center align-items-center w-100 p-4 rounded-5"
+              >
+                <h1>สาระน่ารู้</h1>
+                <div
+                  class="card rounded-5 mb-3 overflow-hidden w-100"
+                  style="max-width: 440px"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="assets/posts/knowledge/index2-1.png"
+                        class="img-fluid rounded-start w-100 h-100 rounded-5"
+                        alt="ข่าว1"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <div
+                          class="d-flex flex-column justify-content-center align-items-center"
+                        >
+                          <h5 class="card-title f-card-title">
+                            5 วิธีปรับเปลี่ยนพฤติกรรม
+                            <br />รักษ์พลังงานรักษ์สิ่งแวดล้อม
+                          </h5>
+                        </div>
+                        <p class="card-text">
+                          <button type="button" class="btn btn-primary">
+                            Primary
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="card rounded-5 mb-3 overflow-hidden w-100"
+                  style="max-width: 440px"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="assets/posts/knowledge/index2-2.png"
+                        class="img-fluid rounded-start w-100 h-100 rounded-5"
+                        alt="ข่าว1"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <div
+                          class="d-flex flex-column justify-content-center align-items-center"
+                        >
+                          <h5 class="card-title f-card-title">
+                            7 วิธีใช้คอมพิวเตอร์ <br />
+                            ให้ประหยัดพลังงาน
+                          </h5>
+                        </div>
+                        <p class="card-text">
+                          <button type="button" class="btn btn-primary">
+                            Primary
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="container container-fluid p-5">
+              <div class="card text-bg-dark rounded-5 overflow-hidden border-0">
+                <img
+                  src="assets/posts/visitor/visit-picture.png"
+                  class="card-img"
+                  alt="เยี่ยมชมศูนย์การเรียนรู้"
+                  style="object-fit: cover; height: 480px"
+                />
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-center align-items-center rounded-5 gap-3"
+                >
+                  <div
+                    class="visitor-title p-3 d-flex justify-content-center align-items-center w-100 h-100"
+                  >
+                    <h1 class="text-white f-visitor-title mb-0">
+                      เยี่ยมชมศูนย์การเรียนรู้
+                    </h1>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn rounded-pill light-green-bg text-white f-btn-click w-100 h-100"
+                    style="max-width: 140px; max-height: 40px"
+                  >
+                    คลิกที่นี่
+                  </button>
+                </div>
+              </div>
             </section>
           </section>
         </main>
+
+        <footer
+          class="footer-bg text-center text-lg-star"
+          style="position: relative"
+        >
+          <img
+            src="assets/footer/footer-circle-1.png"
+            alt="footer"
+            class="img-fluid w-100 h-100"
+            style="
+              position: absolute;
+              top: 49%;
+              right: 13.5%;
+              transform: translate(50%, -50%);
+              max-width: 365px;
+              max-height: 307px;
+            "
+          />
+          <img
+            src="assets/footer/footer-circle-2.png"
+            alt="footer"
+            class="img-fluid w-100 h-100"
+            style="
+              position: absolute;
+              top: 48%;
+              right: 12%;
+              transform: translate(50%, -50%);
+              z-index: 0;
+              max-width: 350px;
+              max-height: 290px;
+            "
+          />
+          <!-- Copyright -->
+          <div
+            class="text-center p-5"
+            style="
+              background-color: rgba(0, 0, 0, 0.05);
+              height: 315px;
+              position: relative;
+            "
+          >
+            <img
+              src="assets/footer/footer.png"
+              alt="footer"
+              style="
+                position: absolute;
+                top: 90px;
+                left: 120px;
+                transform: translate(-50%, -50%);
+              "
+            />
+
+            <div
+              class="d-flex justify-content-center align-items-center flex-column gap-3"
+            >
+              <button
+                type="button"
+                class="btn rounded-pill light-green-bg text-white f-btn-click w-100 h-100"
+                style="max-width: 448px; max-height: 50px"
+              >
+                FAQ เรื่องพลังงานที่นี่
+              </button>
+            </div>
+
+            <div class="row">
+              <div
+                class="col d-flex align-items-end justify-content-center p-5"
+                style="z-index: 2"
+              >
+                <button
+                  type="button"
+                  class="btn rounded-pill light-green-bg text-white f-btn-click"
+                >
+                  hello
+                </button>
+              </div>
+              <div class="col text-start p-5">
+                <h5 class="text-white">
+                  เลขที่ 9, ถนน I-8 ป.ณ. 92 ปณจ.มาบตาพุด <br />
+                  อำเภอเมือง จังหวัดระยอง 21150
+                </h5>
+                <h5 class="text-white">webmaster@blcp.co.th</h5>
+              </div>
+              <div
+                class="col d-flex flex-column justify-content-center align-items-center gap-3 p-1"
+              >
+                <button
+                  type="button"
+                  class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-3"
+                  style="width: 180px; height: 42px"
+                >
+                  <span
+                    class="border rounded-circle border-2 border-dark d-flex align-items-center justify-content-center p-1"
+                  >
+                    <img
+                      src="assets/navbar/Form_nav.png"
+                      alt="Logo"
+                      style="width: 25px; height: 24px"
+                    />
+                  </span>
+
+                  <div class="d-flex flex-column align-items-start">
+                    <p
+                      class="mb-0 fw-bold text-primary"
+                      style="font-size: 16px; line-height: 100%"
+                    >
+                      แบบฟอร์มร้องเรียน
+                    </p>
+                    <p
+                      class="mb-0 fw-bold text-primary"
+                      style="font-size: 16px; line-height: 100%"
+                    >
+                      081-000-7362
+                    </p>
+                  </div>
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-3"
+                  style="width: 180px; height: 42px"
+                >
+                  <span
+                    class="border rounded-circle border-2 border-dark d-flex align-items-center justify-content-center p-1"
+                  >
+                    <img
+                      src="assets/navbar/Phone_nav.png"
+                      alt="Logo"
+                      style="width: 25px; height: 24px"
+                    />
+                  </span>
+
+                  <div class="d-flex flex-column align-items-start">
+                    <p
+                      class="mb-0 fw-bold text-primary"
+                      style="font-size: 16px; line-height: 100%"
+                    >
+                      ติดต่อโรงไฟฟ้าบีแอลซีพี
+                    </p>
+                    <p
+                      class="mb-0 fw-bold text-primary"
+                      style="font-size: 16px; line-height: 100%"
+                    >
+                      038-925100
+                    </p>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Copyright -->
+        </footer>
       </div>
     </div>
     <script
