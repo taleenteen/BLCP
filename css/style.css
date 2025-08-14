@@ -11,6 +11,11 @@
   --my-primary-color: rgba(14, 63, 100, 1);
 }
 
+/* ๊Utility */
+.rounded-pill-vertical {
+  border-radius: 999px / 50%;
+}
+
 /* body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 } */
@@ -66,6 +71,25 @@ img {
 }
 
 /* Font */
+.f-title {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 40px;
+  leading-trim: NONE;
+  line-height: 40px;
+  letter-spacing: 0%;
+}
+
+.f-aboutus-text {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 30px;
+  leading-trim: NONE;
+  line-height: 40px;
+  letter-spacing: 0%;
+  text-align: right;
+}
+
 .f-card-title {
   font-family: "DBHelvethaicaMonX", sans-serif;
   font-weight: 700;
@@ -98,13 +122,18 @@ img {
   box-shadow: 0px 4px 4px 0px rgba(0, 102, 179, 0.1);
 }
 
+.post-btn {
+  background-color: rgba(166, 206, 57, 1);
+  border: 3px solid rgba(255, 255, 255, 1);
+}
+
 /* Background */
 .footer-bg {
   background-color: rgba(14, 63, 100, 1);
 }
 
 .circle-container {
-  position: relative; /* ให้วงกลมภายในอ้างอิงตำแหน่ง */
+  position: relative;
   width: 100px;
   height: 100px;
 }
@@ -114,23 +143,23 @@ img {
   position: absolute;
   top: 10px;
   left: 100px;
-  width: 10px; /* กำหนดขนาดวงกลม */
-  height: 10px; /* กำหนดขนาดวงกลม */
-  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
 .outer-circle {
   width: 100%;
   height: 100%;
-  background-color: #ccc; /* สีวงกลมวงนอก */
+  background-color: #ccc;
 }
 
 .inner-circle {
   width: 70%;
   height: 70%;
-  background-color: #f00; /* สีวงกลมวงใน */
-  top: 15%; /* ปรับตำแหน่งวงกลมวงใน */
-  left: 15%; /* ปรับตำแหน่งวงกลมวงใน */
+  background-color: #f00;
+  top: 15%;
+  left: 15%;
 }
 
 .index-bg {
@@ -168,6 +197,14 @@ img {
   background-position: center;
   width: 300px;
   height: 300px;
+}
+
+.blue-linear-bg {
+  background: linear-gradient(180deg, #0e3f64 0%, #1d80ca 100%);
+}
+
+.blue-linear-bg-convert {
+  background: linear-gradient(180deg, #1d80ca 0%, #0e3f64 100%);
 }
 
 /* Title */
