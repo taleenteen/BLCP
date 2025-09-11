@@ -11,9 +11,62 @@
   --my-primary-color: rgba(14, 63, 100, 1);
 }
 
+.accordion-button {
+  display: flex;
+  align-items: center;
+  transition: none;
+}
+
+/* เปลี่ยนไอคอนเริ่มต้น (ลูกศร) เป็นเครื่องหมายบวก */
+.accordion-button::after {
+  background-image: initial;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: initial;
+}
+
+.accordion-button::after {
+  content: "+";
+  background-image: none;
+  transform: translateY(-50%); /* เลื่อนขึ้น 50% ของความสูงตัวเอง */
+  transition: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(14, 63, 100, 1);
+  position: absolute; /* กำหนดตำแหน่งแบบสัมบูรณ์ */
+  right: 1.25rem; /* หรือค่าที่คุณต้องการ */
+  top: 50%; /* เลื่อนลงมา 50% จากด้านบน */
+}
+
+.accordion-button:not(.collapsed)::after {
+  content: "-";
+  background-image: none;
+  transform: translateY(-50%); /* เลื่อนขึ้น 50% ของความสูงตัวเอง */
+  transition: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(14, 63, 100, 1);
+  position: absolute; /* กำหนดตำแหน่งแบบสัมบูรณ์ */
+  right: 1.25rem; /* หรือค่าที่คุณต้องการ */
+  top: 50%; /* เลื่อนลงมา 50% จากด้านบน */
+}
+
 /* ๊Utility */
 .rounded-pill-vertical {
   border-radius: 999px / 50%;
+}
+
+.min-h-md-200 {
+  min-height: 200px;
+}
+
+.min-h-sm-150 {
+  min-height: 150px;
+}
+
+.min-h-100 {
+  min-height: 100px;
 }
 
 /* body {
@@ -71,6 +124,27 @@ img {
 }
 
 /* Font */
+.f-size-22 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 22px;
+  line-height: 100%;
+}
+
+.f-size-30 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 30px;
+  line-height: 100%;
+}
+
+.f-size-36 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 30px;
+  line-height: 100%;
+}
+
 .f-title {
   font-weight: 700;
   font-style: 75 Bd;
@@ -91,7 +165,6 @@ img {
 }
 
 .f-card-title {
-  font-family: "DBHelvethaicaMonX", sans-serif;
   font-weight: 700;
   font-size: 25px;
   line-height: 24px;
@@ -99,20 +172,36 @@ img {
 }
 
 .f-visitor-title {
-  font-family: "DBHelvethaicaMonX", sans-serif;
   font-weight: 700;
   font-size: 50px;
   line-height: 100%;
   color: rgba(255, 255, 255, 1);
 }
 
+.f-vision-title {
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 100%;
+  color: rgba(255, 255, 255, 1);
+}
+
+h2.f-vision-title {
+  font-size: 45px;
+}
+
 .f-btn-click {
-  font-family: "DBHelvethaicaMonX", sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 100%;
   color: rgba(255, 254, 254, 1);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.f-leader-content {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 100%;
+  color: rgba(94, 94, 94, 1);
 }
 
 /* Button */
@@ -125,6 +214,10 @@ img {
 .post-btn {
   background-color: rgba(166, 206, 57, 1);
   border: 3px solid rgba(255, 255, 255, 1);
+}
+
+.green-linear-bg-btn {
+  background: linear-gradient(90deg, #ffffff 0%, #bed84e 100%);
 }
 
 /* Background */
@@ -205,6 +298,18 @@ img {
 
 .blue-linear-bg-convert {
   background: linear-gradient(180deg, #1d80ca 0%, #0e3f64 100%);
+}
+.bg-grey {
+  background-color: rgba(217, 217, 217, 1);
+}
+
+/* Shadow */
+.card-leader-shadow {
+  box-shadow: 0px 4px 4px 0px rgba(166, 206, 57, 0.25);
+}
+
+.card-post-shaodw {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 /* Title */
