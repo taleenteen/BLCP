@@ -161,7 +161,6 @@ img {
   leading-trim: NONE;
   line-height: 40px;
   letter-spacing: 0%;
-  text-align: right;
 }
 
 .f-card-title {
@@ -303,24 +302,54 @@ h2.f-vision-title {
   background-color: rgba(217, 217, 217, 1);
 }
 
+/* Plant Cycle Image Responsive */
+.plant-cycle-image-container {
+  position: relative;
+}
+
+.plant-cycle-image {
+  position: absolute;
+  top: -100px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Mobile responsiveness for plant cycle image */
+@media (max-width: 991.98px) {
+  .plant-cycle-image-container {
+    position: static;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .plant-cycle-image {
+    position: static !important;
+    top: auto;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .plant-cycle-image-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .plant-cycle-image {
+    max-width: 95%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
 /* Shadow */
 .card-leader-shadow {
   box-shadow: 0px 4px 4px 0px rgba(166, 206, 57, 0.25);
 }
 
-.card-post-shaodw {
+.card-post-shadow {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-/* Title */
-.visitor-title {
-  background: linear-gradient(
-    to right,
-    rgba(166, 206, 57, 1),
-    rgba(255, 255, 255, 0.11)
-  );
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
-  border-radius: 20px;
-  max-width: 384px;
-  max-height: 78px;
 }
