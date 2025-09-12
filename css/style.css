@@ -353,3 +353,108 @@ h2.f-vision-title {
 .card-post-shadow {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
+/* Accordion Responsive Styles */
+/* ให้กล่องเต็มกว้างและมุมโค้งไม่โดนตัด */
+.accordion-item {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+/* ปรับ padding/ความสูงหัวข้อ ให้กล่องดู “เต็ม” แม้ไม่ได้กาง */
+.accordion-button {
+  padding: 1rem 1.25rem;
+  min-height: 56px;
+}
+
+/* ตัวเนื้อหาให้เต็มกว้างเสมอ */
+.accordion-body {
+  width: 100%;
+}
+
+/* ถ้าอยากให้ระยะห่างระหว่าง item เป็นช่อง ๆ ใช้ margin แทน flex gap */
+.accordion .accordion-item + .accordion-item {
+  margin-top: 1rem;
+}
+
+/* Tablet Styles */
+@media (max-width: 991.98px) {
+  .accordion-title {
+    font-size: 26px;
+  }
+
+  .accordion-button {
+    padding: 0.875rem 1.25rem;
+    min-height: 66px; /* รักษาความสูง 66px สำหรับ tablet */
+    height: 66px;
+  }
+
+  .accordion-body {
+    padding: 1.25rem;
+    font-size: 17px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 767.98px) {
+  .accordion-title {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .accordion-button {
+    padding: 0.75rem 1rem;
+    min-height: 66px; /* รักษาความสูง 66px สำหรับ mobile */
+    height: 66px;
+  }
+
+  .accordion-body {
+    padding: 1rem;
+    font-size: 16px;
+  }
+
+  .accordion-body ul {
+    padding-left: 1.25rem;
+  }
+
+  /* ลดขนาด gap ระหว่าง accordion items บน mobile */
+  .accordion.d-flex.flex-column.gap-3 {
+    gap: 1rem !important;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 575.98px) {
+  .accordion-title {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .accordion-button {
+    padding: 0.625rem 0.875rem;
+    min-height: 66px; /* รักษาความสูง 66px สำหรับ mobile เล็ก */
+    height: 66px;
+  }
+
+  .accordion-body {
+    padding: 0.875rem;
+    font-size: 15px;
+  }
+
+  .accordion-body ul {
+    padding-left: 1rem;
+  }
+
+  /* ลดขนาด gap และ padding container บน mobile เล็ก */
+  .accordion.d-flex.flex-column.gap-3 {
+    gap: 0.75rem !important;
+    padding: 1rem !important;
+  }
+
+  /* ปรับขนาดไอคอน +/- บน mobile */
+  .accordion-button::after,
+  .accordion-button:not(.collapsed)::after {
+    font-size: 20px;
+    right: 0.875rem;
+  }
+}
