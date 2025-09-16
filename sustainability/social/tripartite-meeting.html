@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>บริษัทของเรา | Our Company</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content below navbar -->
+        <main class="container container-fluid p-0">
+          <section>
+            <div class="card border-0 text-white">
+              <img
+                src="../../assets/aboutus/aboutus-hero.png"
+                alt="aboutus hero"
+              />
+              <div class="card-img-overlay d-flex justify-content-between">
+                <h1 class="card-title">วิดีโอกิจกรรมความรับผิดชอบต่อสังคม</h1>
+                <div class="d-flex justify-content-end">
+                  <div class="card rounded-pill">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
+                    >
+                      <img
+                        src="../../assets/logo/Facebook.png"
+                        alt="Facebook logo"
+                      />
+                      <img src="../../assets/logo/Line.png" alt="Line logo" />
+                      <img
+                        src="../../assets/logo/Tiktok.png"
+                        alt="Tiktok logo"
+                      />
+                      <img
+                        src="../../assets/logo/YouTube.png"
+                        alt="YouTube logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="white-linear-bg h-100 p-5">
+            <div class="container">
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <h2 class="mb-3">เอกสารและไฟล์ประชุมสามฝ่าย</h2>
+                </div>
+                <div class="col-md-6">
+                  <div class="row g-2">
+                    <div class="col-md-8">
+                      <input
+                        type="text"
+                        id="searchInput"
+                        class="form-control"
+                        placeholder="ค้นหาเอกสาร..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <select id="categoryFilter" class="form-select">
+                        <option value="">ทุกหมวดหมู่</option>
+                        <option value="รายงาน">รายงาน</option>
+                        <option value="เอกสาร">เอกสาร</option>
+                        <option value="วิดีโอ">วิดีโอ</option>
+                        <option value="รูปภาพ">รูปภาพ</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats Display -->
+              <div id="statsDisplay" class="alert alert-info mb-4"></div>
+
+              <!-- Table Container -->
+              <div id="tableContainer"></div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/table.js"></script>
+    <script>
+      // ข้อมูลสำหรับ Table - เอกสารประชุมสามฝ่าย
+      const meetingData = [
+        {
+          id: 1,
+          name: "รายงานการประชุมสามฝ่าย ครั้งที่ 1/2567",
+          category: "รายงาน",
+          createdDate: "2024-01-15",
+          fileUrl: "https://example.com/meeting-report-1-2567.pdf",
+          fileName: "meeting-report-1-2567.pdf",
+        },
+        {
+          id: 2,
+          name: "วาระการประชุมสามฝ่าย มกราคม 2567",
+          category: "เอกสาร",
+          createdDate: "2024-01-10",
+          fileUrl: "https://example.com/agenda-jan-2567.pdf",
+          fileName: "agenda-jan-2567.pdf",
+        },
+        {
+          id: 3,
+          name: "ภาพบรรยากาศการประชุมสามฝ่าย Q1/2567",
+          category: "รูปภาพ",
+          createdDate: "2024-03-20",
+          fileUrl: "https://example.com/meeting-photos-q1.zip",
+          fileName: "meeting-photos-q1.zip",
+        },
+        {
+          id: 4,
+          name: "วิดีโอสรุปการประชุมสามฝ่าย มีนาคม 2567",
+          category: "วิดีโอ",
+          createdDate: "2024-03-25",
+          fileUrl: "https://example.com/meeting-summary-march.mp4",
+          fileName: "meeting-summary-march.mp4",
+        },
+        {
+          id: 5,
+          name: "รายงานการประชุมสามฝ่าย ครั้งที่ 2/2567",
+          category: "รายงาน",
+          createdDate: "2024-04-15",
+          fileUrl: "https://example.com/meeting-report-2-2567.pdf",
+          fileName: "meeting-report-2-2567.pdf",
+        },
+        {
+          id: 6,
+          name: "แผนการดำเนินงานร่วม 2567",
+          category: "เอกสาร",
+          createdDate: "2024-04-20",
+          fileUrl: "https://example.com/action-plan-2567.pdf",
+          fileName: "action-plan-2567.pdf",
+        },
+        {
+          id: 7,
+          name: "นโยบายความร่วมมือสามฝ่าย",
+          category: "เอกสาร",
+          createdDate: "2024-05-01",
+          fileUrl: "https://example.com/tripartite-policy.pdf",
+          fileName: "tripartite-policy.pdf",
+        },
+        {
+          id: 8,
+          name: "รายงานผลการดำเนินงาน Q1/2567",
+          category: "รายงาน",
+          createdDate: "2024-05-10",
+          fileUrl: "https://example.com/performance-report-q1.pdf",
+          fileName: "performance-report-q1.pdf",
+        },
+        {
+          id: 9,
+          name: "วิดีโอการนำเสนอโครงการร่วม",
+          category: "วิดีโอ",
+          createdDate: "2024-06-01",
+          fileUrl: "https://example.com/project-presentation.mp4",
+          fileName: "project-presentation.mp4",
+        },
+        {
+          id: 10,
+          name: "รายงานการประชุมสามฝ่าย ครั้งที่ 3/2567",
+          category: "รายงาน",
+          createdDate: "2024-07-15",
+          fileUrl: "https://example.com/meeting-report-3-2567.pdf",
+          fileName: "meeting-report-3-2567.pdf",
+        },
+        // เพิ่มข้อมูลเพื่อทดสอบ pagination
+        ...Array.from({ length: 15 }, (_, i) => ({
+          id: i + 11,
+          name: `เอกสารประชุมสามฝ่าย ${i + 11}`,
+          category: ["รายงาน", "เอกสาร", "วิดีโอ", "รูปภาพ"][i % 4],
+          createdDate: `2024-${String(Math.floor(i / 4) + 8).padStart(
+            2,
+            "0"
+          )}-${String((i % 4) * 7 + 1).padStart(2, "0")}`,
+          fileUrl: `https://example.com/document-${i + 11}.pdf`,
+          fileName: `document-${i + 11}.pdf`,
+        })),
+      ];
+
+      // Initialize Table Component
+      let tableComponent = new TableComponent({
+        container: document.getElementById("tableContainer"),
+        itemsPerPage: 10,
+        onFileClick: (fileUrl, fileName, data, index) => {
+          console.log("File clicked:", { fileUrl, fileName, data, index });
+
+          // แสดง modal หรือดาวน์โหลดไฟล์
+          if (confirm(`ต้องการดาวน์โหลดไฟล์: ${fileName}?`)) {
+            // ในการใช้งานจริง สามารถดาวน์โหลดไฟล์ได้
+            window.open(fileUrl, "_blank");
+          }
+        },
+        onRowClick: (data, index) => {
+          console.log("Row clicked:", data);
+          // สามารถเพิ่มการแสดงรายละเอียดได้
+        },
+        onPageChange: (page) => {
+          console.log(`เปลี่ยนไปหน้า: ${page}`);
+          updateStats();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        },
+      });
+
+      // Load initial data
+      tableComponent.loadData(meetingData);
+      updateStats();
+
+      // Event Listeners
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        tableComponent.search(e.target.value, ["name", "category"]);
+        updateStats();
+      });
+
+      document
+        .getElementById("categoryFilter")
+        .addEventListener("change", (e) => {
+          const category = e.target.value;
+          if (category) {
+            tableComponent.filter((item) => item.category === category);
+          } else {
+            tableComponent.filter(() => true); // แสดงทั้งหมด
+          }
+          updateStats();
+        });
+
+      function updateStats() {
+        const stats = tableComponent.getStats();
+        document.getElementById("statsDisplay").innerHTML = `
+          แสดง ${stats.filtered} รายการจากทั้งหมด ${stats.total} รายการ | 
+          หน้าที่ ${stats.currentPage} จาก ${stats.totalPages} หน้า | 
+          ${stats.itemsPerPage} รายการต่อหน้า
+        `;
+      }
+    </script>
+  </body>
+</html>

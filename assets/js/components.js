@@ -722,11 +722,17 @@ function loadComponents() {
   // Adjust paths based on folder depth
   if (
     currentPath.includes("/aboutus/environment/") ||
-    currentPath.includes("/aboutus/operation/")
+    currentPath.includes("/aboutus/operation/") ||
+    currentPath.includes("/sustainability/environment/") ||
+    currentPath.includes("/sustainability/social/") ||
+    currentPath.includes("/sustainability/sustainability-report/")
   ) {
     basePath = "../..";
     navBasePath = "../..";
-  } else if (currentPath.includes("/aboutus/")) {
+  } else if (
+    currentPath.includes("/aboutus/") ||
+    currentPath.includes("/sustainability/")
+  ) {
     basePath = "..";
     navBasePath = "..";
   } else {

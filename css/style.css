@@ -124,6 +124,39 @@ img {
 }
 
 /* Font */
+.f-green {
+  color: rgba(166, 206, 57, 1);
+}
+
+.f-post-date {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 13px;
+  line-height: 100%;
+  color: rgba(139, 139, 139, 1);
+}
+
+.f-size-14 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.f-size-16 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.f-size-20 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 20px;
+  line-height: 100%;
+}
+
 .f-size-22 {
   font-weight: 700;
   font-style: 75 Bd;
@@ -143,6 +176,31 @@ img {
   font-style: 75 Bd;
   font-size: 30px;
   line-height: 100%;
+}
+
+.f-size-64 {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+
+  /* 1. ใส่ gradient ให้เป็นพื้นหลัง */
+  background-image: linear-gradient(90deg, #bed84e 0%, #ffffff 100%);
+
+  /* 2. ทำให้พื้นหลังแสดงเฉพาะบริเวณตัวอักษร */
+  background-clip: text;
+
+  /* 3. ทำให้สีของตัวอักษรโปร่งใส เพื่อเผยให้เห็นพื้นหลัง */
+  -webkit-text-fill-color: transparent;
+
+  /* 4. ใส่ prefix เพื่อรองรับการทำงานกับเบราว์เซอร์อื่นๆ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.f-size-96 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 96px;
+  line-height: 85px;
 }
 
 .f-title {
@@ -215,8 +273,23 @@ h2.f-vision-title {
   border: 3px solid rgba(255, 255, 255, 1);
 }
 
+.green-btn {
+  background-color: rgba(190, 216, 78, 1);
+  color: #ffffff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.green-btn:hover {
+  background-color: rgba(166, 206, 57, 1);
+  border: 3px solid rgba(255, 255, 255, 1);
+}
+
 .green-linear-bg-btn {
   background: linear-gradient(90deg, #ffffff 0%, #bed84e 100%);
+}
+
+.green-pagination-btn {
+  background: linear-gradient(180deg, #bed84e 0%, #ffffff 100%);
 }
 
 /* Background */
@@ -298,6 +371,11 @@ h2.f-vision-title {
 .blue-linear-bg-convert {
   background: linear-gradient(180deg, #1d80ca 0%, #0e3f64 100%);
 }
+
+.white-linear-bg {
+  background: linear-gradient(180deg, #f6f6ff 0%, #0e3f64 100%);
+}
+
 .bg-grey {
   background-color: rgba(217, 217, 217, 1);
 }
@@ -354,6 +432,10 @@ h2.f-vision-title {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+.text-shadow {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
 /* Accordion Responsive Styles */
 /* ให้กล่องเต็มกว้างและมุมโค้งไม่โดนตัด */
 .accordion-item {
@@ -375,6 +457,43 @@ h2.f-vision-title {
 /* ถ้าอยากให้ระยะห่างระหว่าง item เป็นช่อง ๆ ใช้ margin แทน flex gap */
 .accordion .accordion-item + .accordion-item {
   margin-top: 1rem;
+}
+
+/* Card section */
+.card-transparent {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-transparent:hover {
+  transform: scale(1.05);
+}
+
+.multiline-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* จำนวนบรรทัดที่ต้องการแสดง */
+  -webkit-box-orient: vertical;
+}
+
+.multiline-ellipsis:hover {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: horizontal;
+  position: absolute; /* เพื่อป้องกันไม่ให้ข้อความไปดัน layout อื่น */
+  background: white; /* ใส่พื้นหลังสีขาวเพื่อกันข้อความทับซ้อนกัน */
+  z-index: 10;
+  width: auto;
+}
+
+.footer-section {
+  height: 50px;
 }
 
 /* Tablet Styles */

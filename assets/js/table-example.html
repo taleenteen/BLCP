@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table Component Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="text-center mb-5">ตัวอย่างการใช้งาน Table Component</h1>
+
+      <!-- Search and Filter Controls -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="ค้นหาชื่อหรือหมวดหมู่..."
+          />
+        </div>
+        <div class="col-md-3">
+          <select id="categoryFilter" class="form-select">
+            <option value="">ทุกหมวดหมู่</option>
+            <option value="เอกสาร">เอกสาร</option>
+            <option value="รูปภาพ">รูปภาพ</option>
+            <option value="วิดีโอ">วิดีโอ</option>
+            <option value="รายงาน">รายงาน</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button id="clearBtn" class="btn btn-outline-secondary w-100">
+            ล้างการค้นหา
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Display -->
+      <div id="statsDisplay" class="alert alert-info"></div>
+
+      <!-- Table Container -->
+      <div id="tableContainer"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="table.js"></script>
+    <script>
+      // Sample Data สำหรับทดสอบ
+      const sampleData = [
+        {
+          id: 1,
+          name: "รายงานประจำปี 2024",
+          category: "รายงาน",
+          createdDate: "2024-01-15",
+          fileUrl: "https://example.com/report2024.pdf",
+          fileName: "report2024.pdf",
+        },
+        {
+          id: 2,
+          name: "คู่มือการใช้งานระบบ",
+          category: "เอกสาร",
+          createdDate: "2024-02-10",
+          fileUrl: "https://example.com/manual.pdf",
+          fileName: "manual.pdf",
+        },
+        {
+          id: 3,
+          name: "ภาพกิจกรรมบริษัท",
+          category: "รูปภาพ",
+          createdDate: "2024-03-05",
+          fileUrl: "https://example.com/photos.zip",
+          fileName: "photos.zip",
+        },
+        {
+          id: 4,
+          name: "วิดีโอนำเสนอผลิตภัณฑ์",
+          category: "วิดีโอ",
+          createdDate: "2024-03-20",
+          fileUrl: "https://example.com/product_demo.mp4",
+          fileName: "product_demo.mp4",
+        },
+        {
+          id: 5,
+          name: "แบบฟอร์มใบสมัครงาน",
+          category: "เอกสาร",
+          createdDate: "2024-04-01",
+          fileUrl: "https://example.com/application_form.pdf",
+          fileName: "application_form.pdf",
+        },
+        {
+          id: 6,
+          name: "งบการเงินไตรมาส 1",
+          category: "รายงาน",
+          createdDate: "2024-04-15",
+          fileUrl: "https://example.com/financial_q1.xlsx",
+          fileName: "financial_q1.xlsx",
+        },
+        {
+          id: 7,
+          name: "นโยบายความปลอดภัย",
+          category: "เอกสาร",
+          createdDate: "2024-05-01",
+          fileUrl: "https://example.com/safety_policy.pdf",
+          fileName: "safety_policy.pdf",
+        },
+        {
+          id: 8,
+          name: "วิดีโอฝึกอบรมพนักงาน",
+          category: "วิดีโอ",
+          createdDate: "2024-05-10",
+          fileUrl: "https://example.com/training_video.mp4",
+          fileName: "training_video.mp4",
+        },
+        // เพิ่มข้อมูลตัวอย่างเพิ่มเติมเพื่อทดสอบ pagination
+        ...Array.from({ length: 25 }, (_, i) => ({
+          id: i + 9,
+          name: `เอกสาร ${i + 9}`,
+          category: ["เอกสาร", "รูปภาพ", "วิดีโอ", "รายงาน"][i % 4],
+          createdDate: `2024-${String(Math.floor(i / 4) + 6).padStart(
+            2,
+            "0"
+          )}-${String((i % 4) * 7 + 1).padStart(2, "0")}`,
+          fileUrl: `https://example.com/file${i + 9}.pdf`,
+          fileName: `file${i + 9}.pdf`,
+        })),
+      ];
+
+      // Initialize Table Component
+      let tableComponent = new TableComponent({
+        container: document.getElementById("tableContainer"),
+        itemsPerPage: 10,
+        onFileClick: (fileUrl, fileName, data, index) => {
+          console.log("File clicked:", { fileUrl, fileName, data, index });
+          alert(`ดาวน์โหลดไฟล์: ${fileName}\nURL: ${fileUrl}`);
+
+          // ตัวอย่างการดาวน์โหลดไฟล์จริง
+          // const link = document.createElement('a');
+          // link.href = fileUrl;
+          // link.download = fileName;
+          // link.click();
+        },
+        onRowClick: (data, index) => {
+          console.log("Row clicked:", data);
+          alert(`คลิกแถว: ${data.name}`);
+        },
+        onPageChange: (page) => {
+          console.log(`เปลี่ยนไปหน้า: ${page}`);
+          updateStats();
+        },
+      });
+
+      // Load initial data
+      tableComponent.loadData(sampleData);
+      updateStats();
+
+      // Event Listeners
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        tableComponent.search(e.target.value, ["name", "category"]);
+        updateStats();
+      });
+
+      document
+        .getElementById("categoryFilter")
+        .addEventListener("change", (e) => {
+          const category = e.target.value;
+          if (category) {
+            tableComponent.filter((item) => item.category === category);
+          } else {
+            tableComponent.filter(() => true); // แสดงทั้งหมด
+          }
+          updateStats();
+        });
+
+      document.getElementById("clearBtn").addEventListener("click", () => {
+        document.getElementById("searchInput").value = "";
+        document.getElementById("categoryFilter").value = "";
+        tableComponent.loadData(sampleData);
+        updateStats();
+      });
+
+      function updateStats() {
+        const stats = tableComponent.getStats();
+        document.getElementById("statsDisplay").innerHTML = `
+                แสดง ${stats.filtered} รายการจากทั้งหมด ${stats.total} รายการ | 
+                หน้าที่ ${stats.currentPage} จาก ${stats.totalPages} หน้า | 
+                ${stats.itemsPerPage} รายการต่อหน้า
+            `;
+      }
+
+      // API Integration Example (commented out)
+      /*
+        async function loadDataFromAPI() {
+            try {
+                const response = await fetch('/api/files');
+                const data = await response.json();
+                tableComponent.loadData(data);
+                updateStats();
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+        */
+    </script>
+  </body>
+</html>

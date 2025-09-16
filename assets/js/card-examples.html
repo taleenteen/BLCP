@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Component Examples</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="text-center mb-5">ตัวอย่างการใช้งาน Card Component</h1>
+
+      <!-- Search and Filter Controls -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="ค้นหา..."
+          />
+        </div>
+        <div class="col-md-3">
+          <select id="cardTypeSelect" class="form-select">
+            <option value="default">Default Cards</option>
+            <option value="news">News Cards</option>
+            <option value="blog">Blog Cards</option>
+            <option value="product">Product Cards</option>
+            <option value="team">Team Cards</option>
+            <option value="gallery">Gallery Cards</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select id="sortSelect" class="form-select">
+            <option value="">เรียงตาม...</option>
+            <option value="title-asc">หัวข้อ A-Z</option>
+            <option value="title-desc">หัวข้อ Z-A</option>
+            <option value="date-desc">วันที่ล่าสุด</option>
+            <option value="date-asc">วันที่เก่าสุด</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Stats Display -->
+      <div id="statsDisplay" class="alert alert-info"></div>
+
+      <!-- Cards Container -->
+      <div class="bg-primary" id="cardsContainer"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="card.js"></script>
+    <script>
+      // Sample Data สำหรับทดสอบ
+      const sampleData = {
+        default: [
+          {
+            title: "Card 1",
+            description: "รายละเอียด card 1",
+            image: "https://via.placeholder.com/300x200",
+            date: "2024-01-01",
+          },
+          {
+            title: "Card 2",
+            description: "รายละเอียด card 2",
+            image: "https://via.placeholder.com/300x200",
+            date: "2024-01-02",
+          },
+          // เพิ่มข้อมูลให้ครบ 25 รายการเพื่อทดสอบ pagination
+          ...Array.from({ length: 23 }, (_, i) => ({
+            title: `Card ${i + 3}`,
+            description: `รายละเอียด card ${i + 3}`,
+            image: "https://via.placeholder.com/300x200",
+            date: `2024-01-${String(i + 3).padStart(2, "0")}`,
+          })),
+        ],
+        news: [
+          {
+            title: "ข่าวสำคัญ 1",
+            summary: "สรุปข่าว 1",
+            category: "การเมือง",
+            author: "นักข่าว A",
+            date: "2024-03-01",
+            image: "https://via.placeholder.com/300x200",
+          },
+          {
+            title: "ข่าวสำคัญ 2",
+            summary: "สรุปข่าว 2",
+            category: "เศรษฐกิจ",
+            author: "นักข่าว B",
+            date: "2024-03-02",
+            image: "https://via.placeholder.com/300x200",
+          },
+          ...Array.from({ length: 18 }, (_, i) => ({
+            title: `ข่าวสำคัญ ${i + 3}`,
+            summary: `สรุปข่าว ${i + 3}`,
+            category: ["การเมือง", "เศรษฐกิจ", "สังคม", "กีฬา"][i % 4],
+            author: `นักข่าว ${String.fromCharCode(67 + i)}`,
+            date: `2024-03-${String(i + 3).padStart(2, "0")}`,
+            image: "https://via.placeholder.com/300x200",
+          })),
+        ],
+        blog: [
+          {
+            title: "บทความ 1",
+            excerpt: "เนื้อหาสั้นๆ ของบทความ 1",
+            readTime: 5,
+            tags: ["เทคโนโลยี", "AI"],
+            date: "2024-02-01",
+            image: "https://via.placeholder.com/300x180",
+          },
+          {
+            title: "บทความ 2",
+            excerpt: "เนื้อหาสั้นๆ ของบทความ 2",
+            readTime: 3,
+            tags: ["การเงิน", "ลงทุน"],
+            date: "2024-02-02",
+            image: "https://via.placeholder.com/300x180",
+          },
+          ...Array.from({ length: 15 }, (_, i) => ({
+            title: `บทความ ${i + 3}`,
+            excerpt: `เนื้อหาสั้นๆ ของบทความ ${i + 3}`,
+            readTime: Math.floor(Math.random() * 10) + 1,
+            tags: [
+              ["เทคโนโลยี", "AI"],
+              ["การเงิน", "ลงทุน"],
+              ["ไลฟ์สไตล์", "สุขภาพ"],
+            ][i % 3],
+            date: `2024-02-${String(i + 3).padStart(2, "0")}`,
+            image: "https://via.placeholder.com/300x180",
+          })),
+        ],
+        product: [
+          {
+            name: "สินค้า 1",
+            description: "รายละเอียดสินค้า 1",
+            price: 1500,
+            rating: 4.5,
+            image: "https://via.placeholder.com/300x220",
+          },
+          {
+            name: "สินค้า 2",
+            description: "รายละเอียดสินค้า 2",
+            price: 2500,
+            rating: 4.0,
+            image: "https://via.placeholder.com/300x220",
+          },
+          ...Array.from({ length: 20 }, (_, i) => ({
+            name: `สินค้า ${i + 3}`,
+            description: `รายละเอียดสินค้า ${i + 3}`,
+            price: Math.floor(Math.random() * 5000) + 500,
+            rating: (Math.random() * 2 + 3).toFixed(1),
+            image: "https://via.placeholder.com/300x220",
+          })),
+        ],
+        team: [
+          {
+            name: "คุณ A",
+            position: "ผู้จัดการ",
+            bio: "ประสบการณ์ 10 ปี",
+            photo: "https://via.placeholder.com/120x120",
+            social: { facebook: "#", linkedin: "#" },
+          },
+          {
+            name: "คุณ B",
+            position: "นักพัฒนา",
+            bio: "ผู้เชี่ยวชาญด้าน React",
+            photo: "https://via.placeholder.com/120x120",
+            social: { twitter: "#", linkedin: "#" },
+          },
+          ...Array.from({ length: 12 }, (_, i) => ({
+            name: `คุณ ${String.fromCharCode(67 + i)}`,
+            position: ["นักพัฒนา", "นักออกแบบ", "นักการตลาด", "ที่ปรึกษา"][
+              i % 4
+            ],
+            bio: `ประสบการณ์ ${Math.floor(Math.random() * 15) + 1} ปี`,
+            photo: "https://via.placeholder.com/120x120",
+            social: { linkedin: "#" },
+          })),
+        ],
+        gallery: [
+          {
+            title: "ภาพ 1",
+            description: "คำอธิบายภาพ 1",
+            location: "กรุงเทพฯ",
+            image: "https://via.placeholder.com/300x250",
+          },
+          {
+            title: "ภาพ 2",
+            description: "คำอธิบายภาพ 2",
+            location: "เชียงใหม่",
+            image: "https://via.placeholder.com/300x250",
+          },
+          ...Array.from({ length: 18 }, (_, i) => ({
+            title: `ภาพ ${i + 3}`,
+            description: `คำอธิบายภาพ ${i + 3}`,
+            location: ["กรุงเทพฯ", "เชียงใหม่", "ภูเก็ต", "พัทยา"][i % 4],
+            image: "https://via.placeholder.com/300x250",
+          })),
+        ],
+      };
+
+      // Initialize Card Component
+      let cardComponent = new CardComponent({
+        container: document.getElementById("cardsContainer"),
+        itemsPerPage: 8,
+        cardType: "default",
+        onCardClick: (data, index) => {
+          alert(`คลิกที่ card: ${data.title || data.name} (index: ${index})`);
+        },
+        onPageChange: (page) => {
+          console.log(`เปลี่ยนไปหน้า: ${page}`);
+          updateStats();
+        },
+      });
+
+      // Load initial data
+      cardComponent.loadData(sampleData.default);
+      updateStats();
+
+      // Event Listeners
+      document
+        .getElementById("cardTypeSelect")
+        .addEventListener("change", (e) => {
+          const cardType = e.target.value;
+          cardComponent.cardType = cardType;
+          cardComponent.loadData(sampleData[cardType] || sampleData.default);
+          updateStats();
+        });
+
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        cardComponent.search(e.target.value);
+        updateStats();
+      });
+
+      document.getElementById("sortSelect").addEventListener("change", (e) => {
+        const [field, order] = e.target.value.split("-");
+        if (field && order) {
+          cardComponent.sort(field, order);
+          updateStats();
+        }
+      });
+
+      function updateStats() {
+        const stats = cardComponent.getStats();
+        document.getElementById("statsDisplay").innerHTML = `
+                แสดง ${stats.filtered} รายการจากทั้งหมด ${stats.total} รายการ | 
+                หน้าที่ ${stats.currentPage} จาก ${stats.totalPages} หน้า | 
+                ${stats.itemsPerPage} รายการต่อหน้า
+            `;
+      }
+
+      // API Integration Example (commented out)
+      /*
+        async function loadDataFromAPI() {
+            try {
+                const response = await fetch('/api/cards');
+                const data = await response.json();
+                cardComponent.loadData(data);
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+        */
+    </script>
+  </body>
+</html>
