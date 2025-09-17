@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">รายละเอียดหน่วยงานที่เกี่ยวข้อง | BLCP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content -->
+        <main class="container-fluid p-0">
+          <!-- Hero Section -->
+          <section>
+            <div class="card border-0 text-white">
+              <img
+                src="../assets/aboutus/aboutus-hero.png"
+                alt="partner hero"
+              />
+              <div
+                class="card-img-overlay d-flex justify-content-between align-items-center"
+              >
+                <div class="text-center w-100">
+                  <h1 id="partner-title" class="card-title mb-3">
+                    รายละเอียดหน่วยงานที่เกี่ยวข้อง
+                  </h1>
+                  <span
+                    id="partner-category"
+                    class="badge bg-primary fs-6 px-3 py-2 rounded-pill"
+                    >หน่วยงานที่เกี่ยวข้อง</span
+                  >
+                </div>
+                <div class="d-flex justify-content-end">
+                  <div class="card rounded-pill">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
+                    >
+                      <img
+                        src="../assets/logo/Facebook.png"
+                        alt="Facebook logo"
+                      />
+                      <img src="../assets/logo/Line.png" alt="Line logo" />
+                      <img src="../assets/logo/Tiktok.png" alt="Tiktok logo" />
+                      <img
+                        src="../assets/logo/YouTube.png"
+                        alt="YouTube logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Content Section -->
+          <section class="py-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Partner Image -->
+                  <div class="text-center mb-4">
+                    <img
+                      id="partner-image"
+                      src=""
+                      alt="Partner Image"
+                      class="img-fluid rounded-3 shadow-sm"
+                      style="max-height: 400px; width: 100%; object-fit: cover"
+                    />
+                  </div>
+
+                  <!-- Partner Date -->
+                  <div class="text-muted text-center mb-4">
+                    <i class="bi bi-calendar3"></i>
+                    <span id="partner-date">วันที่</span>
+                  </div>
+
+                  <!-- Partner Content -->
+                  <div id="partner-content" class="content-section">
+                    <!-- Dynamic content จะถูกแทรกที่นี่ -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Divider -->
+          <hr
+            class="my-5 mx-auto"
+            style="width: 80%; border-top: 2px solid #007bff"
+          />
+
+          <!-- Related Partners Section -->
+          <section class="py-5 bg-light">
+            <div class="container">
+              <h2 class="text-center mb-5">หน่วยงานที่เกี่ยวข้องอื่นๆ</h2>
+              <div id="related-partners-container" class="row">
+                <!-- Related partners จะถูกแทรกที่นี่ -->
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/card.js"></script>
+
+    <script>
+      // ข้อมูลหน่วยงานที่เกี่ยวข้องทั้งหมด (เหมือนใน partner-organizations.html)
+      const partnerData = [
+        {
+          id: 1,
+          title: "เพื่อนชุมชน",
+          image: "../assets/news/news-partner-1.png",
+          category: "ชุมชน",
+          date: "2024-03-15",
+          content: [
+            "การสร้างความสัมพันธ์ที่ดีกับชุมชนรอบข้างเป็นหัวใจสำคัญของการดำเนินธุรกิจของบริษัท บีแอลซีพี เพาเวอร์ จำกัด เพราะเราเชื่อมั่นว่าการเติบโตที่ยั่งยืนต้องเกิดขึ้นร่วมกับชุมชนและสิ่งแวดล้อม",
+            "บริษัทได้จัดทำโครงการ 'เพื่อนชุมชน' เพื่อสร้างความร่วมมือและพัฒนาคุณภาพชีวิตของประชาชนในพื้นที่ ผ่านกิจกรรมต่างๆ เช่น การสนับสนุนการศึกษา การพัฒนาอาชีพ และการดูแลสิ่งแวดล้อม",
+            "ผลจากความร่วมมือนี้ทำให้เกิดความเข้าใจอันดีระหว่างบริษัทและชุมชน สร้างการพัฒนาที่ยั่งยืนและเป็นประโยชน์ต่อทุกฝ่ายในระยะยาว",
+          ],
+        },
+        {
+          id: 2,
+          title: "บริษัท ผลิตไฟฟ้า จำกัด (มหาชน)",
+          image: "../assets/news/news-partner-2.png",
+          category: "หน่วยงานพันธมิตร",
+          date: "2024-03-10",
+          content: [
+            "บริษัท ผลิตไฟฟ้า จำกัด (มหาชน) หรือ EGCO เป็นหนึ่งในพันธมิตรสำคัญของบริษัท บีแอลซีพี เพาเวอร์ จำกัด ในการพัฒนาและดำเนินงานโรงไฟฟ้าที่มีประสิทธิภาพและเป็นมิตรต่อสิ่งแวดล้อม",
+            "ความร่วมมือระหว่างสองบริษัทครอบคลุมการแบ่งปันเทคโนโลยี การพัฒนาบุคลากร และการจัดการด้านสิ่งแวดล้อมอย่างยั่งยืน เพื่อให้การผลิตไฟฟ้าเป็นไปตามมาตรฐานสากล",
+            "การทำงานร่วมกันนี้ช่วยเสริมสร้างความมั่นคงทางพลังงานของประเทศไทย และเป็นแบบอย่างการดำเนินธุรกิจที่รับผิดชอบต่อสังคมและสิ่งแวดล้อม",
+          ],
+        },
+        {
+          id: 3,
+          title: "บริษัท บ้านปู เพาเวอร์ จำกัด (มหาชน)",
+          image: "../assets/news/news-partner-3.png",
+          category: "หน่วยงานพันธมิตร",
+          date: "2024-03-05",
+          content: [
+            "บริษัท บ้านปู เพาเวอร์ จำกัด (มหาชน) เป็นพันธมิตรหลักในการร่วมลงทุนและดำเนินงานโรงไฟฟ้าบีแอลซีพี โดยนำความเชี่ยวชาญและประสบการณ์ในอุตสาหกรรมพลังงานมาสนับสนุน",
+            "ความร่วมมือที่แน่นแฟ้นระหว่างสองบริษัททำให้สามารถดำเนินงานได้อย่างมีประสิทธิภาพ ตั้งแต่การผลิตไฟฟ้า การบำรุงรักษา ไปจนถึงการพัฒนาเทคโนโลยีใหม่ๆ",
+            "การทำงานร่วมกันนี้ไม่เพียงแต่สร้างมูลค่าทางธุรกิจ แต่ยังเน้นการดำเนินงานที่เป็นมิตรต่อสิ่งแวดล้อมและรับผิดชอบต่อสังคม เพื่อการพัฒนาที่ยั่งยืน",
+          ],
+        },
+        {
+          id: 4,
+          title: "เทศบาลนครระยอง",
+          image: "../assets/news/news-partner-4.png",
+          category: "หน่วยงานราชการ",
+          date: "2024-02-28",
+          content: [
+            "เทศบาลนครระยองเป็นหน่วยงานราชการระดับท้องถิ่นที่มีบทบาทสำคัญในการดูแลและพัฒนาคุณภาพชีวิตของประชาชนในพื้นที่ บริษัทได้ร่วมมือกับเทศบาลในหลายโครงการ",
+            "ความร่วมมือครอบคลุมการพัฒนาโครงสร้างพื้นฐาน การส่งเสริมการศึกษา การดูแลสิ่งแวดล้อม และการสนับสนุนกิจกรรมเพื่อสังคมต่างๆ ที่เป็นประโยชน์ต่อชุมชน",
+            "การทำงานร่วมกันอย่างใกล้ชิดนี้ช่วยให้บริษัทสามารถตอบสนองความต้องการของชุมชนได้อย่างตรงจุด และสร้างการพัฒนาที่ยั่งยืนในพื้นที่จังหวัดระยอง",
+          ],
+        },
+        {
+          id: 5,
+          title: "เทศบาลนครมาบตาพุด",
+          image: "../assets/news/news-partner-5.png",
+          category: "หน่วยงานราชการ",
+          date: "2024-02-25",
+          content: [
+            "เทศบาลนครมาบตาพุดเป็นหน่วยงานท้องถิ่นที่สำคัญในการดูแลและพัฒนาพื้นที่อุตสาหกรรมและชุมชนในจังหวัดระยอง บริษัทมีความร่วมมือที่ใกล้ชิดในหลายด้าน",
+            "โครงการความร่วมมือระหว่างบริษัทและเทศบาลมาบตาพุด ได้แก่ การจัดการสิ่งแวดล้อม การพัฒนาทรัพยากรมนุษย์ และการสนับสนุนกิจกรรมสาธารณประโยชน์ต่างๆ",
+            "ความร่วมมือนี้ช่วยสร้างสมดุลระหว่างการพัฒนาอุตสาหกรรมและการดูแลคุณภาพชีวิตของประชาชน เพื่อให้เกิดการเติบโตที่ยั่งยืนในพื้นที่",
+          ],
+        },
+        {
+          id: 6,
+          title: "การไฟฟ้าฝ่ายผลิตแห่งประเทศไทย",
+          image: "../assets/news/news-partner-6.png",
+          category: "หน่วยงานราชการ",
+          date: "2024-02-20",
+          content: [
+            "การไฟฟ้าฝ่ายผลิตแห่งประเทศไทย (EGAT) เป็นหน่วยงานหลักในการซื้อไฟฟ้าจากโรงไฟฟ้าบีแอลซีพี ตามสัญญาซื้อขายไฟฟ้าระยะยาว เพื่อจำหน่ายให้กับผู้บริโภคทั่วประเทศ",
+            "ความร่วมมือระหว่างบริษัทและ EGAT ไม่เพียงแต่เป็นการซื้อขายไฟฟ้า แต่ยังรวมถึงการแบ่งปันความรู้ด้านเทคโนโลยี การพัฒนาประสิทธิภาพการผลิต และการจัดการสิ่งแวดล้อม",
+            "การทำงานร่วมกันนี้ช่วยเสริมสร้างความมั่นคงของระบบไฟฟ้าไทย และเป็นส่วนสำคัญในการพัฒนาประเทศไทยให้เป็นศูนย์กลางพลังงานของภูมิภาค",
+          ],
+        },
+        {
+          id: 7,
+          title: "กระทรวงอุตสาหกรรม",
+          image: "../assets/news/news-partner-7.png",
+          category: "หน่วยงานราชการ",
+          date: "2024-02-15",
+          content: [
+            "กระทรวงอุตสาหกรรมเป็นหน่วยงานหลักในการกำกับดูแลและส่งเสริมการดำเนินงานของอุตสาหกรรมในประเทศไทย รวมถึงอุตสาหกรรมการผลิตไฟฟ้า",
+            "บริษัทได้รับการสนับสนุนและคำแนะนำจากกระทรวงอุตสาหกรรมในด้านการพัฒนาเทคโนโลยี การจัดการสิ่งแวดล้อม และการยกระดับมาตรฐานการผลิตให้สอดคล้องกับนโยบายของรัฐ",
+            "ความร่วมมือนี้ช่วยให้บริษัทสามารถดำเนินงานได้อย่างมีประสิทธิภาพ ตามมาตรฐานสากล และเป็นส่วนหนึ่งในการขับเคลื่อนเศรษฐกิจของประเทศ",
+          ],
+        },
+        {
+          id: 8,
+          title: "กระทรวงพลังงาน",
+          image: "../assets/news/news-partner-8.png",
+          category: "หน่วยงานราชการ",
+          date: "2024-02-10",
+          content: [
+            "กระทรวงพลังงานเป็นหน่วยงานหลักในการกำหนดนโยบายและทิศทางการพัฒนาพลังงานของประเทศไทย บริษัทได้รับการสนับสนุนและทำงานร่วมกันในหลายโครงการ",
+            "ความร่วมมือครอบคลุมการพัฒนาพลังงานสะอาด การเพิ่มประสิทธิภาพการใช้พลังงาน และการลดผลกระทบต่อสิ่งแวดล้อม เพื่อให้สอดคล้องกับนโยบาย Net Zero ของประเทศ",
+            "การทำงานร่วมกันนี้เป็นส่วนสำคัญในการขับเคลื่อนประเทศไทยไปสู่การเป็นศูนย์กลางพลังงานสะอาดของภูมิภาค และเสริมสร้างความมั่นคงทางพลังงานระยะยาว",
+          ],
+        },
+      ];
+
+      // Function สำหรับแปลง URL parameters
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        const results = regex.exec(location.search);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      // Function สำหรับแปลงวันที่เป็นรูปแบบไทย
+      function formatThaiDate(dateString) {
+        const date = new Date(dateString);
+        const options = {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          timeZone: "Asia/Bangkok",
+        };
+        return date.toLocaleDateString("th-TH", options);
+      }
+
+      // Function สำหรับสร้าง content paragraphs
+      function createContentParagraphs(contentArray) {
+        return contentArray
+          .map(
+            (paragraph) =>
+              `<p class="fs-5 lh-lg text-justify mb-4">${paragraph}</p>`
+          )
+          .join("");
+      }
+
+      // Function สำหรับโหลดข้อมูลหน่วยงานที่เกี่ยวข้อง
+      function loadPartnerDetail() {
+        const partnerId = parseInt(getUrlParameter("id"));
+
+        if (!partnerId) {
+          // ถ้าไม่มี ID ให้กลับไปหน้า partner-organizations
+          window.location.href = "partner-organizations.html";
+          return;
+        }
+
+        // หาหน่วยงานที่ตรงกับ ID
+        const partner = partnerData.find((item) => item.id === partnerId);
+
+        if (!partner) {
+          // ถ้าไม่เจอหน่วยงาน ให้แสดงข้อความ error
+          document.getElementById("partner-title").textContent =
+            "ไม่พบหน่วยงานที่ต้องการ";
+          document.getElementById("partner-content").innerHTML =
+            '<p class="text-center text-muted">หน่วยงานที่คุณต้องการอาจถูกลบหรือย้ายแล้ว</p>';
+          return;
+        }
+
+        // อัพเดทข้อมูลในหน้า
+        document.getElementById(
+          "page-title"
+        ).textContent = `${partner.title} | BLCP`;
+        document.getElementById("partner-title").textContent = partner.title;
+        document.getElementById("partner-category").textContent =
+          partner.category || "หน่วยงานที่เกี่ยวข้อง";
+        document.getElementById("partner-image").src = partner.image;
+        document.getElementById("partner-image").alt = partner.title;
+
+        // แสดงวันที่ถ้ามี
+        if (partner.date) {
+          document.getElementById("partner-date").textContent = formatThaiDate(
+            partner.date
+          );
+        } else {
+          document.getElementById("partner-date").parentElement.style.display =
+            "none";
+        }
+
+        // แสดงเนื้อหา
+        if (partner.content && partner.content.length > 0) {
+          document.getElementById("partner-content").innerHTML =
+            createContentParagraphs(partner.content);
+        } else {
+          document.getElementById("partner-content").innerHTML =
+            '<p class="text-muted">ไม่มีเนื้อหารายละเอียด</p>';
+        }
+
+        // โหลดหน่วยงานที่เกี่ยวข้อง
+        loadRelatedPartners(partner);
+      }
+
+      // Function สำหรับโหลดหน่วยงานที่เกี่ยวข้อง
+      function loadRelatedPartners(currentPartner) {
+        // หาหน่วยงานในหมวดหมู่เดียวกัน (ยกเว้นปัจจุบัน)
+        let relatedPartners = partnerData
+          .filter(
+            (item) =>
+              item.category === currentPartner.category &&
+              item.id !== currentPartner.id &&
+              item.content &&
+              item.content.length > 0 // มีเนื้อหาเต็ม
+          )
+          .slice(0, 3); // แสดงสูงสุด 3 รายการ
+
+        if (relatedPartners.length === 0) {
+          // ถ้าไม่มีในหมวดหมู่เดียวกัน ให้แสดงหน่วยงานล่าสุด
+          relatedPartners = partnerData
+            .filter(
+              (item) =>
+                item.id !== currentPartner.id &&
+                item.content &&
+                item.content.length > 0
+            )
+            .slice(0, 3);
+        }
+
+        const container = document.getElementById("related-partners-container");
+
+        if (relatedPartners.length === 0) {
+          container.innerHTML =
+            '<div class="col-12 text-center"><p class="text-muted">ไม่มีหน่วยงานที่เกี่ยวข้อง</p></div>';
+          return;
+        }
+
+        container.innerHTML = relatedPartners
+          .map(
+            (item) => `
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0 partner-card" style="cursor: pointer;" onclick="goToPartner(${
+              item.id
+            })">
+              <img src="${item.image}" class="card-img-top" alt="${
+              item.title
+            }" style="height: 200px; object-fit: cover;" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${item.title}</h5>
+                ${
+                  item.date
+                    ? `<small class="text-muted mb-2"><i class="bi bi-calendar3"></i> ${formatThaiDate(
+                        item.date
+                      )}</small>`
+                    : ""
+                }
+                ${
+                  item.category
+                    ? `<span class="badge bg-primary align-self-start mt-auto">${item.category}</span>`
+                    : ""
+                }
+              </div>
+            </div>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      // Function สำหรับไปยังหน่วยงานอื่น
+      function goToPartner(partnerId) {
+        window.location.href = `partner-detail.html?id=${partnerId}`;
+      }
+
+      // เริ่มต้นโหลดข้อมูลเมื่อหน้าพร้อม
+      document.addEventListener("DOMContentLoaded", function () {
+        loadPartnerDetail();
+      });
+    </script>
+  </body>
+</html>

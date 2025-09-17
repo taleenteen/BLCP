@@ -164,6 +164,13 @@ img {
   line-height: 100%;
 }
 
+.f-size-24 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 24px;
+  line-height: 100%;
+}
+
 .f-size-30 {
   font-weight: 700;
   font-style: 75 Bd;

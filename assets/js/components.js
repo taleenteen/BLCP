@@ -731,7 +731,9 @@ function loadComponents() {
     navBasePath = "../..";
   } else if (
     currentPath.includes("/aboutus/") ||
-    currentPath.includes("/sustainability/")
+    currentPath.includes("/sustainability/") ||
+    currentPath.includes("/publications/") ||
+    currentPath.includes("/news/")
   ) {
     basePath = "..";
     navBasePath = "..";

@@ -316,15 +316,17 @@ class TableComponent {
     }
 
     let paginationHTML =
-      '<nav aria-label="Table pagination"><ul class="pagination">';
+      '<nav aria-label="Table pagination"><ul class="pagination gap-3">';
 
     // Previous button
     paginationHTML += `
-      <li class="page-item ${this.currentPage === 1 ? "disabled" : ""}">
-        <a class="page-link" href="#" data-page="${
+      <li class="page-item me-2 ${this.currentPage === 1 ? "disabled" : ""}">
+        <a class="page-link bg-transparent rounded-5" href="#" data-page="${
           this.currentPage - 1
         }" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
+          <span class="text-white fs-5 fw-bold" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223"/>
+</svg></span>
         </a>
       </li>
     `;
@@ -343,7 +345,7 @@ class TableComponent {
     for (let i = startPage; i <= endPage; i++) {
       paginationHTML += `
         <li class="page-item ${i === this.currentPage ? "active" : ""}">
-          <a class="page-link" href="#" data-page="${i}">${i}</a>
+          <a class="page-link fs-5 fw-bold bg-transparent rounded-5" href="#" data-page="${i}">${i}</a>
         </li>
       `;
     }
@@ -357,13 +359,15 @@ class TableComponent {
 
     // Next button
     paginationHTML += `
-      <li class="page-item ${
+      <li class="page-item ms-2  ${
         this.currentPage === totalPages ? "disabled" : ""
       }">
-        <a class="page-link" href="#" data-page="${
+        <a class="page-link bg-transparent rounded-5" href="#" data-page="${
           this.currentPage + 1
         }" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
+          <span class="text-white fs-1 fw-bold" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+</svg></span>
         </a>
       </li>
     `;

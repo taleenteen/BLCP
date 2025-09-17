@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">รายละเอียดข่าว | BLCP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content -->
+        <main class="container-fluid p-0">
+          <!-- Hero Section -->
+          <section>
+            <div class="card border-0 text-white">
+              <img src="../assets/aboutus/aboutus-hero.png" alt="news hero" />
+              <div
+                class="card-img-overlay d-flex justify-content-between align-items-center"
+              >
+                <div class="text-center w-100">
+                  <h1 id="news-title" class="card-title mb-3">
+                    รายละเอียดข่าว
+                  </h1>
+                  <span
+                    id="news-category"
+                    class="badge bg-primary fs-6 px-3 py-2 rounded-pill"
+                    >ข่าว</span
+                  >
+                </div>
+                <div class="d-flex justify-content-end">
+                  <div class="card rounded-pill">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
+                    >
+                      <img
+                        src="../assets/logo/Facebook.png"
+                        alt="Facebook logo"
+                      />
+                      <img src="../assets/logo/Line.png" alt="Line logo" />
+                      <img src="../assets/logo/Tiktok.png" alt="Tiktok logo" />
+                      <img
+                        src="../assets/logo/YouTube.png"
+                        alt="YouTube logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Content Section -->
+          <section class="py-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- News Image -->
+                  <div class="text-center mb-4">
+                    <img
+                      id="news-image"
+                      src=""
+                      alt="News Image"
+                      class="img-fluid rounded-3 shadow-sm"
+                      style="max-height: 400px; width: 100%; object-fit: cover"
+                    />
+                  </div>
+
+                  <!-- News Date -->
+                  <div class="text-muted text-center mb-4">
+                    <i class="bi bi-calendar3"></i>
+                    <span id="news-date">วันที่</span>
+                  </div>
+
+                  <!-- News Content -->
+                  <div id="news-content" class="content-section">
+                    <!-- Dynamic content จะถูกแทรกที่นี่ -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Divider -->
+          <hr
+            class="my-5 mx-auto"
+            style="width: 80%; border-top: 2px solid #0e3f64"
+          />
+
+          <!-- Related Posts Section -->
+          <section class="py-5 bg-light">
+            <div class="container">
+              <h2 class="text-center mb-5">ข่าวที่เกี่ยวข้อง</h2>
+              <div id="related-posts-container" class="row">
+                <!-- Related posts จะถูกแทรกที่นี่ -->
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/card.js"></script>
+
+    <script>
+      // ข้อมูลโพสต์ทั้งหมด (เหมือนใน daily-news.html)
+      const postData = [
+        {
+          id: 1,
+          title: "ภาพบรรยากาศความสุขสนุกสนาน 'วันไหลบีแอลซีพี'",
+          image: "../assets/news/news-daily-1.png",
+          category: "ข่าวองค์กร",
+          date: "2024-03-15",
+          content: [
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด ได้จัดงาน 'วันไหลบีแอลซีพี' ประจำปี 2567 ขึ้น เพื่อสร้างความสุขและความสามัคคีในหมู่พนักงาน โดยมีกิจกรรมหลากหลายรูปแบบที่สร้างสรรค์และสนุกสนาน",
+            "กิจกรรมในงานประกอบด้วย การแสดงดนตรี การประกวดแต่งกาย การแข่งขันกีฬาสี และการจับรางวัลมากมาย ซึ่งได้รับการตอบรับที่ดีจากพนักงานและครอบครัวที่เข้าร่วมงาน",
+            "นายจอห์น สมิธ ประธานเจ้าหน้าที่บริหาร กล่าวว่า 'การจัดงานวันไหลบีแอลซีพีเป็นประเพณีที่ดีของบริษัท เพื่อเสริมสร้างความสัมพันธ์ที่ดีระหว่างพนักงาน และเป็นการขอบคุณทุกคนที่ร่วมกันทำงานอย่างหนักเพื่อความสำเร็จของบริษัท'",
+          ],
+        },
+        {
+          id: 2,
+          title:
+            'บีแอลซีพี ร่วมเวที CEO Forum ประกาศจุดยืน "อุตสาหกรรมคาร์บอนต่ำ" สู่อนาคต Net Zero',
+          image: "../assets/news/news-daily-2.png",
+          category: "ความยั่งยืน",
+          date: "2024-03-10",
+          content: [
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด เข้าร่วมเวที CEO Forum ในหัวข้อ 'อุตสาหกรรมคาร์บอนต่ำ สู่อนาคต Net Zero' โดยประกาศจุดยืนและแผนการดำเนินงานเพื่อลดการปล่อยก๊าซเรือนกระจก",
+            "ในการนำเสนอ บริษัทได้เปิดเผยแผนงานระยะยาว 20 ปี เพื่อบรรลุเป้าหมาย Net Zero Emission ภายในปี 2050 ผ่านการลงทุนในเทคโนโลยีสะอาด การปรับปรุงประสิทธิภาพการผลิต และการพัฒนาพลังงานทดแทน",
+            "นอกจากนี้ บริษัทยังได้แบ่งปันประสบการณ์ในการจัดการสิ่งแวดล้อม การดูแลชุมชน และการขับเคลื่อนเศรษฐกิจหมุนเวียน เพื่อเป็นแนวทางให้กับอุตสาหกรรมอื่นๆ ในการพัฒนาอย่างยั่งยืน",
+          ],
+        },
+        {
+          id: 3,
+          title:
+            "บีแอลซีพีลงนามในสัญญาซ่อมบำรุงระยะยาวกับบริษัท เอ็กโก เอ็นจิเนียริ่ง จำกัด เพื่อความมั่นคงทางด้านการผลิตกระแสไฟฟ้า",
+          image: "../assets/news/news-daily-3.png",
+          category: "ข่าวธุรกิจ",
+          date: "2024-03-05",
+          content: [
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด ได้ลงนามในสัญญาความร่วมมือระยะยาว 10 ปี กับบริษัท เอ็กโก เอ็นจิเนียริ่ง จำกัด เพื่อให้บริการซ่อมบำรุงโรงไฟฟ้าอย่างครอบคลุม",
+            "ความร่วมมือครั้งนี้จะช่วยเสริมสร้างความมั่นคงในการผลิตกระแสไฟฟ้า ลดความเสี่ยงในการหยุดการผลิต และเพิ่มประสิทธิภาพการดำเนินงานของโรงไฟฟ้า ผ่านการใช้เทคโนโลยีและความเชี่ยวชาญของเอ็กโก เอ็นจิเนียริ่ง",
+            "สัญญานี้คาดว่าจะสร้างมูลค่าทางเศรษฐกิจรวมกว่า 2,000 ล้านบาท และเป็นการสร้างงานให้กับชุมชนท้องถิ่นอีกกว่า 500 ตำแหน่งงาน ตลอดระยะเวลาของสัญญา",
+          ],
+        },
+        {
+          id: 4,
+          title:
+            "บีแอลซีพีและบ้านปูร่วมแบ่งปันประสบการณ์และสนับสนุนโครงการความรับผิดชอบต่อสังคม ขับเคลื่อนเป้าหมายการพัฒนาอย่างยั่งยืน",
+          image: "../assets/news/news-daily-4.png",
+          category: "CSR",
+          date: "2024-02-28",
+          content: [
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด ร่วมกับบริษัท บ้านปู จำกัด (มหาชน) จัดกิจกรรมแบ่งปันประสบการณ์และสนับสนุนโครงการความรับผิดชอบต่อสังคม เพื่อขับเคลื่อนเป้าหมายการพัฒนาอย่างยั่งยืน",
+            "โครงการนี้มุ่งเน้นการพัฒนาศักยภาพของชุมชนในพื้นที่ ผ่านการส่งเสริมการศึกษา การพัฒนาอาชีพ และการอนุรักษ์สิ่งแวดล้อม โดยได้รับการสนับสนุนจากทั้งสองบริษัทในการดำเนินโครงการต่างๆ",
+            "กิจกรรมดังกล่าวเป็นส่วนหนึ่งของแผนยุทธศาสตร์ CSR ระยะยาว ที่มุ่งเน้นการสร้างผลกระทบเชิงบวกต่อสังคมและสิ่งแวดล้อม ตลอดจนการสร้างความยั่งยืนให้กับชุมชนและประเทศชาติ",
+          ],
+        },
+      ];
+
+      // Function สำหรับแปลง URL parameters
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        const results = regex.exec(location.search);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      // Function สำหรับแปลงวันที่เป็นรูปแบบไทย
+      function formatThaiDate(dateString) {
+        const date = new Date(dateString);
+        const options = {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          timeZone: "Asia/Bangkok",
+        };
+        return date.toLocaleDateString("th-TH", options);
+      }
+
+      // Function สำหรับสร้าง content paragraphs
+      function createContentParagraphs(contentArray) {
+        return contentArray
+          .map(
+            (paragraph) =>
+              `<p class="fs-5 lh-lg text-justify mb-4">${paragraph}</p>`
+          )
+          .join("");
+      }
+
+      // Function สำหรับโหลดข้อมูลข่าว
+      function loadNewsDetail() {
+        const newsId = parseInt(getUrlParameter("id"));
+
+        if (!newsId) {
+          // ถ้าไม่มี ID ให้กลับไปหน้า daily-news
+          window.location.href = "daily-news.html";
+          return;
+        }
+
+        // หาข่าวที่ตรงกับ ID
+        const news = postData.find((post) => post.id === newsId);
+
+        if (!news) {
+          // ถ้าไม่เจอข่าว ให้แสดงข้อความ error
+          document.getElementById("news-title").textContent =
+            "ไม่พบข่าวที่ต้องการ";
+          document.getElementById("news-content").innerHTML =
+            '<p class="text-center text-muted">ข่าวที่คุณต้องการอาจถูกลบหรือย้ายแล้ว</p>';
+          return;
+        }
+
+        // อัพเดทข้อมูลในหน้า
+        document.getElementById(
+          "page-title"
+        ).textContent = `${news.title} | BLCP`;
+        document.getElementById("news-title").textContent = news.title;
+        document.getElementById("news-category").textContent =
+          news.category || "ข่าว";
+        document.getElementById("news-image").src = news.image;
+        document.getElementById("news-image").alt = news.title;
+
+        // แสดงวันที่ถ้ามี
+        if (news.date) {
+          document.getElementById("news-date").textContent = formatThaiDate(
+            news.date
+          );
+        } else {
+          document.getElementById("news-date").parentElement.style.display =
+            "none";
+        }
+
+        // แสดงเนื้อหา
+        if (news.content && news.content.length > 0) {
+          document.getElementById("news-content").innerHTML =
+            createContentParagraphs(news.content);
+        } else {
+          document.getElementById("news-content").innerHTML =
+            '<p class="text-muted">ไม่มีเนื้อหารายละเอียด</p>';
+        }
+
+        // โหลดข่าวที่เกี่ยวข้อง
+        loadRelatedPosts(news);
+      }
+
+      // Function สำหรับโหลดข่าวที่เกี่ยวข้อง
+      function loadRelatedPosts(currentNews) {
+        // หาข่าวในหมวดหมู่เดียวกัน (ยกเว้นข่าวปัจจุบัน)
+        const relatedPosts = postData
+          .filter(
+            (post) =>
+              post.category === currentNews.category &&
+              post.id !== currentNews.id &&
+              post.content &&
+              post.content.length > 0 // มีเนื้อหาเต็ม
+          )
+          .slice(0, 3); // แสดงสูงสุด 3 ข่าว
+
+        if (relatedPosts.length === 0) {
+          // ถ้าไม่มีข่าวในหมวดหมู่เดียวกัน ให้แสดงข่าวล่าสุด
+          relatedPosts.push(
+            ...postData
+              .filter(
+                (post) =>
+                  post.id !== currentNews.id &&
+                  post.content &&
+                  post.content.length > 0
+              )
+              .slice(0, 3)
+          );
+        }
+
+        const container = document.getElementById("related-posts-container");
+
+        if (relatedPosts.length === 0) {
+          container.innerHTML =
+            '<div class="col-12 text-center"><p class="text-muted">ไม่มีข่าวที่เกี่ยวข้อง</p></div>';
+          return;
+        }
+
+        container.innerHTML = relatedPosts
+          .map(
+            (post) => `
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0 post-card" style="cursor: pointer;" onclick="goToNews(${
+              post.id
+            })">
+              <img src="${post.image}" class="card-img-top" alt="${
+              post.title
+            }" style="height: 200px; object-fit: cover;" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${post.title}</h5>
+                ${
+                  post.date
+                    ? `<small class="text-muted mb-2"><i class="bi bi-calendar3"></i> ${formatThaiDate(
+                        post.date
+                      )}</small>`
+                    : ""
+                }
+                ${
+                  post.category
+                    ? `<span class="badge bg-secondary align-self-start mt-auto">${post.category}</span>`
+                    : ""
+                }
+              </div>
+            </div>
+          </div>
+        `
+          )
+          .join("");
+      }
+
+      // Function สำหรับไปยังข่าวอื่น
+      function goToNews(newsId) {
+        window.location.href = `news-detail.html?id=${newsId}`;
+      }
+
+      // เริ่มต้นโหลดข้อมูลเมื่อหน้าพร้อม
+      document.addEventListener("DOMContentLoaded", function () {
+        loadNewsDetail();
+      });
+    </script>
+  </body>
+</html>
