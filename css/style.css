@@ -7,8 +7,62 @@
 
 :root {
   --bs-primary-rgb: 14, 63, 100;
-
   --my-primary-color: rgba(14, 63, 100, 1);
+}
+
+/* Responsive Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: white;
+  border-right: 1px solid #dee2e6;
+  z-index: 1050;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    position: static;
+    transform: none !important;
+    width: 280px;
+    min-width: 280px;
+    max-width: 320px;
+    min-height: 100vh;
+  }
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1049;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Main Content Adjustments */
+.flex-grow-1 {
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+@media (min-width: 992px) {
+  .flex-grow-1 {
+    margin-left: 0;
+  }
 }
 
 .accordion-button {
@@ -157,6 +211,14 @@ img {
   line-height: 100%;
 }
 
+.f-size-20-contact {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
 .f-size-22 {
   font-weight: 700;
   font-style: 75 Bd;
@@ -299,6 +361,56 @@ h2.f-vision-title {
   background: linear-gradient(180deg, #bed84e 0%, #ffffff 100%);
 }
 
+.tab-btn {
+  background: rgba(246, 246, 255, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: rgba(139, 139, 139, 1);
+  border-radius: 15px;
+  max-width: 200px;
+  width: 100%;
+  height: 44px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  border: none;
+
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.tab-btn.active {
+  background: linear-gradient(90deg, #ffffff 0%, #bed84e 100%);
+  color: var(--my-primary-color);
+}
+
+.tab-btn:hover {
+  background: linear-gradient(90deg, #d9d9d9 0%, #737373 100%);
+  color: #fff;
+}
+
+.contact-btn {
+  background-color: rgba(190, 216, 78, 1);
+  color: #ffffff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
+  text-decoration-skip-ink: auto;
+  border: none;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(90deg, #d0d0d0 0%, #737373 100%);
+  color: #fff;
+}
+
 /* Background */
 .footer-bg {
   background-color: rgba(14, 63, 100, 1);
@@ -336,9 +448,16 @@ h2.f-vision-title {
 
 .index-bg {
   background-image: url("../assets/background/index_background.png");
-
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 522px;
+}
 
+.contact-form-bg {
+  background-image: url("../assets/background/contact-form.png");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;

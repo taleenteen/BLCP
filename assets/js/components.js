@@ -1,45 +1,50 @@
 // Footer Component
 function createFooter(basePath = "../..") {
   return `
-    <footer class="footer-bg text-center text-lg-star" style="position: relative">
-      <img
-        src="${basePath}/assets/footer/footer-circle-1.png"
-        alt="footer"
-        class="img-fluid w-100 h-100"
-        style="
-          position: absolute;
-          top: 49%;
-          right: 13.5%;
-          transform: translate(50%, -50%);
-          max-width: 365px;
-          max-height: 307px;
-        "
-      />
-      <img
-        src="${basePath}/assets/footer/footer-circle-2.png"
-        alt="footer"
-        class="img-fluid w-100 h-100"
-        style="
-          position: absolute;
-          top: 48%;
-          right: 12%;
-          transform: translate(50%, -50%);
-          z-index: 0;
-          max-width: 350px;
-          max-height: 290px;
-        "
-      />
+    <footer class="footer-bg text-center text-lg-start" style="position: relative">
+      <div class="d-none d-md-block" style="position: absolute; top: 0; right: 0; overflow: hidden; height: 315px; width: 100%; pointer-events: none;">
+        <img
+          src="${basePath}/assets/footer/footer-circle-1.png"
+          alt="footer"
+          class="img-fluid"
+          style="
+            position: absolute;
+            top: 49%;
+            right: 13.5%;
+            transform: translate(50%, -50%);
+            max-width: 365px;
+            max-height: 307px;
+            z-index: 0;
+          "
+        />
+        <img
+          src="${basePath}/assets/footer/footer-circle-2.png"
+          alt="footer"
+          class="img-fluid"
+          style="
+            position: absolute;
+            top: 48%;
+            right: 12%;
+            transform: translate(50%, -50%);
+            z-index: 0;
+            max-width: 350px;
+            max-height: 290px;
+          "
+        />
+      </div>
       <div
-        class="text-center p-5"
+        class="text-center py-4 py-md-5"
         style="
           background-color: rgba(0, 0, 0, 0.05);
-          height: 315px;
+          min-height: 280px;
+          height: auto;
           position: relative;
         "
       >
         <img
           src="${basePath}/assets/footer/footer.png"
           alt="footer"
+          class="d-none d-md-block"
           style="
             position: absolute;
             top: 90px;
@@ -48,47 +53,87 @@ function createFooter(basePath = "../..") {
           "
         />
 
-        <div class="d-flex justify-content-center align-items-center flex-column gap-3">
+        <div class="d-flex justify-content-center align-items-center flex-column gap-3 mb-4">
           <button
             type="button"
-            class="btn rounded-pill light-green-bg text-white f-btn-click w-100 h-100"
-            style="max-width: 448px; max-height: 50px"
+            class="btn rounded-pill light-green-bg text-white f-btn-click"
+            style="max-width: 448px; height: 50px; width: 100%;"
           >
             FAQ เรื่องพลังงานที่นี่
           </button>
         </div>
 
-        <div class="row">
-          <div class="col d-flex align-items-end justify-content-center p-5" style="z-index: 2">
-            <button type="button" class="btn rounded-pill light-green-bg text-white f-btn-click">
-              hello
-            </button>
+        <div class="row g-3">
+          <div class="col-12 col-md-4 d-flex align-items-end justify-content-center" style="z-index: 2">
+            <div class="card rounded-pill">
+              <div class="card-body d-flex justify-content-center gap-2 p-2">
+                <img
+                  src="${basePath}/assets/logo/Facebook.png"
+                  alt="Facebook logo"
+                  style="cursor: pointer;"
+                />
+                <img
+                  src="${basePath}/assets/logo/Line.png"
+                  alt="Line logo"
+                  style="cursor: pointer;"
+                />
+                <img
+                  src="${basePath}/assets/logo/Tiktok.png"
+                  alt="Tiktok logo"
+                  style="cursor: pointer;" 
+                />
+                <img
+                  src="${basePath}/assets/logo/Youtube.png"
+                  alt="YouTube logo"
+                  style="cursor: pointer;"
+                />
+              </div>
+            </div>
           </div>
-          <div class="col text-start p-5">
-            <h5 class="text-white">
-              เลขที่ 9, ถนน I-8 ป.ณ. 92 ปณจ.มาบตาพุด <br />
-              อำเภอเมือง จังหวัดระยอง 21150
-            </h5>
-            <h5 class="text-white">webmaster@blcp.co.th</h5>
+          
+          <div class="col-12 col-md-4 text-start p-3 p-md-5">
+            <div class="d-flex align-items-center mb-3">
+              <img
+                src="${basePath}/assets/footer/map-icon.png"
+                alt="Map icon"
+                style="cursor: pointer"
+                class="me-2"
+              />
+              <h5 class="text-white mb-0" style="font-size: clamp(14px, 2.5vw, 18px);">
+                เลขที่ 9, ถนน I-8 ป.ณ. 92 ปณจ.มาบตาพุด <br />
+                อำเภอเมือง จังหวัดระยอง 21150
+              </h5>
+            </div>
+            <div class="d-flex align-items-center">
+              <img
+                src="${basePath}/assets/footer/mail-icon.png"
+                alt="Mail icon"
+                style="cursor: pointer"
+                width="48"
+                class="me-2"
+              />
+              <h5 class="text-white mb-0" style="font-size: clamp(14px, 2.5vw, 18px);">webmaster@blcp.co.th</h5>
+            </div>
           </div>
-          <div class="col d-flex flex-column justify-content-center align-items-center gap-3 p-1">
+          
+          <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center gap-3 p-3">
             <button
               type="button"
-              class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-3"
-              style="width: 180px; height: 42px"
+              class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-2 gap-md-3"
+              style="width: 100%; max-width: 180px; height: 42px; font-size: clamp(12px, 2vw, 16px);"
             >
               <span class="border rounded-circle border-2 border-dark d-flex align-items-center justify-content-center p-1">
                 <img
                   src="${basePath}/assets/navbar/Form_nav.png"
                   alt="Logo"
-                  style="width: 25px; height: 24px"
+                  style="width: 20px; height: 20px"
                 />
               </span>
               <div class="d-flex flex-column align-items-start">
-                <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+                <p class="mb-0 fw-bold text-primary" style="font-size: inherit; line-height: 100%">
                   แบบฟอร์มร้องเรียน
                 </p>
-                <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+                <p class="mb-0 fw-bold text-primary" style="font-size: inherit; line-height: 100%">
                   081-000-7362
                 </p>
               </div>
@@ -96,21 +141,21 @@ function createFooter(basePath = "../..") {
 
             <button
               type="button"
-              class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-3"
-              style="width: 180px; height: 42px"
+              class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-2 gap-md-3"
+              style="width: 100%; max-width: 180px; height: 42px; font-size: clamp(12px, 2vw, 16px);"
             >
               <span class="border rounded-circle border-2 border-dark d-flex align-items-center justify-content-center p-1">
                 <img
                   src="${basePath}/assets/navbar/Phone_nav.png"
                   alt="Logo"
-                  style="width: 25px; height: 24px"
+                  style="width: 20px; height: 20px"
                 />
               </span>
               <div class="d-flex flex-column align-items-start">
-                <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+                <p class="mb-0 fw-bold text-primary" style="font-size: inherit; line-height: 100%">
                   ติดต่อโรงไฟฟ้าบีแอลซีพี
                 </p>
-                <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+                <p class="mb-0 fw-bold text-primary" style="font-size: inherit; line-height: 100%">
                   038-925100
                 </p>
               </div>
@@ -122,10 +167,14 @@ function createFooter(basePath = "../..") {
   `;
 }
 
-// Sidebar Component
+// Sidebar Component - Responsive with Hamburger Menu
 function createSidebar(basePath = "../..") {
   return `
-    <aside class="border-end" style="min-width: 220px; min-height: 100vh; max-width: 320px">
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay d-lg-none" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar d-lg-block border-end" id="sidebar" style="min-width: 220px; max-width: 320px; transform: translateX(-100%);">
       <img
         src="${basePath}/assets/logo/BLCP-01.png"
         alt="Sidebar Logo"
@@ -569,110 +618,142 @@ function createSidebar(basePath = "../..") {
   `;
 }
 
-// Navbar Component
+// Navbar Component - Responsive with Hamburger Menu
 function createNavbar(basePath = "..", currentLang = "th") {
   return `
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary justify-content-between" style="min-height: 64px">
+    <nav class="navbar navbar-expand-lg bg-primary" style="min-height: 64px;">
       <div class="container-fluid">
-        <div class="d-flex gap-2">
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="btn btn-primary d-lg-none me-2"
+          type="button"
+          id="sidebarToggle"
+          aria-label="Toggle sidebar"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </button>
+
+        <!-- Logo (Mobile) -->
+        <div class="d-lg-none">
+          <img
+            src="${basePath}/assets/navbar/Logo.png"
+            alt="Logo"
+            class="img-fluid"
+            style="height: 32px;"
+          />
+        </div>
+
+        <!-- Desktop Action Buttons -->
+        <div class="d-none d-lg-flex gap-2 flex-wrap">
           <button
             type="button"
-            class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-3"
-            style="width: 180px; height: 42px"
+            class="btn btn-primary bg-white btn-sm rounded-pill p-1 text-black d-flex align-items-center gap-2"
+            style="height: 40px; min-width: 160px;"
           >
-            <span class="border rounded-circle border-2 border-dark d-flex align-items-center justify-content-center p-1">
+            <span class="border rounded-circle border-2 border-dark d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;">
               <img
                 src="${basePath}/assets/navbar/Form_nav.png"
-                alt="Logo"
-                style="width: 25px; height: 24px"
+                alt="Form"
+                style="width: 20px; height: 20px"
               />
             </span>
             <div class="d-flex flex-column align-items-start">
-              <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+              <small class="mb-0 fw-bold text-primary" style="font-size: 12px; line-height: 1;">
                 แบบฟอร์มร้องเรียน
-              </p>
-              <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+              </small>
+              <small class="mb-0 fw-bold text-primary" style="font-size: 12px; line-height: 1;">
                 081-000-7362
-              </p>
+              </small>
             </div>
           </button>
 
           <button
             type="button"
-            class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-3"
-            style="width: 180px; height: 42px"
+            class="btn btn-primary bg-white btn-sm rounded-pill p-1 text-black d-flex align-items-center gap-2"
+            style="height: 40px; min-width: 160px;"
           >
-            <span class="border rounded-circle border-2 border-dark d-flex align-items-center justify-content-center p-1">
+            <span class="border rounded-circle border-2 border-dark d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;">
               <img
                 src="${basePath}/assets/navbar/Carrer_nav.png"
-                alt="Logo"
-                style="width: 25px; height: 24px"
+                alt="Career"
+                style="width: 20px; height: 20px"
               />
             </span>
             <div class="d-flex flex-column align-items-start">
-              <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+              <small class="mb-0 fw-bold text-primary" style="font-size: 12px; line-height: 1;">
                 ร่วมงานกับเรา
-              </p>
-              <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+              </small>
+              <small class="mb-0 fw-bold text-primary" style="font-size: 12px; line-height: 1;">
                 081-000-7362
-              </p>
+              </small>
             </div>
           </button>
 
           <button
             type="button"
-            class="btn post-btn btn-lg rounded-pill p-1 text-black d-flex align-items-center gap-3 border-0"
-            style="width: 180px; height: 42px"
+            class="btn post-btn btn-sm rounded-pill p-1 text-white d-flex align-items-center gap-2 border-0"
+            style="height: 40px; min-width: 160px;"
           >
-            <span class="border bg-white rounded-circle border-2 border-dark d-flex align-items-center justify-content-center p-1">
+            <span class="border bg-white rounded-circle border-2 border-dark d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;">
               <img
                 src="${basePath}/assets/navbar/Phone_nav.png"
-                alt="Logo"
-                style="width: 25px; height: 24px"
+                alt="Phone"
+                style="width: 20px; height: 20px"
               />
             </span>
             <div class="d-flex flex-column align-items-start">
-              <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+              <small class="mb-0 fw-bold" style="font-size: 12px; line-height: 1;">
                 ติดต่อโรงไฟฟ้าบีแอลซีพี
-              </p>
-              <p class="mb-0 fw-bold text-primary" style="font-size: 16px; line-height: 100%">
+              </small>
+              <small class="mb-0 fw-bold" style="font-size: 12px; line-height: 1;">
                 038-925100
-              </p>
+              </small>
             </div>
           </button>
         </div>
-      </div>
-      <div class="container-fluid d-flex align-items-center gap-2 justify-content-end">
-        <div class="d-flex align-items-center gap-2">
-          <img
-            src="${basePath}/assets/navbar/Nav_logo.png"
-            alt="Logo"
-            class="img-fluid me-3"
-          />
-          <a
-            href="index-en.html"
-            class="btn btn-secondary ${
-              currentLang === "en" ? "post-btn border-0" : ""
-            } lang-btn btn-lg rounded-pill p-1 ${
-    currentLang === "en" ? "text-white" : "text-primary"
-  } fw-bold d-flex align-items-center px-3"
-            style="font-size: 32px; line-height: 100%"
-          >EN</a>
 
-          <div style="width: 2px; height: 42px; background-color: white"></div>
+        <!-- Right Side Controls -->
+        <div class="d-flex align-items-center gap-2 ms-auto">
+          <!-- Desktop Logo -->
+          <div class="d-none d-lg-block me-3">
+            <img
+              src="${basePath}/assets/navbar/Logo.png"
+              alt="Logo"
+              class="img-fluid"
+              style="height: 42px;"
+            />
+          </div>
 
-          <a
-            href="index.html"
-            class="btn btn-secondary ${
-              currentLang === "th" ? "post-btn border-0" : ""
-            } lang-btn btn-lg rounded-pill p-1 ${
-    currentLang === "th" ? "text-white" : "text-primary"
-  } fw-bold d-flex align-items-center px-3"
-            style="font-size: 32px; line-height: 100%"
-          >TH</a>
-          
-          <button class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-primary fw-bold d-flex align-items-center px-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+          <!-- Language Switcher -->
+          <div class="d-flex align-items-center gap-1">
+            <a
+              href="index.html"
+              class="btn btn-sm rounded-pill px-2 ${
+                currentLang === "th"
+                  ? "post-btn border-0 text-white"
+                  : "btn-outline-light text-white"
+              } fw-bold"
+              style="font-size: clamp(16px, 3vw, 20px); min-width: 40px; height: 36px; line-height: 1;"
+            >TH</a>
+            
+            <div style="width: 1px; height: 20px; background-color: white;"></div>
+            
+            <a
+              href="index-en.html"
+              class="btn btn-sm rounded-pill px-2 ${
+                currentLang === "en"
+                  ? "post-btn border-0 text-white"
+                  : "btn-outline-light text-white"
+              } fw-bold"
+              style="font-size: clamp(16px, 3vw, 20px); min-width: 40px; height: 36px; line-height: 1;"
+            >EN</a>
+          </div>
+
+          <!-- Search Button -->
+          <button class="btn btn-primary bg-white btn-sm rounded-pill p-1 text-primary fw-bold d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"/>
             </svg>
           </button>
@@ -712,6 +793,63 @@ function initializeSidebarActiveStates() {
   });
 }
 
+// Function to handle mobile sidebar toggle
+function initializeSidebarToggle() {
+  const sidebarToggle = document.getElementById("sidebarToggle");
+  const sidebar = document.getElementById("sidebar");
+  const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+  if (sidebarToggle && sidebar && sidebarOverlay) {
+    // Toggle sidebar visibility
+    const toggleSidebar = () => {
+      const isOpen =
+        sidebar.style.transform === "translateX(0px)" ||
+        !sidebar.style.transform;
+
+      if (isOpen) {
+        sidebar.style.transform = "translateX(-100%)";
+        sidebarOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      } else {
+        sidebar.style.transform = "translateX(0px)";
+        sidebarOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+    };
+
+    // Event listeners
+    sidebarToggle.addEventListener("click", toggleSidebar);
+    sidebarOverlay.addEventListener("click", toggleSidebar);
+
+    // Close sidebar when clicking on links (mobile)
+    const sidebarLinks = sidebar.querySelectorAll("a");
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 992) {
+          // Only on mobile
+          toggleSidebar();
+        }
+      });
+    });
+
+    // Handle window resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 992) {
+        sidebar.style.transform = "";
+        sidebarOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      } else {
+        sidebar.style.transform = "translateX(-100%)";
+      }
+    });
+
+    // Initialize correct state
+    if (window.innerWidth < 992) {
+      sidebar.style.transform = "translateX(-100%)";
+    }
+  }
+}
+
 // Load components function
 function loadComponents() {
   // Determine base path based on current location
@@ -733,7 +871,8 @@ function loadComponents() {
     currentPath.includes("/aboutus/") ||
     currentPath.includes("/sustainability/") ||
     currentPath.includes("/publications/") ||
-    currentPath.includes("/news/")
+    currentPath.includes("/news/") ||
+    currentPath.includes("/contact/")
   ) {
     basePath = "..";
     navBasePath = "..";
@@ -755,6 +894,7 @@ function loadComponents() {
   // Initialize sidebar active states after components are loaded
   setTimeout(() => {
     initializeSidebarActiveStates();
+    initializeSidebarToggle();
   }, 100);
 }
 

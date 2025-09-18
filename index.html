@@ -13,19 +13,19 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="d-flex">
+    <div class="d-flex position-relative">
       <!-- Sidebar Container -->
       <div id="sidebar-container"></div>
-      
-      <div class="flex-grow-1">
+
+      <div class="flex-grow-1 w-100">
         <!-- Navbar Container -->
         <div id="navbar-container"></div>
-        
+
         <!-- Main content below navbar -->
-        <main class="container container-fluid p-0">
+        <main class="container-fluid p-0">
           <section>
             <div id="carouselExampleIndicators" class="carousel slide p-0">
-              <div class="carousel-indicators p-0">
+              <div class="carousel-indicators p-0 d-none d-md-flex">
                 <button
                   type="button"
                   data-bs-target="#carouselExampleIndicators"
@@ -51,27 +51,30 @@
                 <div class="carousel-item active">
                   <img
                     src="/assets/carousel/first_page.png"
-                    class="d-block w-100"
+                    class="d-block w-100 img-fluid"
                     alt="..."
+                    style="height: 300px; object-fit: cover"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/assets/carousel/second_page.png"
-                    class="d-block w-100"
+                    class="d-block w-100 img-fluid"
                     alt="..."
+                    style="height: 300px; object-fit: cover"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/assets/carousel/first_page.png"
-                    class="d-block w-100"
+                    class="d-block w-100 img-fluid"
                     alt="..."
+                    style="height: 300px; object-fit: cover"
                   />
                 </div>
               </div>
               <button
-                class="carousel-control-prev"
+                class="carousel-control-prev d-none d-md-flex"
                 type="button"
                 data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev"
@@ -83,7 +86,7 @@
                 <span class="visually-hidden">Previous</span>
               </button>
               <button
-                class="carousel-control-next"
+                class="carousel-control-next d-none d-md-flex"
                 type="button"
                 data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="next"
@@ -99,26 +102,33 @@
 
           <section class="index-bg">
             <div
-              class="container container-fluid d-flex flex-column justify-content-center align-items-center gap-5 p-5 pt-3"
+              class="container container-fluid d-flex flex-column justify-content-center align-items-center gap-3 gap-md-5 p-3 p-md-5 pt-3"
             >
               <img
                 src="assets/logo/BLCP-02.png"
                 alt="BLCP Logo"
                 class="img-fluid"
-                width="277"
-                height="157"
+                style="max-width: 200px; width: 100%"
               />
-              <div>
+              <div class="px-2 px-md-0">
                 <p
                   class="text-center fw-bold text-black"
-                  style="font-size: 30px; line-height: 35px"
+                  style="font-size: clamp(16px, 4vw, 30px); line-height: 1.2"
                 >
-                  โรงไฟฟ้าบีแอลซีพีดำเนินธุรกิจผลิตกระแสไฟฟ้า <br />
-                  โดยใช้อุปกรณ์และเทคโนโลยีการผลิตที่ทันสมัยควบคู่กับการบริหารจัดการ<br />
+                  โรงไฟฟ้าบีแอลซีพีดำเนินธุรกิจผลิตกระแสไฟฟ้า
+                  <br class="d-none d-md-block" />
+                  โดยใช้อุปกรณ์และเทคโนโลยีการผลิตที่ทันสมัยควบคู่กับการบริหารจัดการ<br
+                    class="d-none d-md-block"
+                  />
                   ด้านสิ่งแวดล้อมที่เข้มงวด
-                  เพื่อให้สอดคล้องกับมาตรฐานของภาครัฐและเพื่อคำนึงถึงความรู้สึก<br />
-                  และความต้องการของชุมชนเป็นสำคัญ <br />
-                  โรงไฟฟ้าบีแอลซีพีใช้ถ่านหินคุณภาพดีประเภทบิทูบินัสเป็นเชื้อเพลิงซึ่งส่วนใหญ่นำเข้า<br />
+                  เพื่อให้สอดคล้องกับมาตรฐานของภาครัฐและเพื่อคำนึงถึงความรู้สึก<br
+                    class="d-none d-md-block"
+                  />
+                  และความต้องการของชุมชนเป็นสำคัญ
+                  <br class="d-none d-md-block" />
+                  โรงไฟฟ้าบีแอลซีพีใช้ถ่านหินคุณภาพดีประเภทบิทูบินัสเป็นเชื้อเพลิงซึ่งส่วนใหญ่นำเข้า<br
+                    class="d-none d-md-block"
+                  />
                   มาจากประเทศออสเตรเลียมีกำลังการผลิตรวม 1,434 เมกะวัตต์
                 </p>
               </div>
@@ -127,51 +137,66 @@
 
           <section class="secondary-bg">
             <section
-              class="container container-fluid d-flex justify-content-center align-items-center gap-3 p-4"
+              class="container container-fluid d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 p-3 p-md-4"
             >
               <div
-                class="card text-white overflow-hidden rounded-4 shadow-sm"
+                class="card text-white overflow-hidden rounded-4 shadow-sm w-100"
                 style="max-width: 300px"
               >
                 <img
                   src="assets/posts/index/first.png"
                   class="card-img"
                   alt="เทคโนโลยีถ่านหินสะอาด"
-                  style="object-fit: cover; height: 300px"
+                  style="
+                    object-fit: cover;
+                    height: 250px;
+                    height: clamp(200px, 30vw, 300px);
+                  "
                 />
 
                 <!-- Overlay ล่าง -->
-                <div class="card-img-overlay d-flex align-items-end p-3">
+                <div class="card-img-overlay d-flex align-items-end p-2 p-md-3">
                   <div class="container-fluid p-0">
                     <div class="row">
                       <div class="col"></div>
                       <div class="col d-flex align-items-center text-center">
                         <h5
                           class="m-0 fw-semibold text-truncate"
-                          style="max-width: 200px; text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.85); font-weight: 700; font-size: 27px; line-height: 100%;"
+                          style="
+                            max-width: 200px;
+                            text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.85);
+                            font-weight: 700;
+                            font-size: clamp(18px, 4vw, 27px);
+                            line-height: 100%;
+                          "
                         >
                           เทคโนโลยีถ่านหินสะอาด
                         </h5>
                       </div>
                       <div class="col">
                         <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
+                          class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                          style="
+                            width: 28px;
+                            height: 28px;
+                            width: clamp(24px, 5vw, 32px);
+                            height: clamp(24px, 5vw, 32px);
+                          "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            class="bi bi-arrow-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -179,48 +204,63 @@
               </div>
 
               <div
-                class="card text-white overflow-hidden rounded-4 shadow-sm"
+                class="card text-white overflow-hidden rounded-4 shadow-sm w-100"
                 style="max-width: 300px"
               >
                 <img
                   src="assets/posts/index/second.png"
                   class="card-img"
                   alt="วิสัยทัศน์"
-                  style="object-fit: cover; height: 300px"
+                  style="
+                    object-fit: cover;
+                    height: 250px;
+                    height: clamp(200px, 30vw, 300px);
+                  "
                 />
 
                 <!-- Overlay ล่าง -->
-                <div class="card-img-overlay d-flex align-items-end p-3">
+                <div class="card-img-overlay d-flex align-items-end p-2 p-md-3">
                   <div class="container-fluid p-0">
                     <div class="row">
                       <div class="col"></div>
                       <div class="col d-flex align-items-center text-center">
                         <h5
                           class="m-0 fw-semibold text-truncate"
-                          style="max-width: 200px; text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.85); font-weight: 700; font-size: 27px; line-height: 100%;"
+                          style="
+                            max-width: 200px;
+                            text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.85);
+                            font-weight: 700;
+                            font-size: clamp(18px, 4vw, 27px);
+                            line-height: 100%;
+                          "
                         >
                           วิสัยทัศน์
                         </h5>
                       </div>
                       <div class="col">
                         <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
+                          class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                          style="
+                            width: 28px;
+                            height: 28px;
+                            width: clamp(24px, 5vw, 32px);
+                            height: clamp(24px, 5vw, 32px);
+                          "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            class="bi bi-arrow-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -228,48 +268,63 @@
               </div>
 
               <div
-                class="card text-white overflow-hidden rounded-4 shadow-sm"
+                class="card text-white overflow-hidden rounded-4 shadow-sm w-100"
                 style="max-width: 300px"
               >
                 <img
                   src="assets/posts/index/third.png"
                   class="card-img"
                   alt="รางวัลที่ได้รับ"
-                  style="object-fit: cover; height: 300px"
+                  style="
+                    object-fit: cover;
+                    height: 250px;
+                    height: clamp(200px, 30vw, 300px);
+                  "
                 />
 
                 <!-- Overlay ล่าง -->
-                <div class="card-img-overlay d-flex align-items-end p-3">
+                <div class="card-img-overlay d-flex align-items-end p-2 p-md-3">
                   <div class="container-fluid p-0">
                     <div class="row">
                       <div class="col"></div>
                       <div class="col d-flex align-items-center text-center">
                         <h5
                           class="m-0 fw-semibold text-truncate"
-                          style="max-width: 200px; text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.85); font-weight: 700; font-size: 27px; line-height: 100%;"
+                          style="
+                            max-width: 200px;
+                            text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.85);
+                            font-weight: 700;
+                            font-size: clamp(18px, 4vw, 27px);
+                            line-height: 100%;
+                          "
                         >
                           รางวัลที่ได้รับ
                         </h5>
                       </div>
                       <div class="col">
                         <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
+                          class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                          style="
+                            width: 28px;
+                            height: 28px;
+                            width: clamp(24px, 5vw, 32px);
+                            height: clamp(24px, 5vw, 32px);
+                          "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            class="bi bi-arrow-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -278,156 +333,204 @@
             </section>
 
             <section
-              class="low-yellow-bg d-flex flex-column align-items-center justify-content-center m-5 p-5 rounded-4"
+              class="low-yellow-bg d-flex flex-column align-items-center justify-content-center m-3 m-md-5 p-3 p-md-5 rounded-4"
             >
-              <h1 style="font-size: 40px; font-weight: 700; line-height: 100%; color: rgba(14, 63, 100, 1);">กิจกรรมความรับผิดชอบต่อสังคม</h1>
+              <h1
+                style="
+                  font-size: clamp(24px, 5vw, 40px);
+                  font-weight: 700;
+                  line-height: 100%;
+                  color: rgba(14, 63, 100, 1);
+                  text-align: center;
+                "
+              >
+                กิจกรรมความรับผิดชอบต่อสังคม
+              </h1>
 
-              <div class="d-flex justify-content-center gap-3 mt-4">
-                <div
-                  class="card rounded-5 overflow-hidden"
-                  style="width: 14.063rem; max-height: 330px"
-                >
-                  <img
-                    src="assets\posts\social-responsibility-activities/first.png"
-                    class="card-img-top rounded-5"
-                    alt="โรงไฟฟ้าบีแอลซีพี"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      โรงไฟฟ้าบีแอลซีพี จับมือเทศบาล นครเมืองมาบตาพุด แปรรูป
-                      ขยะใบไม้เป็นปุ๋ย ลดปัญหา PM 2.5
-                    </h5>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 mt-2 mt-md-4 w-100"
+              >
+                <div class="col">
+                  <div
+                    class="card rounded-5 overflow-hidden h-100"
+                    style="max-height: 330px"
+                  >
+                    <img
+                      src="assets\posts\social-responsibility-activities/first.png"
+                      class="card-img-top rounded-5"
+                      alt="โรงไฟฟ้าบีแอลซีพี"
+                      style="height: 150px; object-fit: cover"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <h5
+                        class="card-title flex-grow-1"
+                        style="font-size: clamp(14px, 2.5vw, 16px)"
+                      >
+                        โรงไฟฟ้าบีแอลซีพี จับมือเทศบาล นครเมืองมาบตาพุด แปรรูป
+                        ขยะใบไม้เป็นปุ๋ย ลดปัญหา PM 2.5
+                      </h5>
 
-                    <div class="d-flex justify-content-end">
-                      <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
+                      <div class="d-flex justify-content-end mt-auto">
+                        <button
+                          class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                          style="
+                            width: clamp(24px, 5vw, 32px);
+                            height: clamp(24px, 5vw, 32px);
+                          "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            class="bi bi-arrow-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div
-                  class="card rounded-5 overflow-hidden"
-                  style="width: 14.063rem; max-height: 330px"
-                >
-                  <img
-                    src="assets\posts\social-responsibility-activities/second.png"
-                    class="card-img-top rounded-5"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      บีแอลซีพี สนับสนุนการศึกษา สายอาชีพ ร่วมลงนาม MOU
-                      ยกระดับอาชีวศึกษา
-                    </h5>
-                    <div class="d-flex justify-content-end">
-                     <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
+                <div class="col">
+                  <div
+                    class="card rounded-5 overflow-hidden h-100"
+                    style="max-height: 330px"
+                  >
+                    <img
+                      src="assets\posts\social-responsibility-activities/second.png"
+                      class="card-img-top rounded-5"
+                      alt="..."
+                      style="height: 150px; object-fit: cover"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <h5
+                        class="card-title flex-grow-1"
+                        style="font-size: clamp(14px, 2.5vw, 16px)"
+                      >
+                        บีแอลซีพี สนับสนุนการศึกษา สายอาชีพ ร่วมลงนาม MOU
+                        ยกระดับอาชีวศึกษา
+                      </h5>
+                      <div class="d-flex justify-content-end mt-auto">
+                        <button
+                          class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                          style="
+                            width: clamp(24px, 5vw, 32px);
+                            height: clamp(24px, 5vw, 32px);
+                          "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            class="bi bi-arrow-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div
-                  class="card rounded-5 overflow-hidden"
-                  style="width: 14.063rem; max-height: 330px"
-                >
-                  <img
-                    src="assets\posts\social-responsibility-activities/third.png"
-                    class="card-img-top rounded-5"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      โรงไฟฟ้าบีแอลซีพี ร่วมปล่อยพันธุ์ สัตว์น้ำกว่า 1.6 ล้านตัว
-                      ต่อเนื่อง เป็นปีที่ 22 สานต่อ ESG
-                    </h5>
-                    <div class="d-flex justify-content-end">
-                      <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
+                <div class="col">
+                  <div
+                    class="card rounded-5 overflow-hidden h-100"
+                    style="max-height: 330px"
+                  >
+                    <img
+                      src="assets\posts\social-responsibility-activities/third.png"
+                      class="card-img-top rounded-5"
+                      alt="..."
+                      style="height: 150px; object-fit: cover"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <h5
+                        class="card-title flex-grow-1"
+                        style="font-size: clamp(14px, 2.5vw, 16px)"
+                      >
+                        โรงไฟฟ้าบีแอลซีพี ร่วมปล่อยพันธุ์ สัตว์น้ำกว่า 1.6
+                        ล้านตัว ต่อเนื่อง เป็นปีที่ 22 สานต่อ ESG
+                      </h5>
+                      <div class="d-flex justify-content-end mt-auto">
+                        <button
+                          class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                          style="
+                            width: clamp(24px, 5vw, 32px);
+                            height: clamp(24px, 5vw, 32px);
+                          "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            class="bi bi-arrow-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div
-                  class="card rounded-5 overflow-hidden"
-                  style="width: 14.063rem; max-height: 330px"
-                >
-                  <img
-                    src="assets\posts\social-responsibility-activities/four.png"
-                    class="card-img-top rounded-5"
-                    alt="..."
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      โรงไฟฟ้าบีแอลซีพี สานฝันปั้นช่าง เทคนิค สู่สังคมคุณภาพ
-                      ตอกย้ำ เป้าหมาย SDG 4
-                    </h5>
-                    <div class="d-flex justify-content-end">
-                      <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
+                <div class="col">
+                  <div
+                    class="card rounded-5 overflow-hidden h-100"
+                    style="max-height: 330px"
+                  >
+                    <img
+                      src="assets\posts\social-responsibility-activities/four.png"
+                      class="card-img-top rounded-5"
+                      alt="..."
+                      style="height: 150px; object-fit: cover"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <h5
+                        class="card-title flex-grow-1"
+                        style="font-size: clamp(14px, 2.5vw, 16px)"
+                      >
+                        โรงไฟฟ้าบีแอลซีพี สานฝันปั้นช่าง เทคนิค สู่สังคมคุณภาพ
+                        ตอกย้ำ เป้าหมาย SDG 4
+                      </h5>
+                      <div class="d-flex justify-content-end mt-auto">
+                        <button
+                          class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                          style="
+                            width: clamp(24px, 5vw, 32px);
+                            height: clamp(24px, 5vw, 32px);
+                          "
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            class="bi bi-arrow-right"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -442,58 +545,128 @@
               >
                 <div class="carousel-inner">
                   <div
-                    class="carousel-item active d-flex flex-column align-center justify-content-center gap-5"
+                    class="carousel-item active d-flex flex-column align-center justify-content-center gap-3 gap-md-5"
                   >
-                    <div class="d-flex justify-content-center mt-5 gap-5">
+                    <div
+                      class="d-flex flex-column flex-lg-row justify-content-center align-items-center mt-3 mt-md-5 gap-3 gap-lg-5 px-3"
+                    >
                       <img
                         src="assets/carousel/main_page.png"
                         alt=""
-                        style="width: 467px; height: 262px"
+                        class="img-fluid"
+                        style="max-width: 400px; width: 100%; height: auto"
                       />
-                      <div class="text-center align-self-center">
-                        <h1 class="text-black" style="font-size: 36px; line-height: 100%; font-weight: 600;">วิดีโอความรับผิดชอบต่อสังคม</h1>
-                        <h2 style="font-size: 32px; line-height: 100%; font-weight: 700;">หอยหวานจากทะเล...สู่จาน</h2>
-                        <p style="font-size: 20px; line-height: 100%; font-weight: 400;">
+                      <div class="text-center text-lg-start align-self-center">
+                        <h1
+                          class="text-black"
+                          style="
+                            font-size: clamp(20px, 5vw, 36px);
+                            line-height: 100%;
+                            font-weight: 600;
+                          "
+                        >
+                          วิดีโอความรับผิดชอบต่อสังคม
+                        </h1>
+                        <h2
+                          style="
+                            font-size: clamp(18px, 4vw, 32px);
+                            line-height: 100%;
+                            font-weight: 700;
+                          "
+                        >
+                          หอยหวานจากทะเล...สู่จาน
+                        </h2>
+                        <p
+                          style="
+                            font-size: clamp(14px, 3vw, 20px);
+                            line-height: 1.2;
+                            font-weight: 400;
+                          "
+                        >
                           การผจญภัยครั้งใหม่ของ BLCP Junior Guide มาแล้วจ้า!
-                          <br />
-                          ครั้งนี้เด็กๆ จากโรงเรียนบ้านฉางกาญจนกุลวิทยา <br />
-                          จะพาทุกคนไปรู้จักกับ “หอยหวาน” สุดอร่อย <br />
+                          <br class="d-none d-md-block" />
+                          ครั้งนี้เด็กๆ จากโรงเรียนบ้านฉางกาญจนกุลวิทยา
+                          <br class="d-none d-md-block" />
+                          จะพาทุกคนไปรู้จักกับ "หอยหวาน" สุดอร่อย
+                          <br class="d-none d-md-block" />
                           ผ่านการผจญภัยแสนสนุก
                         </p>
                       </div>
                     </div>
-                    <div class="d-flex justify-content-center gap-5">
-                      <img
-                        src="assets/carousel/main_first.png"
-                        alt=""
-                        style="width: 186px; height: 105px"
-                      />
-                      <img
-                        src="assets/carousel/main_second.png"
-                        alt=""
-                        style="width: 186px; height: 105px"
-                      />
-                      <img
-                        src="assets/carousel/main_third.png"
-                        alt=""
-                        style="width: 186px; height: 105px"
-                      />
-                      <img
-                        src="assets/carousel/main_four.png"
-                        alt=""
-                        style="width: 186px; height: 105px"
-                      />
-                      <img
-                        src="assets/carousel/main_five.png"
-                        alt=""
-                        style="width: 186px; height: 105px"
-                      />
+                    <div
+                      class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-2 g-md-3 mx-2 mx-md-0 mb-3 mb-md-0"
+                    >
+                      <div class="col">
+                        <img
+                          src="assets/carousel/main_first.png"
+                          alt=""
+                          class="img-fluid rounded"
+                          style="
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 16/9;
+                            object-fit: cover;
+                          "
+                        />
+                      </div>
+                      <div class="col">
+                        <img
+                          src="assets/carousel/main_second.png"
+                          alt=""
+                          class="img-fluid rounded"
+                          style="
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 16/9;
+                            object-fit: cover;
+                          "
+                        />
+                      </div>
+                      <div class="col">
+                        <img
+                          src="assets/carousel/main_third.png"
+                          alt=""
+                          class="img-fluid rounded"
+                          style="
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 16/9;
+                            object-fit: cover;
+                          "
+                        />
+                      </div>
+                      <div class="col">
+                        <img
+                          src="assets/carousel/main_four.png"
+                          alt=""
+                          class="img-fluid rounded"
+                          style="
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 16/9;
+                            object-fit: cover;
+                          "
+                        />
+                      </div>
+                      <div class="col">
+                        <img
+                          src="assets/carousel/main_five.png"
+                          alt=""
+                          class="img-fluid rounded"
+                          style="
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 16/9;
+                            object-fit: cover;
+                          "
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <button
-                  class="carousel-control-prev"
+                  class="carousel-control-prev d-none d-lg-flex"
                   type="button"
                   data-bs-target="#customCarousel"
                   data-bs-slide="prev"
@@ -505,7 +678,7 @@
                   <span class="visually-hidden">Previous</span>
                 </button>
                 <button
-                  class="carousel-control-next"
+                  class="carousel-control-next d-none d-lg-flex"
                   type="button"
                   data-bs-target="#customCarousel"
                   data-bs-slide="next"
@@ -519,56 +692,76 @@
               </div>
             </section>
 
-            <section class="d-flex justify-content-between gap-3 p-5">
+            <section
+              class="d-flex flex-column flex-lg-row justify-content-between gap-3 p-3 p-md-5"
+            >
               <div
-                class="light-blue-bg d-flex flex-column justify-content-center align-items-center w-100 p-4 rounded-5"
+                class="light-blue-bg d-flex flex-column justify-content-center align-items-center w-100 p-3 p-md-4 rounded-5 mb-3 mb-lg-0"
               >
-                <h1 style="font-size: 40px; font-weight: 700; line-height: 100%; color: rgba(14, 63, 100, 1);">ข่าวประชาสัมพันธ์</h1>
+                <h1
+                  style="
+                    font-size: clamp(24px, 5vw, 40px);
+                    font-weight: 700;
+                    line-height: 100%;
+                    color: rgba(14, 63, 100, 1);
+                    text-align: center;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  ข่าวประชาสัมพันธ์
+                </h1>
                 <div
                   class="card rounded-5 mb-3 overflow-hidden w-100 h-100"
-                  style="max-width: 440px; max-height: 200px;"
+                  style="max-width: 440px; max-height: 200px"
                 >
-                  <div class="row g-0">
-                    <div class="col-md-4">
+                  <div class="row g-0 h-100">
+                    <div class="col-4 col-md-4">
                       <img
                         src="assets/posts/news/index1-1.png"
-                        class="img-fluid rounded-start w-100 h-100 rounded-5"
+                        class="img-fluid w-100 h-100 rounded-5"
                         alt="ข่าว1"
+                        style="object-fit: cover"
                       />
                     </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
+                    <div class="col-8 col-md-8">
+                      <div class="card-body d-flex flex-column h-100">
                         <div
-                          class="d-flex flex-column justify-content-center align-items-center"
+                          class="d-flex flex-column justify-content-center align-items-center flex-grow-1"
                         >
-                          <h5 class="card-title f-card-title">
+                          <h5
+                            class="card-title text-center"
+                            style="font-size: clamp(12px, 2.5vw, 16px)"
+                          >
                             รับสมัครแล้ววันนี้ ! <br />มัคคุเทศก์น้อยบีแอลซีพี
                             ปีที่ 18 <br />สนใจสมัครคลิ๊กเลย
                           </h5>
                         </div>
 
-                        <p class="card-text">
+                        <div class="card-text">
                           <div class="d-flex justify-content-end">
-                      <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
-                    </div>
-                        </p>
+                            <button
+                              class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                              style="
+                                width: clamp(24px, 5vw, 32px);
+                                height: clamp(24px, 5vw, 32px);
+                              "
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                fill="currentColor"
+                                class="bi bi-arrow-right"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -576,22 +769,26 @@
 
                 <div
                   class="card rounded-5 mb-3 overflow-hidden w-100 h-100"
-                  style="max-width: 440px; max-height: 200px;"
+                  style="max-width: 440px; max-height: 200px"
                 >
-                  <div class="row g-0">
-                    <div class="col-md-4">
+                  <div class="row g-0 h-100">
+                    <div class="col-4 col-md-4">
                       <img
                         src="assets/posts/news/index1-2.png"
-                        class="img-fluid rounded-start w-100 h-100 rounded-5"
-                        alt="ข่าว1"
+                        class="img-fluid w-100 h-100 rounded-5"
+                        alt="ข่าว2"
+                        style="object-fit: cover"
                       />
                     </div>
-                    <div class="col-md-8">
-                      <div class="card-body ">
+                    <div class="col-8 col-md-8">
+                      <div class="card-body d-flex flex-column h-100">
                         <div
-                          class="d-flex flex-column justify-content-center align-items-center"
+                          class="d-flex flex-column justify-content-center align-items-center flex-grow-1"
                         >
-                          <h5 class="card-title f-card-title">
+                          <h5
+                            class="card-title text-center"
+                            style="font-size: clamp(12px, 2.5vw, 16px)"
+                          >
                             โรงไฟฟ้าบีแอลซีพี <br />
                             ต้นแบบการผลิตไฟฟ้าต้นทุนต่ำ <br />
                             เพื่อประชาชน
@@ -600,25 +797,28 @@
 
                         <div class="card-text">
                           <div class="d-flex justify-content-end">
-                      <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
-                    </div>
+                            <button
+                              class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                              style="
+                                width: clamp(24px, 5vw, 32px);
+                                height: clamp(24px, 5vw, 32px);
+                              "
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                fill="currentColor"
+                                class="bi bi-arrow-right"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                                />
+                              </svg>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -627,53 +827,71 @@
               </div>
 
               <div
-                class="light-blue-bg d-flex flex-column justify-content-center align-items-center w-100 p-4 rounded-5"
+                class="light-blue-bg d-flex flex-column justify-content-center align-items-center w-100 p-3 p-md-4 rounded-5"
               >
-                <h1 style="font-size: 40px; font-weight: 700; line-height: 100%; color: rgba(14, 63, 100, 1);">สาระน่ารู้</h1>
+                <h1
+                  style="
+                    font-size: clamp(24px, 5vw, 40px);
+                    font-weight: 700;
+                    line-height: 100%;
+                    color: rgba(14, 63, 100, 1);
+                    text-align: center;
+                    margin-bottom: 1rem;
+                  "
+                >
+                  สาระน่ารู้
+                </h1>
                 <div
                   class="card rounded-5 mb-3 overflow-hidden w-100 h-100"
-                  style="max-width: 440px; max-height: 200px;"
+                  style="max-width: 440px; max-height: 200px"
                 >
-                  <div class="row g-0">
-                    <div class="col-md-4">
+                  <div class="row g-0 h-100">
+                    <div class="col-4 col-md-4">
                       <img
                         src="assets/posts/knowledge/index2-1.png"
-                        class="img-fluid rounded-start w-100 h-100 rounded-5"
-                        alt="ข่าว1"
+                        class="img-fluid w-100 h-100 rounded-5"
+                        alt="สาระน่ารู้1"
+                        style="object-fit: cover"
                       />
                     </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
+                    <div class="col-8 col-md-8">
+                      <div class="card-body d-flex flex-column h-100">
                         <div
-                          class="d-flex flex-column justify-content-center align-items-center"
+                          class="d-flex flex-column justify-content-center align-items-center flex-grow-1"
                         >
-                          <h5 class="card-title f-card-title">
+                          <h5
+                            class="card-title text-center"
+                            style="font-size: clamp(12px, 2.5vw, 16px)"
+                          >
                             5 วิธีปรับเปลี่ยนพฤติกรรม
                             <br />รักษ์พลังงานรักษ์สิ่งแวดล้อม
                           </h5>
                         </div>
-                        <p class="card-text">
+                        <div class="card-text">
                           <div class="d-flex justify-content-end">
-                      <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
-                    </div>
-                        </p>
+                            <button
+                              class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                              style="
+                                width: clamp(24px, 5vw, 32px);
+                                height: clamp(24px, 5vw, 32px);
+                              "
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                fill="currentColor"
+                                class="bi bi-arrow-right"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -681,48 +899,55 @@
 
                 <div
                   class="card rounded-5 mb-3 overflow-hidden w-100 h-100"
-                  style="max-width: 440px; max-height: 200px;"
+                  style="max-width: 440px; max-height: 200px"
                 >
-                  <div class="row g-0">
-                    <div class="col-md-4">
+                  <div class="row g-0 h-100">
+                    <div class="col-4 col-md-4">
                       <img
                         src="assets/posts/knowledge/index2-2.png"
-                        class="img-fluid rounded-start w-100 h-100 rounded-5"
-                        alt="ข่าว1"
+                        class="img-fluid w-100 h-100 rounded-5"
+                        alt="สาระน่ารู้2"
+                        style="object-fit: cover"
                       />
                     </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
+                    <div class="col-8 col-md-8">
+                      <div class="card-body d-flex flex-column h-100">
                         <div
-                          class="d-flex flex-column justify-content-center align-items-center"
+                          class="d-flex flex-column justify-content-center align-items-center flex-grow-1"
                         >
-                          <h5 class="card-title f-card-title">
+                          <h5
+                            class="card-title text-center"
+                            style="font-size: clamp(12px, 2.5vw, 16px)"
+                          >
                             7 วิธีใช้คอมพิวเตอร์ <br />
                             ให้ประหยัดพลังงาน
                           </h5>
                         </div>
-                        <p class="card-text">
+                        <div class="card-text">
                           <div class="d-flex justify-content-end">
-                      <button
- class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
- style="width: 32px; height: 32px;"
->
- <svg
-   xmlns="http://www.w3.org/2000/svg"
-   width="40"
-   height="40"
-   fill="currentColor"
-   class="bi bi-arrow-right"
-   viewBox="0 0 16 16"
- >
-   <path
-     fill-rule="evenodd"
-     d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-   />
- </svg>
-</button>
-                    </div>
-                        </p>
+                            <button
+                              class="btn green-btn d-flex align-items-center justify-content-center p-1 rounded-circle border-0"
+                              style="
+                                width: clamp(24px, 5vw, 32px);
+                                height: clamp(24px, 5vw, 32px);
+                              "
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="32"
+                                height="32"
+                                fill="currentColor"
+                                class="bi bi-arrow-right"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -730,28 +955,44 @@
               </div>
             </section>
 
-            <section class="container container-fluid p-5">
-              <div class="card text-bg-dark rounded-5 overflow-hidden border-0">
+            <section class="container-fluid px-3 px-md-5 py-4 py-md-5">
+              <div
+                class="card text-bg-dark rounded-4 rounded-md-5 overflow-hidden border-0"
+              >
                 <img
                   src="assets/posts/visitor/visit-picture.png"
-                  class="card-img"
+                  class="card-img img-fluid"
                   alt="เยี่ยมชมศูนย์การเรียนรู้"
-                  style="object-fit: cover; height: 480px"
+                  style="
+                    object-fit: cover;
+                    height: clamp(300px, 50vh, 480px);
+                    aspect-ratio: 16/9;
+                  "
                 />
                 <div
-                  class="card-img-overlay d-flex flex-column justify-content-center align-items-center rounded-5 gap-3"
+                  class="card-img-overlay d-flex flex-column justify-content-center align-items-center rounded-4 rounded-md-5 gap-2 gap-md-3 p-3 p-md-4"
                 >
                   <div
-                    class="visitor-title p-3 d-flex justify-content-center align-items-center w-100 h-100"
+                    class="visitor-title d-flex justify-content-center align-items-center text-center"
                   >
-                    <h1 class="text-white f-visitor-title mb-0">
+                    <h1
+                      class="text-white mb-0"
+                      style="
+                        font-size: clamp(1.5rem, 4vw, 2.5rem);
+                        line-height: 1.2;
+                      "
+                    >
                       เยี่ยมชมศูนย์การเรียนรู้
                     </h1>
                   </div>
                   <button
                     type="button"
-                    class="btn rounded-pill light-green-bg text-white f-btn-click w-100 h-100"
-                    style="max-width: 140px; max-height: 40px"
+                    class="btn rounded-pill light-green-bg text-white px-3 px-md-4 py-2"
+                    style="
+                      font-size: clamp(0.875rem, 2vw, 1rem);
+                      min-width: 120px;
+                      max-width: 160px;
+                    "
                   >
                     คลิกที่นี่
                   </button>
