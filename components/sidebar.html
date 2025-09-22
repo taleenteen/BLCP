@@ -10,7 +10,7 @@
   />
   <div class="accordion border-none" id="accordionExample">
     <ul class="list-unstyled sidebar-menu">
-      <!-- Tab 1 -->
+      <!-- Tab 1: เกี่ยวกับเรา / About Us -->
       <li>
         <button
           class="btn w-100 d-flex justify-content-between align-items-center sidebar-link f-link"
@@ -19,6 +19,7 @@
           data-bs-target="#menu1"
           aria-expanded="false"
           aria-controls="menu1"
+          id="aboutus-main-btn"
         >
           <div>
             <img
@@ -26,7 +27,8 @@
               alt="About us"
               class="img-fluid"
             />
-            เกี่ยวกับเรา
+            <span class="thai-text">เกี่ยวกับเรา</span>
+            <span class="english-text" style="display: none">About Us</span>
           </div>
           <span class="chevron-icon">
             <svg
@@ -45,14 +47,50 @@
           </span>
         </button>
         <div class="collapse" id="menu1">
-          <a href="#" class="d-block py-1 ps-4 f-link">ประวัติองค์กร</a>
-          <a href="#" class="d-block py-1 ps-4 f-link"
-            >วิสัยทัศน์ พันธกิจ ค่านิยม</a
+          <a
+            href="aboutus/index.html"
+            class="d-block py-1 ps-4 f-link sidebar-submenu"
+            data-page="aboutus-history"
+            data-en-href="aboutus/index.html"
           >
-          <a href="#" class="d-block py-1 ps-4 f-link">คณะผู้บริหาร</a>
-          <a href="#" class="d-block py-1 ps-4 f-link"
-            >รางวัล และเหตุการณ์สำคัญ</a
+            <span class="thai-text">ประวัติองค์กร</span>
+            <span class="english-text" style="display: none"
+              >Company History</span
+            >
+          </a>
+          <a
+            href="aboutus/vision.html"
+            class="d-block py-1 ps-4 f-link sidebar-submenu"
+            data-page="aboutus-vision"
+            data-en-href="aboutus/vision.html"
           >
+            <span class="thai-text">วิสัยทัศน์ พันธกิจ ค่านิยม</span>
+            <span class="english-text" style="display: none"
+              >Vision, Mission, Values</span
+            >
+          </a>
+          <a
+            href="aboutus/leadership.html"
+            class="d-block py-1 ps-4 f-link sidebar-submenu"
+            data-page="aboutus-leadership"
+            data-en-href="aboutus/leadership.html"
+          >
+            <span class="thai-text">คณะผู้บริหาร</span>
+            <span class="english-text" style="display: none"
+              >Leadership Team</span
+            >
+          </a>
+          <a
+            href="aboutus/prize-event.html"
+            class="d-block py-1 ps-4 f-link sidebar-submenu"
+            data-page="aboutus-prize"
+            data-en-href="aboutus/prize-event.html"
+          >
+            <span class="thai-text">รางวัล และเหตุการณ์สำคัญ</span>
+            <span class="english-text" style="display: none"
+              >Awards & Important Events</span
+            >
+          </a>
 
           <ul class="list-unstyled">
             <li>
@@ -63,8 +101,12 @@
                 data-bs-target="#submenu1"
                 aria-expanded="false"
                 aria-controls="submenu1"
+                id="operation-main-btn"
               >
-                การดำเนินงาน
+                <span class="thai-text">การดำเนินงาน</span>
+                <span class="english-text" style="display: none"
+                  >Operations</span
+                >
                 <span class="chevron-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,23 +124,78 @@
                 </span>
               </button>
               <div class="collapse" id="submenu1">
-                <a href="#" class="d-block py-1 ps-5 f-link"
-                  >เทคโนโลยีการผลิตไฟฟ้า</a
+                <a
+                  href="aboutus/operation/index.html"
+                  class="d-block py-1 ps-5 f-link sidebar-submenu"
+                  data-page="operation-tech"
+                  data-en-href="aboutus/operation/index.html"
                 >
-                <a href="#" class="d-block py-1 ps-5 f-link">การใช้น้ำจืด</a>
-                <a href="#" class="d-block py-1 ps-5 f-link">ระบบหล่อน้ำเย็น</a>
-                <a href="#" class="d-block py-1 ps-5 f-link">ระบบควบคุมมลพิษ</a>
-                <a href="#" class="d-block py-1 ps-5 f-link"
-                  >การจัดการน้ำเสีย</a
+                  <span class="thai-text">เทคโนโลยีการผลิตไฟฟ้า</span>
+                  <span class="english-text" style="display: none"
+                    >Power Generation Technology</span
+                  >
+                </a>
+                <a
+                  href="aboutus/operation/freshwater-use.html"
+                  class="d-block py-1 ps-5 f-link sidebar-submenu"
+                  data-page="operation-freshwater"
+                  data-en-href="aboutus/operation/freshwater-use.html"
                 >
+                  <span class="thai-text">การใช้น้ำจืด</span>
+                  <span class="english-text" style="display: none"
+                    >Fresh Water Usage</span
+                  >
+                </a>
+                <a
+                  href="aboutus/operation/cooling-water-system.html"
+                  class="d-block py-1 ps-5 f-link sidebar-submenu"
+                  data-page="operation-cooling"
+                  data-en-href="aboutus/operation/cooling-water-system.html"
+                >
+                  <span class="thai-text">ระบบหล่อน้ำเย็น</span>
+                  <span class="english-text" style="display: none"
+                    >Cooling Water System</span
+                  >
+                </a>
+                <a
+                  href="aboutus/operation/emission-control-system.html"
+                  class="d-block py-1 ps-5 f-link sidebar-submenu"
+                  data-page="operation-emission"
+                  data-en-href="aboutus/operation/emission-control-system.html"
+                >
+                  <span class="thai-text">ระบบควบคุมมลพิษ</span>
+                  <span class="english-text" style="display: none"
+                    >Emission Control System</span
+                  >
+                </a>
+                <a
+                  href="aboutus/operation/wastewater.html"
+                  class="d-block py-1 ps-5 f-link sidebar-submenu"
+                  data-page="operation-wastewater"
+                  data-en-href="aboutus/operation/wastewater.html"
+                >
+                  <span class="thai-text">การจัดการน้ำเสีย</span>
+                  <span class="english-text" style="display: none"
+                    >Wastewater Management</span
+                  >
+                </a>
               </div>
             </li>
           </ul>
 
-          <a href="#" class="d-block py-1 ps-4 f-link">FAQs คำถามที่พบบ่อย</a>
+          <a
+            href="aboutus/faqs.html"
+            class="d-block py-1 ps-4 f-link sidebar-submenu"
+            data-page="aboutus-faqs"
+            data-en-href="aboutus/faqs.html"
+          >
+            <span class="thai-text">FAQs คำถามที่พบบ่อย</span>
+            <span class="english-text" style="display: none">FAQs</span>
+          </a>
         </div>
       </li>
-      <!-- Tab 2 -->
+
+      <!-- Tab 2: ความยั่งยืนและสิ่งแวดล้อม / Sustainability and Environment -->
       <li>
         <button
           class="btn w-100 d-flex justify-content-between align-items-center sidebar-link f-link"
@@ -116,11 +213,13 @@
               width="23"
               height="25"
             />
-            ความยั่งยืนและสิ่งแวดล้อม
+            <span class="thai-text">ความยั่งยืนและสิ่งแวดล้อม</span>
+            <span class="english-text" style="display: none"
+              >Sustainability & Environment</span
+            >
           </div>
-
-          <span class="chevron-icon"
-            ><svg
+          <span class="chevron-icon">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -131,11 +230,20 @@
               <path
                 fill-rule="evenodd"
                 d="M6.646 12.854a.5.5 0 0 1 0-.708L10.293 8 6.646 4.354a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0z"
-              /></svg
-          ></span>
+              />
+            </svg>
+          </span>
         </button>
         <div class="collapse" id="menu2">
-          <a href="#" class="d-block py-1 ps-4 f-link">กลยุทธ์ ESG</a>
+          <a
+            href="sustainability/index.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="sustainability/index.html"
+          >
+            <span class="thai-text">กลยุทธ์ ESG</span>
+            <span class="english-text" style="display: none">ESG Strategy</span>
+          </a>
+
           <ul class="list-unstyled">
             <li>
               <button
@@ -146,7 +254,10 @@
                 aria-expanded="false"
                 aria-controls="submenu2-1"
               >
-                สิ่งแวดล้อม
+                <span class="thai-text">สิ่งแวดล้อม</span>
+                <span class="english-text" style="display: none"
+                  >Environment</span
+                >
                 <span class="chevron-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -164,10 +275,46 @@
                 </span>
               </button>
               <div class="collapse" id="submenu2-1">
-                <a href="#" class="d-block py-1 ps-5 f-link">ระบบสิ่งแวดล้อม</a>
-                <a href="#" class="d-block py-1 ps-5 f-link"
-                  >การตรวจสอบสิ่งแวดล้อม</a
+                <a
+                  href="aboutus/environment/index.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="aboutus/environment/index.html"
                 >
+                  <span class="thai-text">ภาพรวมสิ่งแวดล้อม</span>
+                  <span class="english-text" style="display: none"
+                    >Environmental Overview</span
+                  >
+                </a>
+                <a
+                  href="aboutus/environment/environment-system.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="aboutus/environment/environment-system.html"
+                >
+                  <span class="thai-text">ระบบสิ่งแวดล้อม</span>
+                  <span class="english-text" style="display: none"
+                    >Environmental System</span
+                  >
+                </a>
+                <a
+                  href="aboutus/environment/environmental-inspection.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="aboutus/environment/environmental-inspection.html"
+                >
+                  <span class="thai-text">การตรวจสอบสิ่งแวดล้อม</span>
+                  <span class="english-text" style="display: none"
+                    >Environmental Inspection</span
+                  >
+                </a>
+                <a
+                  href="aboutus/environment/water-air-management.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="aboutus/environment/water-air-management.html"
+                >
+                  <span class="thai-text">การจัดการน้ำและอากาศ</span>
+                  <span class="english-text" style="display: none"
+                    >Water & Air Management</span
+                  >
+                </a>
               </div>
             </li>
           </ul>
@@ -182,7 +329,8 @@
                 aria-expanded="false"
                 aria-controls="submenu2-2"
               >
-                สังคม
+                <span class="thai-text">สังคม</span>
+                <span class="english-text" style="display: none">Social</span>
                 <span class="chevron-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -200,15 +348,26 @@
                 </span>
               </button>
               <div class="collapse" id="submenu2-2">
-                <a href="#" class="d-block py-1 ps-5 f-link"
-                  >โครงการ และกิจกรรมเพื่อสังคม</a
+                <a
+                  href="sustainability/social/index.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="sustainability/social/index.html"
                 >
-                <a href="#" class="d-block py-1 ps-5 f-link"
-                  >การประชุมไตรภาคี</a
+                  <span class="thai-text">โครงการ และกิจกรรมเพื่อสังคม</span>
+                  <span class="english-text" style="display: none"
+                    >Social Projects & Activities</span
+                  >
+                </a>
+                <a
+                  href="publications/tripartite-meeting.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="publications/tripartite-meeting.html"
                 >
-                <a href="#" class="d-block py-1 ps-5 f-link"
-                  >วิดีโอกิจกรรม ฯลฯ</a
-                >
+                  <span class="thai-text">การประชุมไตรภาคี</span>
+                  <span class="english-text" style="display: none"
+                    >Tripartite Meeting</span
+                  >
+                </a>
               </div>
             </li>
           </ul>
@@ -223,7 +382,10 @@
                 aria-expanded="false"
                 aria-controls="submenu2-3"
               >
-                รายงานด้านความยั่งยืน
+                <span class="thai-text">รายงานด้านความยั่งยืน</span>
+                <span class="english-text" style="display: none"
+                  >Sustainability Reports</span
+                >
                 <span class="chevron-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -241,18 +403,62 @@
                 </span>
               </button>
               <div class="collapse" id="submenu2-3">
-                <a href="#" class="d-block py-1 ps-5 f-link">รายงาน CSR-DIW</a>
-                <a href="#" class="d-block py-1 ps-5 f-link"
-                  >รายงานยความยั่งยืนคณะทำงาน</a
+                <a
+                  href="sustainability/sustainability-report/index.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="sustainability/sustainability-report/index.html"
                 >
+                  <span class="thai-text">รายงานความยั่งยืน</span>
+                  <span class="english-text" style="display: none"
+                    >Sustainability Report</span
+                  >
+                </a>
+                <a
+                  href="publications/csr-diw-report.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="publications/csr-diw-report.html"
+                >
+                  <span class="thai-text">รายงาน CSR-DIW</span>
+                  <span class="english-text" style="display: none"
+                    >CSR-DIW Report</span
+                  >
+                </a>
+                <a
+                  href="publications/sustainability-committee-report.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="publications/sustainability-committee-report.html"
+                >
+                  <span class="thai-text">รายงานคณะทำงานความยั่งยืน</span>
+                  <span class="english-text" style="display: none"
+                    >Sustainability Committee Report</span
+                  >
+                </a>
+                <a
+                  href="publications/environmental-audit-report.html"
+                  class="d-block py-1 ps-5 f-link"
+                  data-en-href="publications/environmental-audit-report.html"
+                >
+                  <span class="thai-text">รายงานการตรวจสอบสิ่งแวดล้อม</span>
+                  <span class="english-text" style="display: none"
+                    >Environmental Audit Report</span
+                  >
+                </a>
               </div>
             </li>
           </ul>
 
-          <a href="#" class="d-block py-1 ps-4 f-link">นโยบาย</a>
+          <a
+            href="sustainability/policy.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="sustainability/policy.html"
+          >
+            <span class="thai-text">นโยบาย</span>
+            <span class="english-text" style="display: none">Policy</span>
+          </a>
         </div>
       </li>
-      <!-- Tab 3 -->
+
+      <!-- Tab 3: ข่าวสาร / News -->
       <li>
         <button
           class="btn w-100 d-flex justify-content-between align-items-center sidebar-link f-link"
@@ -268,11 +474,11 @@
               alt="News"
               class="img-fluid"
             />
-            ข่าวสาร
+            <span class="thai-text">ข่าวสาร</span>
+            <span class="english-text" style="display: none">News</span>
           </div>
-
-          <span class="chevron-icon"
-            ><svg
+          <span class="chevron-icon">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -283,51 +489,45 @@
               <path
                 fill-rule="evenodd"
                 d="M6.646 12.854a.5.5 0 0 1 0-.708L10.293 8 6.646 4.354a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0z"
-              /></svg
-          ></span>
+              />
+            </svg>
+          </span>
         </button>
         <div class="collapse" id="menu3">
-          <a href="#" class="d-block py-1 ps-4 f-link"
-            >ข่าวประจำวัน ข่าวสารองค์กร</a
+          <a
+            href="news/daily-news.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="news/daily-news.html"
           >
-          <a href="#" class="d-block py-1 ps-4 f-link">สาระน่ารู้</a>
-          <a href="#" class="d-block py-1 ps-4 f-link">หน่วยงานที่เกี่ยวข้อง</a>
-
-          <ul class="list-unstyled">
-            <li>
-              <button
-                class="btn w-100 ps-4 d-flex justify-content-between align-items-center sidebar-link f-link"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#submenu"
-                aria-expanded="false"
-                aria-controls="submenu"
-              >
-                ร่วมงานกับเรา
-                <span class="chevron-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-chevron-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6.646 12.854a.5.5 0 0 1 0-.708L10.293 8 6.646 4.354a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0z"
-                    />
-                  </svg>
-                </span>
-              </button>
-              <div class="collapse" id="submenu">
-                <a href="#" class="d-block py-1 ps-5 f-link">ตำแหน่งว่าง</a>
-              </div>
-            </li>
-          </ul>
+            <span class="thai-text">ข่าวประจำวัน ข่าวสารองค์กร</span>
+            <span class="english-text" style="display: none"
+              >Daily News & Corporate News</span
+            >
+          </a>
+          <a
+            href="news/knowledge-tips.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="news/knowledge-tips.html"
+          >
+            <span class="thai-text">สาระน่ารู้</span>
+            <span class="english-text" style="display: none"
+              >Knowledge Tips</span
+            >
+          </a>
+          <a
+            href="news/partner-organizations.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="news/partner-organizations.html"
+          >
+            <span class="thai-text">หน่วยงานที่เกี่ยวข้อง</span>
+            <span class="english-text" style="display: none"
+              >Partner Organizations</span
+            >
+          </a>
         </div>
       </li>
-      <!-- Tab 4 -->
+
+      <!-- Tab 4: เอกสารเผยแพร่ / Publications -->
       <li>
         <button
           class="btn w-100 d-flex justify-content-between align-items-center sidebar-link f-link"
@@ -340,14 +540,14 @@
           <div>
             <img
               src="assets/sidebar/mortarboard-fill.png"
-              alt="Learning Center"
+              alt="Publications"
               class="img-fluid"
             />
-            ศูนย์การเรียนรู้
+            <span class="thai-text">เอกสารเผยแพร่</span>
+            <span class="english-text" style="display: none">Publications</span>
           </div>
-
-          <span class="chevron-icon"
-            ><svg
+          <span class="chevron-icon">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -358,14 +558,31 @@
               <path
                 fill-rule="evenodd"
                 d="M6.646 12.854a.5.5 0 0 1 0-.708L10.293 8 6.646 4.354a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0z"
-              /></svg
-          ></span>
+              />
+            </svg>
+          </span>
         </button>
         <div class="collapse" id="menu4">
-          <a href="#" class="d-block py-1 ps-4 f-link">KSEC</a>
+          <a
+            href="publications/aqms-report.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="publications/aqms-report.html"
+          >
+            <span class="thai-text">รายงาน AQMS</span>
+            <span class="english-text" style="display: none">AQMS Report</span>
+          </a>
+          <a
+            href="publications/cems-report.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="publications/cems-report.html"
+          >
+            <span class="thai-text">รายงาน CEMS</span>
+            <span class="english-text" style="display: none">CEMS Report</span>
+          </a>
         </div>
       </li>
-      <!-- Tab 5 -->
+
+      <!-- Tab 5: ติดต่อเรา / Contact Us -->
       <li>
         <button
           class="btn w-100 d-flex justify-content-between align-items-center sidebar-link f-link"
@@ -377,15 +594,15 @@
         >
           <div>
             <img
-              src="assets/sidebar/File_dock_fill.png"
-              alt="Report Publication"
+              src="assets/sidebar/envelope-fill.png"
+              alt="Contact"
               class="img-fluid"
             />
-            รายงานเอกสารเผยแพร่
+            <span class="thai-text">ติดต่อเรา</span>
+            <span class="english-text" style="display: none">Contact Us</span>
           </div>
-
-          <span class="chevron-icon"
-            ><svg
+          <span class="chevron-icon">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -396,71 +613,144 @@
               <path
                 fill-rule="evenodd"
                 d="M6.646 12.854a.5.5 0 0 1 0-.708L10.293 8 6.646 4.354a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0z"
-              /></svg
-          ></span>
+              />
+            </svg>
+          </span>
         </button>
         <div class="collapse" id="menu5">
-          <a href="#" class="d-block py-1 ps-4 f-link"
-            >รายงานการตรวจสอบสิ่งแวดล้อม</a
+          <a
+            href="contact/complaint-form.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="contact/complaint-form.html"
           >
-          <a href="#" class="d-block py-1 ps-4 f-link">รายงาน AQMS</a>
-          <a href="#" class="d-block py-1 ps-4 f-link">รายงาน CEMS</a>
-          <a href="#" class="d-block py-1 ps-4 f-link">รายงาน CSR-DIW</a>
-          <a href="#" class="d-block py-1 ps-4 f-link"
-            >รายงานความยั่งยืนคณะทำงาน</a
-          >
-          <a href="#" class="d-block py-1 ps-4 f-link">การประชุมไตรภาคี</a>
-        </div>
-      </li>
-      <!-- Tab 6 -->
-      <li>
-        <button
-          class="btn w-100 d-flex justify-content-between align-items-center sidebar-link f-link"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#menu6"
-          aria-expanded="false"
-          aria-controls="menu6"
-        >
-          <div>
-            <img
-              src="assets/sidebar/Send_fill.png"
-              alt="Contact Us"
-              class="img-fluid"
-              width="30"
-              height="30"
-            />
-            ติดต่อเรา
-          </div>
-
-          <span class="chevron-icon"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-chevron-right"
-              viewBox="0 0 16 16"
+            <span class="thai-text">แบบฟอร์มร้องเรียน</span>
+            <span class="english-text" style="display: none"
+              >Complaint Form</span
             >
-              <path
-                fill-rule="evenodd"
-                d="M6.646 12.854a.5.5 0 0 1 0-.708L10.293 8 6.646 4.354a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0z"
-              /></svg
-          ></span>
-        </button>
-        <div class="collapse" id="menu6">
-          <a href="#" class="d-block py-1 ps-4 f-link"
-            >ร้องเรียนการดำเนินงานทั่วไป</a
+          </a>
+          <a
+            href="contact/satisfaction-survey.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="contact/satisfaction-survey.html"
           >
-          <a href="#" class="d-block py-1 ps-4 f-link"
-            >ร้องเรียนเรื่องการทุจริต</a
+            <span class="thai-text">แบบสำรวจความพึงพอใจ</span>
+            <span class="english-text" style="display: none"
+              >Satisfaction Survey</span
+            >
+          </a>
+          <a
+            href="contact/privacy-policy.html"
+            class="d-block py-1 ps-4 f-link"
+            data-en-href="contact/privacy-policy.html"
           >
-          <a href="#" class="d-block py-1 ps-4 f-link"
-            >แบบสอบถามความพึงพอใจเว็ปไซต์</a
-          >
-          <a href="#" class="d-block py-1 ps-4 f-link">นโยบายความเป็นส่วนตัว</a>
+            <span class="thai-text">นโยบายความเป็นส่วนตัว</span>
+            <span class="english-text" style="display: none"
+              >Privacy Policy</span
+            >
+          </a>
         </div>
       </li>
     </ul>
   </div>
+
+  <!-- Language Toggle -->
+  <div class="mt-3 px-3">
+    <button
+      id="language-toggle"
+      class="btn btn-outline-primary w-100"
+      onclick="toggleLanguage()"
+    >
+      <span class="thai-text">EN</span>
+      <span class="english-text" style="display: none">TH</span>
+    </button>
+  </div>
 </aside>
+
+<script>
+  // Language toggle functionality
+  function toggleLanguage() {
+    const thaiElements = document.querySelectorAll(".thai-text");
+    const englishElements = document.querySelectorAll(".english-text");
+    const links = document.querySelectorAll("a[data-en-href]");
+
+    const isEnglish = thaiElements[0].style.display === "none";
+
+    if (isEnglish) {
+      // Switch to Thai
+      thaiElements.forEach((el) => (el.style.display = ""));
+      englishElements.forEach((el) => (el.style.display = "none"));
+      links.forEach((link) => {
+        const thaiHref = link.getAttribute("href");
+        const englishHref = link.getAttribute("data-en-href");
+        link.setAttribute("href", thaiHref);
+      });
+      localStorage.setItem("language", "th");
+    } else {
+      // Switch to English
+      thaiElements.forEach((el) => (el.style.display = "none"));
+      englishElements.forEach((el) => (el.style.display = ""));
+      links.forEach((link) => {
+        const englishHref = link.getAttribute("data-en-href");
+        if (englishHref) {
+          link.setAttribute("href", englishHref);
+        }
+      });
+      localStorage.setItem("language", "en");
+    }
+  }
+
+  // Load saved language preference
+  document.addEventListener("DOMContentLoaded", function () {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage === "en") {
+      toggleLanguage();
+    }
+  });
+</script>
+
+<style>
+  .sidebar-link {
+    color: rgba(14, 63, 100, 1);
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin: 5px 10px;
+  }
+
+  .sidebar-link:hover {
+    background: linear-gradient(to right, #ffffff, #bed84e);
+    box-shadow: 0px 4px 4px 0px rgba(0, 102, 179, 0.1);
+    color: rgba(14, 63, 100, 1);
+    text-decoration: none;
+  }
+
+  .sidebar-submenu {
+    color: rgba(14, 63, 100, 1);
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 30px;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 3px 15px;
+  }
+
+  .sidebar-submenu:hover {
+    background: rgba(190, 216, 78, 0.3);
+    color: rgba(14, 63, 100, 1);
+    text-decoration: none;
+  }
+
+  .chevron-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar-link[aria-expanded="true"] .chevron-icon {
+    transform: rotate(180deg);
+  }
+</style>

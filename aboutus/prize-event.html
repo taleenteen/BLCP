@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>บริษัทของเรา | Our Company</title>
+    <title>ข่าวประจำวัน ข่าวสารองค์กร | Daily News</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
   </head>
   <body>
     <div class="d-flex">
@@ -24,64 +24,20 @@
 
         <!-- Main content below navbar -->
         <main class="container container-fluid p-0">
-          <section
-            class="blue-linear-bg-convert h-100 d-flex flex-column align-items-center"
-          >
-            <div
-              class="container d-flex flex-column justify-content-center align-items-center p-5"
-            >
-              <h1 class="text-white f-vision-title">
-                รางวัล และเหตุการณ์สำคัญ
-              </h1>
-              <p class="text-white f-vision-subtitle">
+          <section class="blue-linear-bg-convert h-100 p-5">
+            <div class="d-flex flex-md-column justify-content-center mb-4">
+              <h1 class="f-size-36 text-white">รางวัล และเหตุการณ์สำคัญ</h1>
+              <p>
                 Celebrating 16 years of success, with over xx award across
                 Sustainability goal.
               </p>
-
-              <ul class="nav nav-tabs rounded-pill bg-white">
-                <li class="nav-item rounded-pill">
-                  <a
-                    class="nav-link active rounded-pill"
-                    aria-current="page"
-                    href="#"
-                    >All</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link rounded-pill" href="#">Environmental</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link rounded-pill" href="#">Social</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link rounded-pill" href="#">Governance</a>
-                </li>
-              </ul>
-
-              <div>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                  <div class="container mt-5">
-                    <div
-                      class="row justify-content-center"
-                      id="card-container"
-                    ></div>
-                  </div>
-                </div>
+              <div class="card">
+                <button class="rounded-5 bg-green">All</button>
               </div>
             </div>
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-              </ul>
-            </nav>
+            <section class="container px-5 py-2">
+              <div id="cardsContainer"></div>
+            </section>
           </section>
         </main>
 
@@ -94,7 +50,175 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    <script src="../assets/js/components.js"></script>
-    <script src="../assets/js/script.js"></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/card.js"></script>
+    <script>
+      // ข้อมูลโพสต์สำหรับ Daily News พร้อมรายละเอียด
+      const postData = [
+        {
+          id: 1,
+          title: "ภาพบรรยากาศความสุขสนุกสนาน 'วันไหลบีแอลซีพี'",
+          image: "../../assets/news/news-daily-1.png",
+          category: "ข่าวองค์กร",
+          date: "2024-03-15",
+          content: [
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด ได้จัดงาน 'วันไหลบีแอลซีพี' ประจำปี 2567 ขึ้น เพื่อสร้างความสุขและความสามัคคีในหมู่พนักงาน โดยมีกิจกรรมหลากหลายรูปแบบที่สร้างสรรค์และสนุกสนาน",
+            "กิจกรรมในงานประกอบด้วย การแสดงดนตรี การประกวดแต่งกาย การแข่งขันกีฬาสี และการจับรางวัลมากมาย ซึ่งได้รับการตอบรับที่ดีจากพนักงานและครอบครัวที่เข้าร่วมงาน",
+            "นายจอห์น สมิธ ประธานเจ้าหน้าที่บริหาร กล่าวว่า 'การจัดงานวันไหลบีแอลซีพีเป็นประเพณีที่ดีของบริษัท เพื่อเสริมสร้างความสัมพันธ์ที่ดีระหว่างพนักงาน และเป็นการขอบคุณทุกคนที่ร่วมกันทำงานอย่างหนักเพื่อความสำเร็จของบริษัท'",
+          ],
+        },
+        {
+          id: 2,
+          title:
+            'บีแอลซีพี ร่วมเวที CEO Forum ประกาศจุดยืน "อุตสาหกรรมคาร์บอนต่ำ" สู่อนาคต Net Zero',
+          image: "../../assets/news/news-daily-2.png",
+          category: "ความยั่งยืน",
+          date: "2024-03-10",
+          content: [
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด เข้าร่วมเวที CEO Forum ในหัวข้อ 'อุตสาหกรรมคาร์บอนต่ำ สู่อนาคต Net Zero' โดยประกาศจุดยืนและแผนการดำเนินงานเพื่อลดการปล่อยก๊าซเรือนกระจก",
+            "ในการนำเสนอ บริษัทได้เปิดเผยแผนงานระยะยาว 20 ปี เพื่อบรรลุเป้าหมาย Net Zero Emission ภายในปี 2050 ผ่านการลงทุนในเทคโนโลยีสะอาด การปรับปรุงประสิทธิภาพการผลิต และการพัฒนาพลังงานทดแทน",
+            "นอกจากนี้ บริษัทยังได้แบ่งปันประสบการณ์ในการจัดการสิ่งแวดล้อม การดูแลชุมชน และการขับเคลื่อนเศรษฐกิจหมุนเวียน เพื่อเป็นแนวทางให้กับอุตสาหกรรมอื่นๆ ในการพัฒนาอย่างยั่งยืน",
+          ],
+        },
+        {
+          id: 3,
+          title:
+            "บีแอลซีพีลงนามในสัญญาซ่อมบำรุงระยะยาวกับบริษัท เอ็กโก เอ็นจิเนียริ่ง จำกัด เพื่อความมั่นคงทางด้านการผลิตกระแสไฟฟ้า",
+          image: "../../assets/news/news-daily-3.png",
+          category: "ข่าวธุรกิจ",
+          date: "2024-03-05",
+          content: [
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด ได้ลงนามในสัญญาความร่วมมือระยะยาว 10 ปี กับบริษัท เอ็กโก เอ็นจิเนียริ่ง จำกัด เพื่อให้บริการซ่อมบำรุงโรงไฟฟ้าอย่างครอบคลุม",
+            "ความร่วมมือครั้งนี้จะช่วยเสริมสร้างความมั่นคงในการผลิตกระแสไฟฟ้า ลดความเสี่ยงในการหยุดการผลิต และเพิ่มประสิทธิภาพการดำเนินงานของโรงไฟฟ้า ผ่านการใช้เทคโนโลยีและความเชี่ยวชาญของเอ็กโก เอ็นจิเนียริ่ง",
+            "สัญญานี้คาดว่าจะสร้างมูลค่าทางเศรษฐกิจรวมกว่า 2,000 ล้านบาท และเป็นการสร้างงานให้กับชุมชนท้องถิ่นอีกกว่า 500 ตำแหน่งงาน ตลอดระยะเวลาของสัญญา",
+          ],
+        },
+        {
+          id: 4,
+          title:
+            "บีแอลซีพีและบ้านปูร่วมแบ่งปันประสบการณ์และสนับสนุนโครงการความรับผิดชอบต่อสังคม ขับเคลื่อนเป้าหมายการพัฒนาอย่างยั่งยืน",
+          image: "../../assets/news/news-daily-4.png",
+          category: "CSR",
+          date: "2024-02-28",
+          content: [
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด ร่วมกับบริษัท บ้านปู จำกัด (มหาชน) จัดกิจกรรมแบ่งปันประสบการณ์และสนับสนุนโครงการความรับผิดชอบต่อสังคม เพื่อขับเคลื่อนเป้าหมายการพัฒนาอย่างยั่งยืน",
+            "โครงการนี้มุ่งเน้นการพัฒนาศักยภาพของชุมชนในพื้นที่ ผ่านการส่งเสริมการศึกษา การพัฒนาอาชีพ และการอนุรักษ์สิ่งแวดล้อม โดยได้รับการสนับสนุนจากทั้งสองบริษัทในการดำเนินโครงการต่างๆ",
+            "กิจกรรมดังกล่าวเป็นส่วนหนึ่งของแผนยุทธศาสตร์ CSR ระยะยาว ที่มุ่งเน้นการสร้างผลกระทบเชิงบวกต่อสังคมและสิ่งแวดล้อม ตลอดจนการสร้างความยั่งยืนให้กับชุมชนและประเทศชาติ",
+          ],
+        },
+        {
+          id: 5,
+          title:
+            "โรงไฟฟ้าบีแอลซีพี ร่วมสนับสนุนสวนพฤกษศาสตร์ เพื่อสร้างสมดุลความหลากหลายทางชีวภาพ",
+          image: "../../assets/news/news-daily-5.png",
+        },
+        {
+          id: 6,
+          title:
+            "บีแอลซีพีพร้อมคณะผู้บริหารให้การต้อนรับคณะดูงานจาก Electricity Generating Plc และ Quezon Power (Philippines) Limited Co.",
+          image: "../../assets/news/news-daily-6.png",
+        },
+        {
+          id: 7,
+          title:
+            "โรงไฟฟ้าบีแอลซีพี เปิดโครงการ “พอร์ตดีมีที่เรียนกับบีแอลซีพี” ผนึกกำลัง กระทรวงศึกษาธิการ และโรงเรียนระยองวิทยาคม",
+          image: "../../assets/news/news-daily-7.png",
+        },
+        {
+          id: 8,
+          title:
+            "โรงไฟฟ้าบีแอลซีพี ผนึกกำลังภาคีชุมชนชายฝั่ง 3 จังหวัดภาคตะวันออก สร้างจิตสำนึก รักษ์ป่าชายเลน",
+          image: "../../assets/news/news-daily-8.png",
+        },
+        {
+          id: 9,
+          title: "โครงการสร้างรายได้ให้ชุมชน",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 10,
+          title: "กิจกรรมดูแลสุขภาพผู้สูงอายุ",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 11,
+          title: "โครงการพัฒนาเยาวชนท้องถิ่น",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 12,
+          title: "กิจกรรมส่งเสริมวัฒนธรรมท้องถิ่น",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        // เพิ่มข้อมูลเพื่อทดสอบ pagination
+        ...Array.from({ length: 8 }, (_, i) => ({
+          id: i + 13,
+          title: `กิจกรรมความรับผิดชอบต่อสังคม ${i + 13}`,
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        })),
+      ];
+
+      // Initialize Card Component สำหรับ Post Cards
+      let cardComponent = new CardComponent({
+        container: document.getElementById("cardsContainer"),
+        itemsPerPage: 8,
+        cardType: "post",
+        onCardClick: (data, index) => {
+          // ลิงค์ไปยังหน้ารายละเอียดของข่าว
+          console.log(`คลิกที่ข่าว: ${data.title} (ID: ${data.id})`);
+
+          // ตรวจสอบว่ามีข้อมูลเต็มหรือไม่
+          if (data.content && data.content.length > 0) {
+            // ไปยังหน้ารายละเอียด
+            window.location.href = `news-detail.html?id=${data.id}`;
+          } else {
+            // แสดงข้อความว่าไม่มีรายละเอียด
+            alert("ข่าวนี้ยังไม่มีรายละเอียด");
+          }
+        },
+        onPageChange: (page) => {
+          console.log(`เปลี่ยนไปหน้า: ${page}`);
+          // Scroll to top เมื่อเปลี่ยนหน้า
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        },
+      });
+
+      // โหลดข้อมูลโพสต์
+      cardComponent.loadData(postData);
+
+      // เพิ่ม search functionality (ถ้าต้องการ)
+      function addSearchFeature() {
+        const searchHTML = `
+                <div class="row mb-4">
+                  <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="ค้นหาวิดีโอ...">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="text-muted">
+                      แสดง ${postData.length} วิดีโอทั้งหมด
+                    </div>
+                  </div>
+                </div>
+              `;
+
+        const cardsContainer = document.getElementById("cardsContainer");
+        cardsContainer.insertAdjacentHTML("beforebegin", searchHTML);
+
+        // Add search event listener
+        document
+          .getElementById("searchInput")
+          .addEventListener("input", (e) => {
+            cardComponent.search(e.target.value, ["title"]);
+          });
+      }
+
+      // เรียกใช้ search feature (ถ้าต้องการ)
+      // addSearchFeature();
+    </script>
   </body>
 </html>
