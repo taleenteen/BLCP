@@ -1,6 +1,3 @@
-// Accordion Class for BLCP Website
-// Object-oriented approach for creating accordion components
-
 class AccordionBuilder {
   constructor(options = {}) {
     this.id = options.id || "accordion";
@@ -123,7 +120,7 @@ function createAccordion(data) {
                 aria-expanded="${isFirstItem ? "true" : "false"}"
                 aria-controls="${collapseId}"
               >
-                <h3 class="mb-0 accordion-title">${item.title}</h3>
+                <h3 class="mb-0 accordion-title f-size-30">${item.title}</h3>
               </button>
             </h2>
             <div
@@ -132,7 +129,7 @@ function createAccordion(data) {
               aria-labelledby="${headingId}"
               data-bs-parent="#${id}"
             >
-              <div class="accordion-body" style="padding: 1.5rem;">
+              <div class="accordion-body f-size-24 text-black" style="padding: 1.5rem;">
                 ${item.content}
               </div>
             </div>

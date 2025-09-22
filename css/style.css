@@ -163,6 +163,20 @@ img {
   text-decoration: none;
 }
 
+.f-link.active-link {
+  background: linear-gradient(to right, #ffffff, #bed84e);
+  box-shadow: 0px 4px 4px 0px rgba(0, 102, 179, 0.1);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 2px 0;
+  display: block;
+}
+
+.f-link.active-link:hover {
+  background: linear-gradient(to right, #ffffff, #bed84e);
+  box-shadow: 0px 4px 4px 0px rgba(0, 102, 179, 0.1);
+}
+
 .f-link:hover {
   color: rgba(14, 63, 100, 1);
   background: linear-gradient(
@@ -233,6 +247,13 @@ img {
   line-height: 100%;
 }
 
+.f-size-25 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 24px;
+  line-height: 100%;
+}
+
 .f-size-30 {
   font-weight: 700;
   font-style: 75 Bd;
@@ -251,7 +272,14 @@ img {
 .f-size-36 {
   font-weight: 700;
   font-style: 75 Bd;
-  font-size: 30px;
+  font-size: 36px;
+  line-height: 100%;
+}
+
+.f-size-40 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 40px;
   line-height: 100%;
 }
 
@@ -339,6 +367,10 @@ h2.f-vision-title {
 }
 
 /* Button */
+.index-btn {
+  background: linear-gradient(0deg, #a6ce39 0%, rgba(255, 255, 255, 0.11) 100%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 
 .lang-btn {
   background-color: rgba(217, 217, 217, 1);
@@ -483,7 +515,6 @@ h2.f-vision-title {
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 522px;
 }
 
 .contact-form-bg {

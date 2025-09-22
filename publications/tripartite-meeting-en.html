@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tripartite Meeting | BLCP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      /* Custom datepicker styles */
+      .flatpickr-calendar {
+        z-index: 9999 !important;
+      }
+      .date-input-wrapper {
+        position: relative;
+      }
+      .clear-date-btn {
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: #6c757d;
+        cursor: pointer;
+        z-index: 5;
+      }
+      .clear-date-btn:hover {
+        color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content below navbar -->
+        <main class="container container-fluid p-0">
+          <section>
+            <div class="card border-0 text-white">
+              <img
+                src="../../assets/aboutus/aboutus-hero.png"
+                alt="aboutus hero"
+              />
+              <div class="card-img-overlay d-flex justify-content-between">
+                <h1 class="card-title">Tripartite Meeting</h1>
+                <div class="d-flex justify-content-end">
+                  <div class="card rounded-pill">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
+                    >
+                      <img
+                        src="../../assets/logo/Facebook.png"
+                        alt="Facebook logo"
+                      />
+                      <img src="../../assets/logo/Line.png" alt="Line logo" />
+                      <img
+                        src="../../assets/logo/Tiktok.png"
+                        alt="Tiktok logo"
+                      />
+                      <img
+                        src="../../assets/logo/YouTube.png"
+                        alt="YouTube logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="white-linear-bg h-100 p-5">
+            <div class="container">
+              <div class="row mb-4">
+                <div class="col-12 col-md-6">
+                  <div class="mb-3 border-0" style="max-width: 210px">
+                    <div
+                      class="input-group border-0 rounded-4 overflow-hidden position-relative"
+                    >
+                      <span
+                        id="pick-one-addon"
+                        class="input-group-text bg-white border-end-0 rounded-start-5"
+                        role="button"
+                        title="Open Calendar"
+                      >
+                        <img
+                          src="../../assets/logo/calendar-icon.png"
+                          alt="Search"
+                          width="20"
+                          height="20"
+                        />
+                      </span>
+                      <input
+                        id="pick-one"
+                        type="text"
+                        class="form-control border-start-0 pe-5 f-size-20 rounded-end-5"
+                        placeholder="Search by Date"
+                        autocomplete="off"
+                        readonly
+                      />
+                      <button
+                        id="clear-date-btn"
+                        type="button"
+                        class="position-absolute"
+                        style="
+                          right: 10px;
+                          top: 50%;
+                          transform: translateY(-50%);
+                          z-index: 10;
+                          background: none;
+                          border: none;
+                          font-size: 18px;
+                          opacity: 0.7;
+                          display: none;
+                          cursor: pointer;
+                          width: 20px;
+                          height: 20px;
+                          color: #6c757d;
+                        "
+                        title="Clear Date"
+                      >
+                        <p class="align-baseline">X</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row g-2 justify-content-end">
+                    <div class="col-auto">
+                      <div class="input-group">
+                        <span
+                          class="input-group-text bg-white rounded-start-5 border-end"
+                        >
+                          <img
+                            src="../../assets/logo/search-icon.svg"
+                            alt="Search"
+                            width="20"
+                            height="20"
+                          />
+                        </span>
+                        <input
+                          type="text"
+                          id="searchInput"
+                          class="form-control rounded-end-5 border-start-0 f-size-24"
+                          placeholder="Search"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Table Container -->
+              <div id="tableContainer"></div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+    <!-- Flatpickr JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/table.js"></script>
+
+    <script>
+      // Data for Table - Tripartite Meeting Documents
+      const meetingData = [
+        {
+          id: 1,
+          name: "Tripartite Meeting Report 89-4_2024",
+          category: "Meeting Report",
+          createdDate: "2024-01-15",
+          fileUrl: "https://example.com/meeting-report-1-2567.pdf",
+          fileName: "meeting-report-1-2567.pdf",
+        },
+        {
+          id: 2,
+          name: "Tripartite Meeting Report 86-1_2024",
+          category: "Meeting Report",
+          createdDate: "2024-01-10",
+          fileUrl: "https://example.com/agenda-jan-2567.pdf",
+          fileName: "agenda-jan-2567.pdf",
+        },
+        {
+          id: 3,
+          name: "Tripartite Meeting Report 85-3_2023",
+          category: "Meeting Report",
+          createdDate: "2024-03-20",
+          fileUrl: "https://example.com/meeting-photos-q1.zip",
+          fileName: "meeting-photos-q1.zip",
+        },
+        {
+          id: 4,
+          name: "Tripartite Meeting Report 84-2_2023",
+          category: "Meeting Report",
+          createdDate: "2024-03-25",
+          fileUrl: "https://example.com/meeting-summary-march.mp4",
+          fileName: "meeting-summary-march.mp4",
+        },
+        {
+          id: 5,
+          name: "BLCP Power Plant Tripartite Committee Meeting No. 74-4/2019",
+          category: "Meeting Report",
+          createdDate: "2024-04-15",
+          fileUrl: "https://example.com/meeting-report-2-2567.pdf",
+          fileName: "meeting-report-2-2567.pdf",
+        },
+        // Additional test data for pagination
+        ...Array.from({ length: 15 }, (_, i) => ({
+          id: i + 6,
+          name: `Tripartite Meeting Document ${i + 6}`,
+          category: ["Report", "Document", "Video", "Photos"][i % 4],
+          createdDate: `2024-${String(Math.floor(i / 4) + 6).padStart(
+            2,
+            "0"
+          )}-${String((i % 4) * 7 + 1).padStart(2, "0")}`,
+          fileUrl: `https://example.com/document-${i + 6}.pdf`,
+          fileName: `document-${i + 6}.pdf`,
+        })),
+      ];
+
+      // Wait for DOM to load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Table Component
+        let tableComponent = new TableComponent({
+          container: document.getElementById("tableContainer"),
+          itemsPerPage: 10,
+          onFileClick: (fileUrl, fileName, data, index) => {
+            console.log("File clicked:", { fileUrl, fileName, data, index });
+            if (confirm(`Do you want to download file: ${fileName}?`)) {
+              window.open(fileUrl, "_blank");
+            }
+          },
+          onRowClick: (data, index) => {
+            console.log("Row clicked:", data);
+          },
+          onPageChange: (page) => {
+            console.log(`Switched to page: ${page}`);
+            updateStats();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          },
+        });
+
+        // Load initial data
+        tableComponent.loadData(meetingData);
+        updateStats();
+
+        // Event Listeners
+        document
+          .getElementById("searchInput")
+          .addEventListener("input", (e) => {
+            tableComponent.search(e.target.value, ["name", "category"]);
+            updateStats();
+          });
+
+        document
+          .getElementById("categoryFilter")
+          .addEventListener("change", (e) => {
+            const category = e.target.value;
+            if (category) {
+              tableComponent.filter((item) => item.category === category);
+            } else {
+              tableComponent.filter(() => true);
+            }
+            updateStats();
+          });
+
+        function updateStats() {
+          const stats = tableComponent.getStats();
+          document.getElementById("statsDisplay").innerHTML = `
+            Showing ${stats.filtered} of ${stats.total} entries | 
+            Page ${stats.currentPage} of ${stats.totalPages} | 
+            ${stats.itemsPerPage} entries per page
+          `;
+        }
+
+        // Initialize Flatpickr Datepicker
+        setTimeout(() => {
+          if (typeof flatpickr !== "undefined") {
+            // Initialize Single Date Picker with English locale
+            const picker = flatpickr("#pick-one", {
+              dateFormat: "d/m/Y",
+              allowInput: false,
+              clickOpens: true,
+              position: "below left",
+              onChange: function (selectedDates, dateStr, instance) {
+                console.log("Date selected:", dateStr);
+                if (selectedDates.length > 0) {
+                  // Convert to YYYY-MM-DD format for filtering
+                  const selectedDate = selectedDates[0];
+                  const year = selectedDate.getFullYear();
+                  const month = String(selectedDate.getMonth() + 1).padStart(
+                    2,
+                    "0"
+                  );
+                  const day = String(selectedDate.getDate()).padStart(2, "0");
+                  const formatDate = `${year}-${month}-${day}`;
+
+                  // Filter table by selected date
+                  tableComponent.filter(
+                    (item) => item.createdDate === formatDate
+                  );
+                } else {
+                  // Show all items if no date selected
+                  tableComponent.filter(() => true);
+                }
+                updateStats();
+              },
+              minDate: "2020-01-01",
+              maxDate: "today",
+            });
+
+            // Event listeners for opening datepicker
+            document
+              .getElementById("pick-one-addon")
+              .addEventListener("click", function (e) {
+                e.preventDefault();
+                picker.open();
+              });
+
+            // Add clear date button
+            const clearButton = document.getElementById("clear-date-btn");
+            clearButton.addEventListener("click", function (e) {
+              e.preventDefault();
+              picker.clear();
+              tableComponent.filter(() => true);
+              updateStats();
+            });
+
+            // Show clear button when date is selected
+            picker.config.onChange.push(function (selectedDates) {
+              if (selectedDates.length > 0) {
+                clearButton.style.display = "block";
+              } else {
+                clearButton.style.display = "none";
+              }
+            });
+
+            console.log("Flatpickr datepicker initialized successfully");
+          } else {
+            console.error("Flatpickr library not loaded");
+          }
+        }, 300);
+      });
+    </script>
+  </body>
+</html>

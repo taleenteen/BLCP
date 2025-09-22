@@ -2,7 +2,18 @@
 <html lang="th">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, init { id: 5, title:
+    "โรงไฟฟ้าบีแอลซีพี ร่วมสนับสนุนสวนพฤกษศาสตร์
+    เพื่อสร้างสมดุลความหลากหลายทางชีวภาพ", image:
+    "../../assets/news/news-daily-5.png", category: "ความยั่งยืน", date:
+    "2024-02-20", }, { id: 6, title:
+    "บีแอลซีพีพร้อมคณะผู้บริหารให้การต้อนรับคณะดูงานจาก Electricity Generating
+    Plc และ Quezon Power (Philippines) Limited Co.", image:
+    "../../assets/news/news-daily-6.png", category: "ข่าวธุรกิจ", date:
+    "2024-02-15", }, { id: 7, title: "โรงไฟฟ้าบีแอลซีพี เปิดโครงการ
+    "พอร์ตดีมีที่เรียนกับบีแอลซีพี" ผนึกกำลัง กระทรวงศึกษาธิการ
+    และโรงเรียนระยองวิทยาคม", image: "../../assets/news/news-daily-7.png",
+    category: "CSR", date: "2024-02-10", },
     <title>ข่าวประจำวัน ข่าวสารองค์กร | Daily News</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -12,6 +23,23 @@
     />
 
     <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+      /* Custom styles for active tab */
+      #categoryTabs .nav-link.active {
+        background: linear-gradient(90deg, #ffffff 0%, #bed84e 100%);
+        color: rgba(14, 63, 100, 1);
+      }
+      #categoryTabs .nav-link {
+        cursor: pointer;
+        font-weight: 700;
+        font-style: 75 Bd;
+        font-size: 26px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: rgba(139, 139, 139, 1);
+      }
+    </style>
   </head>
   <body>
     <div class="d-flex">
@@ -26,16 +54,66 @@
         <main class="container container-fluid p-0">
           <section class="blue-linear-bg-convert h-100 p-5">
             <div class="d-flex flex-md-column justify-content-center mb-4">
-              <h1 class="f-size-36 text-white">รางวัล และเหตุการณ์สำคัญ</h1>
-              <p>
+              <h1 class="f-size-40 text-white align-self-center">
+                รางวัล และเหตุการณ์สำคัญ
+              </h1>
+              <p class="align-self-center text-white f-size-20">
                 Celebrating 16 years of success, with over xx award across
                 Sustainability goal.
               </p>
-              <div class="card">
-                <button class="rounded-5 bg-green">All</button>
+              <div
+                class="card align-self-center rounded-5"
+                style="max-width: 800px"
+              >
+                <ul class="nav nav-pills gap-4" id="categoryTabs">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active rounded-5"
+                      data-category="all"
+                      href="#"
+                      >ทั้งหมด</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link rounded-5"
+                      data-category="ข่าวองค์กร"
+                      href="#"
+                      >ข่าวองค์กร</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link rounded-5"
+                      data-category="ความยั่งยืน"
+                      href="#"
+                      >ความยั่งยืน</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link rounded-5"
+                      data-category="ข่าวธุรกิจ"
+                      href="#"
+                      >ข่าวธุรกิจ</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link rounded-5" data-category="CSR" href="#"
+                      >CSR</a
+                    >
+                  </li>
+                </ul>
               </div>
             </div>
             <section class="container px-5 py-2">
+              <div class="row mb-3">
+                <div class="col-12">
+                  <div id="itemCount" class="text-white-50 small">
+                    แสดง 20 รายการ (ทั้งหมด)
+                  </div>
+                </div>
+              </div>
               <div id="cardsContainer"></div>
             </section>
           </section>
@@ -130,29 +208,39 @@
           title:
             "โรงไฟฟ้าบีแอลซีพี ผนึกกำลังภาคีชุมชนชายฝั่ง 3 จังหวัดภาคตะวันออก สร้างจิตสำนึก รักษ์ป่าชายเลน",
           image: "../../assets/news/news-daily-8.png",
+          category: "ความยั่งยืน",
+          date: "2024-02-05",
         },
         {
           id: 9,
           title: "โครงการสร้างรายได้ให้ชุมชน",
           image:
             "../../assets/posts/social-responsibility-activities/first.png",
+          category: "CSR",
+          date: "2024-01-30",
         },
         {
           id: 10,
           title: "กิจกรรมดูแลสุขภาพผู้สูงอายุ",
           image:
             "../../assets/posts/social-responsibility-activities/second.png",
+          category: "CSR",
+          date: "2024-01-25",
         },
         {
           id: 11,
           title: "โครงการพัฒนาเยาวชนท้องถิ่น",
           image:
             "../../assets/posts/social-responsibility-activities/third.png",
+          category: "CSR",
+          date: "2024-01-20",
         },
         {
           id: 12,
           title: "กิจกรรมส่งเสริมวัฒนธรรมท้องถิ่น",
           image: "../../assets/posts/social-responsibility-activities/four.png",
+          category: "CSR",
+          date: "2024-01-15",
         },
         // เพิ่มข้อมูลเพื่อทดสอบ pagination
         ...Array.from({ length: 8 }, (_, i) => ({
@@ -160,6 +248,8 @@
           title: `กิจกรรมความรับผิดชอบต่อสังคม ${i + 13}`,
           image:
             "../../assets/posts/social-responsibility-activities/first.png",
+          category: "CSR",
+          date: `2024-01-${10 - i < 10 ? "0" + (10 - i) : 10 - i}`,
         })),
       ];
 
@@ -190,6 +280,70 @@
 
       // โหลดข้อมูลโพสต์
       cardComponent.loadData(postData);
+
+      // Update initial count
+      document.getElementById(
+        "itemCount"
+      ).textContent = `แสดง ${postData.length} รายการ (ทั้งหมด)`;
+
+      // เพิ่ม Tab Filter Functionality
+      function initializeCategoryFilter() {
+        const categoryTabs = document.querySelectorAll(
+          "#categoryTabs .nav-link"
+        );
+        let currentData = postData; // เก็บข้อมูลปัจจุบัน
+
+        categoryTabs.forEach((tab) => {
+          tab.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remove active class from all tabs
+            categoryTabs.forEach((t) => t.classList.remove("active"));
+
+            // Add active class to clicked tab
+            this.classList.add("active");
+
+            const selectedCategory = this.getAttribute("data-category");
+            console.log("Selected category:", selectedCategory);
+
+            // Filter data based on category
+            let filteredData;
+            if (selectedCategory === "all") {
+              filteredData = postData;
+            } else {
+              filteredData = postData.filter(
+                (item) => item.category === selectedCategory
+              );
+            }
+
+            console.log("Filtered data:", filteredData);
+
+            // Update card component with filtered data
+            cardComponent.loadData(filteredData);
+
+            // Update display count
+            updateDisplayCount(filteredData.length, selectedCategory);
+
+            // Scroll to top when changing category
+            document.getElementById("cardsContainer").scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          });
+        });
+      }
+
+      // Function to update display count
+      function updateDisplayCount(count, category) {
+        const categoryDisplay = category === "all" ? "ทั้งหมด" : category;
+        const countElement = document.getElementById("itemCount");
+        if (countElement) {
+          countElement.textContent = `แสดง ${count} รายการ (${categoryDisplay})`;
+        }
+      }
+
+      // Initialize category filter
+      initializeCategoryFilter();
 
       // เพิ่ม search functionality (ถ้าต้องการ)
       function addSearchFeature() {

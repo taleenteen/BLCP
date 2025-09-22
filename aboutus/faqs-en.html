@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Company | บริษัทของเรา</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content below navbar -->
+        <main class="container container-fluid p-0">
+          <section>
+            <div class="card border-0 text-white">
+              <img
+                src="../assets/aboutus/aboutus-hero.png"
+                alt="aboutus hero"
+              />
+              <div class="card-img-overlay d-flex justify-content-between">
+                <h1 class="card-title">FAQs Frequently Asked Questions</h1>
+                <div class="d-flex justify-content-end">
+                  <div class="card rounded-pill">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
+                    >
+                      <img
+                        src="../assets/logo/Facebook.png"
+                        alt="Facebook logo"
+                      />
+                      <img src="../assets/logo/Line.png" alt="Line logo" />
+                      <img src="../assets/logo/Tiktok.png" alt="Tiktok logo" />
+                      <img
+                        src="../assets/logo/YouTube.png"
+                        alt="YouTube logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="blue-linear-bg-convert d-flex flex-column align-items-center gap-5 p-5"
+          >
+            <!-- Accordion sections will be generated here -->
+            <div class="w-100" id="accordion-section-1"></div>
+            <div class="w-100" id="accordion-section-2"></div>
+            <div class="w-100" id="accordion-section-3"></div>
+            <div class="w-100" id="accordion-section-4"></div>
+            <div class="w-100" id="accordion-section-5"></div>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/accordion.js"></script>
+    <script>
+      // FAQ data categorized by sections - English Version
+      const faqSections = [
+        {
+          id: "charcoaTechnologyAccordion",
+          title: "Information about Power Plant and Coal Technology",
+          items: [
+            {
+              id: "1-1",
+              title:
+                "What technology does BLCP Power Plant use for electricity generation?",
+              content:
+                "BLCP Power Plant uses modern Clean Coal Technology with strict pollution control systems to be environmentally friendly",
+            },
+            {
+              id: "1-2",
+              title: "How is pollution controlled?",
+              content:
+                "There are strict pollution control systems including ESP (Electrostatic Precipitator) for dust capture and FGD (Flue Gas Desulfurization) for sulfur dioxide capture",
+            },
+            {
+              id: "1-3",
+              title: "Where does the power plant source its coal from?",
+              content:
+                "BLCP Power Plant uses high-quality bituminous coal imported from Australia, which has low sulfur content averaging 0.45% per year",
+            },
+          ],
+        },
+        {
+          id: "managementEnvironmentAccordion",
+          title: "Environmental Management",
+          items: [
+            {
+              id: "2-1",
+              title:
+                "Does the power plant impact the environment and how is it managed?",
+              content:
+                "The power plant strictly complies with environmental standards with 4 air quality monitoring stations and modern wastewater treatment systems, including beneficial coal ash management",
+            },
+            {
+              id: "2-2",
+              title: "How is environmental quality monitored?",
+              content:
+                "There are 4 Air Quality Monitoring Stations (AQMS) around the power plant and Continuous Emission Monitoring System (CEMS) at the chimney, with regular reporting to government agencies",
+            },
+            {
+              id: "2-3",
+              title: "How is coal ash managed?",
+              content:
+                "All coal ash is sold to the cement industry as a component in production. There is no burial or disposal of any kind",
+            },
+          ],
+        },
+        {
+          id: "communityAccordion",
+          title: "Community Relations",
+          items: [
+            {
+              id: "3-1",
+              title: "What community projects does the power plant have?",
+              content:
+                "Various projects including career development, education, public health, and environmental conservation to improve the quality of life of surrounding communities",
+            },
+            {
+              id: "3-2",
+              title: "Are there meetings with the community?",
+              content:
+                "Regular tripartite meetings are held to listen to opinions and suggestions from the community, government agencies, and private sector",
+            },
+            {
+              id: "3-3",
+              title: "How can the community contact the power plant?",
+              content:
+                "Can contact via Call Center 038-925100 or through online complaint forms or visit the power plant directly",
+            },
+          ],
+        },
+        {
+          id: "companyMeasuresAccordion",
+          title: "Company Measures and Policies",
+          items: [
+            {
+              id: "4-1",
+              title: "What is the company's safety policy?",
+              content:
+                "Has a Safety First policy based on safe working principles with regular safety training and inspections",
+            },
+            {
+              id: "4-2",
+              title: "What measures are in place for risk management?",
+              content:
+                "Has Enterprise Risk Management system and comprehensive emergency response plans",
+            },
+            {
+              id: "4-3",
+              title: "Does the company have an anti-corruption policy?",
+              content:
+                "Has strict anti-corruption policies with reporting channels and whistleblower protection systems",
+            },
+          ],
+        },
+        {
+          id: "economyEnergyAccordion",
+          title: "Economy, Energy and Government Policy",
+          items: [
+            {
+              id: "5-1",
+              title: "How does the power plant help the country's economy?",
+              content:
+                "Helps create energy security, reduce electricity imports, and create jobs for local communities",
+            },
+            {
+              id: "5-2",
+              title: "Alignment with government energy policy?",
+              content:
+                "Aligns with the Power Development Plan (PDP) and the country's fuel diversification policy",
+            },
+            {
+              id: "5-3",
+              title: "What are the future development plans?",
+              content:
+                "Focus on clean technology development, efficiency improvement, and continuous reduction of environmental impact",
+            },
+          ],
+        },
+      ];
+
+      // Load accordion when DOM is ready
+      document.addEventListener("DOMContentLoaded", () => {
+        // Wait for components to load first
+        setTimeout(() => {
+          faqSections.forEach((section, index) => {
+            const targetElement = document.getElementById(
+              `accordion-section-${index + 1}`
+            );
+            if (targetElement) {
+              targetElement.innerHTML = createAccordion(section);
+            }
+          });
+        }, 200);
+      });
+    </script>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

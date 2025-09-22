@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partner Organizations | BLCP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content below navbar -->
+        <main class="container container-fluid p-0">
+          <section>
+            <div class="card border-0 text-white">
+              <img
+                src="../assets/aboutus/aboutus-hero.png"
+                alt="aboutus hero"
+              />
+              <div class="card-img-overlay d-flex justify-content-between">
+                <h1 class="card-title">Partner Organizations</h1>
+                <div class="d-flex justify-content-end">
+                  <div class="card rounded-pill">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
+                    >
+                      <img
+                        src="../assets/logo/Facebook.png"
+                        alt="Facebook logo"
+                      />
+                      <img src="../assets/logo/Line.png" alt="Line logo" />
+                      <img src="../assets/logo/Tiktok.png" alt="Tiktok logo" />
+                      <img
+                        src="../assets/logo/YouTube.png"
+                        alt="YouTube logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="blue-linear-bg-convert h-100 p-5">
+            <div class="d-flex justify-content-center mb-4"></div>
+            <section class="container px-5 py-2">
+              <div id="cardsContainer"></div>
+            </section>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/card.js"></script>
+    <script>
+      // Partner organizations data with detailed information
+      const postData = [
+        {
+          id: 1,
+          title: "Community Friends",
+          image: "../assets/news/news-partner-1.png",
+          category: "Community",
+          date: "2024-03-15",
+          content: [
+            "Building good relationships with surrounding communities is at the heart of BLCP Power Company Limited's business operations, as we firmly believe that sustainable growth must occur together with communities and the environment.",
+            "The Company has established the 'Community Friends' project to create cooperation and improve the quality of life for people in the area through various activities such as supporting education, career development, and environmental care.",
+            "The results of this cooperation have created good understanding between the Company and the community, creating sustainable development that benefits all parties in the long term.",
+          ],
+        },
+        {
+          id: 2,
+          title: "Electricity Generating Public Company Limited",
+          image: "../assets/news/news-partner-2.png",
+          category: "Partner Organizations",
+          date: "2024-03-10",
+          content: [
+            "Electricity Generating Public Company Limited (EGCO) is one of the important partners of BLCP Power Company Limited in developing and operating efficient and environmentally friendly power plants.",
+            "Cooperation between the two companies covers technology sharing, human resource development, and sustainable environmental management to ensure electricity generation meets international standards.",
+            "This collaboration helps strengthen Thailand's energy security and serves as a model for businesses that are responsible to society and the environment.",
+          ],
+        },
+        {
+          id: 3,
+          title: "Banpu Power Public Company Limited",
+          image: "../assets/news/news-partner-3.png",
+          category: "Partner Organizations",
+          date: "2024-03-05",
+          content: [
+            "Banpu Power Public Company Limited is the main partner in co-investing and operating the BLCP power plant, bringing expertise and experience in the energy industry to support operations.",
+            "The strong cooperation between the two companies enables efficient operations from electricity generation, maintenance, to developing new technologies.",
+            "This collaboration not only creates business value but also emphasizes environmentally friendly operations and social responsibility for sustainable development.",
+          ],
+        },
+        {
+          id: 4,
+          title: "Rayong City Municipality",
+          image: "../assets/news/news-partner-4.png",
+          category: "Government Agencies",
+          date: "2024-02-28",
+          content: [
+            "Rayong City Municipality is a local government agency that plays an important role in caring for and developing the quality of life for people in the area. The Company has cooperated with the municipality on many projects.",
+            "Cooperation covers infrastructure development, education promotion, environmental care, and support for various social activities that benefit the community.",
+            "This close collaboration helps the Company respond to community needs precisely and create sustainable development in Rayong Province.",
+          ],
+        },
+        {
+          id: 5,
+          title: "Map Ta Phut City Municipality",
+          image: "../assets/news/news-partner-5.png",
+          category: "Government Agencies",
+          date: "2024-02-25",
+          content: [
+            "Map Ta Phut City Municipality is an important local agency in caring for and developing industrial areas and communities in Rayong Province. The Company has close cooperation in many aspects.",
+            "Cooperation projects between the Company and Map Ta Phut Municipality include environmental management, human resource development, and support for various public benefit activities.",
+            "This cooperation helps create balance between industrial development and caring for people's quality of life to achieve sustainable growth in the area.",
+          ],
+        },
+        {
+          id: 6,
+          title: "Electricity Generating Authority of Thailand",
+          image: "../assets/news/news-partner-6.png",
+          category: "Government Agencies",
+          date: "2024-02-20",
+          content: [
+            "The Electricity Generating Authority of Thailand (EGAT) is the main agency for purchasing electricity from the BLCP power plant under a long-term power purchase agreement for distribution to consumers nationwide.",
+            "Cooperation between the Company and EGAT is not only electricity trading but also includes sharing knowledge in technology, developing production efficiency, and environmental management.",
+            "This collaboration helps strengthen Thailand's electrical system security and is an important part of developing Thailand as the energy hub of the region.",
+          ],
+        },
+        {
+          id: 7,
+          title: "Ministry of Industry",
+          image: "../assets/news/news-partner-7.png",
+          category: "Government Agencies",
+          date: "2024-02-15",
+          content: [
+            "The Ministry of Industry is the main agency for supervising and promoting industrial operations in Thailand, including the electricity generation industry.",
+            "The Company receives support and guidance from the Ministry of Industry in technology development, environmental management, and upgrading production standards to align with government policies.",
+            "This cooperation helps the Company operate efficiently according to international standards and be part of driving the country's economy.",
+          ],
+        },
+        {
+          id: 8,
+          title: "Ministry of Energy",
+          image: "../assets/news/news-partner-8.png",
+          category: "Government Agencies",
+          date: "2024-02-10",
+          content: [
+            "The Ministry of Energy is the main agency for setting policies and directions for Thailand's energy development. The Company receives support and works together on many projects.",
+            "Cooperation covers clean energy development, improving energy use efficiency, and reducing environmental impact to align with the country's Net Zero policy.",
+            "This collaboration is an important part of driving Thailand towards becoming the clean energy hub of the region and strengthening long-term energy security.",
+          ],
+        },
+      ];
+
+      // Initialize Card Component for Post Cards
+      let cardComponent = new CardComponent({
+        container: document.getElementById("cardsContainer"),
+        itemsPerPage: 8,
+        cardType: "post",
+        onCardClick: (data, index) => {
+          // Link to partner organization detail page
+          console.log(
+            `Clicked on organization: ${data.title} (ID: ${data.id})`
+          );
+
+          // Check if full data is available
+          if (data.content && data.content.length > 0) {
+            // Go to detail page
+            window.location.href = `partner-detail-en.html?id=${data.id}`;
+          } else {
+            // Show message that no details available
+            alert("This organization does not have details yet");
+          }
+        },
+        onPageChange: (page) => {
+          console.log(`Changed to page: ${page}`);
+          // Scroll to top when changing pages
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        },
+      });
+
+      // Load post data
+      cardComponent.loadData(postData);
+
+      // Add search functionality (if needed)
+      function addSearchFeature() {
+        const searchHTML = `
+                <div class="row mb-4">
+                  <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search organizations...">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="text-muted">
+                      Showing ${postData.length} organizations total
+                    </div>
+                  </div>
+                </div>
+              `;
+
+        const cardsContainer = document.getElementById("cardsContainer");
+        cardsContainer.insertAdjacentHTML("beforebegin", searchHTML);
+
+        // Add search event listener
+        document
+          .getElementById("searchInput")
+          .addEventListener("input", (e) => {
+            cardComponent.search(e.target.value, ["title"]);
+          });
+      }
+
+      // Call search feature (if needed)
+      // addSearchFeature();
+    </script>
+  </body>
+</html>

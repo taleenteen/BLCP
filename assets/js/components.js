@@ -256,9 +256,9 @@ function createSidebar(basePath = "../..") {
                     </span>
                   </button>
                   <div class="collapse" id="submenu3">
-                    <a href="${basePath}/sustainability/social/index.html" class="d-block py-1 ps-5 f-link">โครงการ และกิจกรรมเพื่อสังคม</a>
-                    <a href="${basePath}/publications/tripartite-meeting.html" class="d-block py-1 ps-5 f-link">การประชุมไตรภาคี</a>
-                    <a href="${basePath}/sustainability/social/activities.html" class="d-block py-1 ps-5 f-link">วิดีโอกิจกรรม ฯลฯ</a>
+                    <a href="${basePath}/sustainability/social/social-projects.html" class="d-block py-1 ps-5 f-link">โครงการ และกิจกรรมเพื่อสังคม</a>
+                    <a href="${basePath}/sustainability/social/tripartite-meeting.html" class="d-block py-1 ps-5 f-link">การประชุมไตรภาคี</a>
+                    <a href="${basePath}/sustainability/social/videos.html" class="d-block py-1 ps-5 f-link">วิดีโอกิจกรรม ฯลฯ</a>
                   </div>
                 </li>
               </ul>
@@ -579,57 +579,150 @@ function initializeSidebarActiveState() {
   const currentPath = window.location.pathname;
   const currentPage = currentPath.split("/").pop() || "index.html";
 
+  console.log("Current path:", currentPath);
+  console.log("Current page:", currentPage);
+
   // Remove any existing active states
-  document
-    .querySelectorAll(".sidebar-link, .sidebar-submenu")
-    .forEach((link) => {
-      link.classList.remove("active-link");
-    });
+  document.querySelectorAll(".sidebar-link, .f-link").forEach((link) => {
+    link.classList.remove("active-link");
+  });
 
-  // Find and activate the current page link
-  document
-    .querySelectorAll(".sidebar-link, .sidebar-submenu")
-    .forEach((link) => {
-      const href = link.getAttribute("href");
-      if (href) {
-        const linkPage = href.split("/").pop();
+  let foundMatch = false;
 
-        // Direct match
-        if (linkPage === currentPage) {
-          link.classList.add("active-link");
+  // Phase 1: Find exact page match (highest priority)
+  document.querySelectorAll(".f-link").forEach((link) => {
+    if (foundMatch) return; // Stop if already found
 
-          // If it's a submenu item, also expand its parent
-          const parentCollapse = link.closest(".collapse");
-          if (parentCollapse) {
-            parentCollapse.classList.add("show");
-            const parentToggle = document.querySelector(
-              `[data-bs-target="#${parentCollapse.id}"]`
-            );
-            if (parentToggle) {
-              parentToggle.setAttribute("aria-expanded", "true");
-              parentToggle.classList.add("active-link");
-            }
-          }
+    const href = link.getAttribute("href");
+    if (href) {
+      const linkPage = href.split("/").pop();
+      const normalizedHref = href.replace(/^\.\.\//, "").replace(/^\.\//, "");
+      const normalizedPath = currentPath.replace(/^\//, "");
+
+      // Exact match logic
+      let isMatch = false;
+
+      if (linkPage === currentPage) {
+        // For index.html files, check folder match too
+        if (linkPage === "index.html") {
+          const linkFolder = normalizedHref.replace("/index.html", "");
+          const currentFolder = normalizedPath.replace("/index.html", "");
+          isMatch = linkFolder === currentFolder;
+        } else {
+          // For other files, simple filename match
+          isMatch = true;
         }
+      }
 
-        // Special cases for index pages
-        if (
-          currentPage === "index.html" &&
-          (linkPage === "index.html" ||
-            href === "../index.html" ||
-            href === "/index.html")
-        ) {
-          // Only activate main index, not sub-index pages
-          if (
-            !href.includes("/aboutus/") &&
-            !href.includes("/sustainability/") &&
-            !href.includes("/environment/")
-          ) {
-            link.classList.add("active-link");
+      if (isMatch) {
+        console.log("Found exact match:", href);
+        link.classList.add("active-link");
+        foundMatch = true;
+
+        // If it's a submenu item, expand its parent
+        const parentCollapse = link.closest(".collapse");
+        if (parentCollapse) {
+          parentCollapse.classList.add("show");
+          const parentToggle = document.querySelector(
+            `[data-bs-target="#${parentCollapse.id}"]`
+          );
+          if (parentToggle) {
+            parentToggle.setAttribute("aria-expanded", "true");
+            parentToggle.classList.remove("collapsed");
           }
         }
       }
-    });
+    }
+  });
+
+  // Phase 2: Activate main menu button if submenu was found
+  if (foundMatch) {
+    // Check which section we're in and activate main menu
+    if (currentPath.includes("/aboutus/")) {
+      const aboutUsButton = document.querySelector('[data-bs-target="#menu1"]');
+      if (aboutUsButton && !aboutUsButton.classList.contains("active-link")) {
+        aboutUsButton.classList.add("active-link");
+        const aboutUsMenu = document.getElementById("menu1");
+        if (aboutUsMenu && !aboutUsMenu.classList.contains("show")) {
+          aboutUsMenu.classList.add("show");
+          aboutUsButton.setAttribute("aria-expanded", "true");
+          aboutUsButton.classList.remove("collapsed");
+        }
+      }
+    } else if (currentPath.includes("/sustainability/")) {
+      const sustainabilityButton = document.querySelector(
+        '[data-bs-target="#menu2"]'
+      );
+      if (
+        sustainabilityButton &&
+        !sustainabilityButton.classList.contains("active-link")
+      ) {
+        sustainabilityButton.classList.add("active-link");
+        const sustainabilityMenu = document.getElementById("menu2");
+        if (
+          sustainabilityMenu &&
+          !sustainabilityMenu.classList.contains("show")
+        ) {
+          sustainabilityMenu.classList.add("show");
+          sustainabilityButton.setAttribute("aria-expanded", "true");
+          sustainabilityButton.classList.remove("collapsed");
+        }
+      }
+    } else if (currentPath.includes("/news/")) {
+      const newsButton = document.querySelector('[data-bs-target="#menu3"]');
+      if (newsButton && !newsButton.classList.contains("active-link")) {
+        newsButton.classList.add("active-link");
+        const newsMenu = document.getElementById("menu3");
+        if (newsMenu && !newsMenu.classList.contains("show")) {
+          newsMenu.classList.add("show");
+          newsButton.setAttribute("aria-expanded", "true");
+          newsButton.classList.remove("collapsed");
+        }
+      }
+    } else if (currentPath.includes("/learning-center/")) {
+      const learningButton = document.querySelector(
+        '[data-bs-target="#menu4"]'
+      );
+      if (learningButton && !learningButton.classList.contains("active-link")) {
+        learningButton.classList.add("active-link");
+        const learningMenu = document.getElementById("menu4");
+        if (learningMenu && !learningMenu.classList.contains("show")) {
+          learningMenu.classList.add("show");
+          learningButton.setAttribute("aria-expanded", "true");
+          learningButton.classList.remove("collapsed");
+        }
+      }
+    } else if (currentPath.includes("/publications/")) {
+      const publicationsButton = document.querySelector(
+        '[data-bs-target="#menu5"]'
+      );
+      if (
+        publicationsButton &&
+        !publicationsButton.classList.contains("active-link")
+      ) {
+        publicationsButton.classList.add("active-link");
+        const publicationsMenu = document.getElementById("menu5");
+        if (publicationsMenu && !publicationsMenu.classList.contains("show")) {
+          publicationsMenu.classList.add("show");
+          publicationsButton.setAttribute("aria-expanded", "true");
+          publicationsButton.classList.remove("collapsed");
+        }
+      }
+    } else if (currentPath.includes("/contact/")) {
+      const contactButton = document.querySelector('[data-bs-target="#menu6"]');
+      if (contactButton && !contactButton.classList.contains("active-link")) {
+        contactButton.classList.add("active-link");
+        const contactMenu = document.getElementById("menu6");
+        if (contactMenu && !contactMenu.classList.contains("show")) {
+          contactMenu.classList.add("show");
+          contactButton.setAttribute("aria-expanded", "true");
+          contactButton.classList.remove("collapsed");
+        }
+      }
+    }
+  }
+
+  console.log("Active state set, found match:", foundMatch);
 }
 
 /* ================== Initialization & Mobile Sidebar Toggle ================= */
@@ -637,8 +730,12 @@ function initializeSidebarActiveState() {
 function initializeSidebarActiveStates() {
   // เรียงลำดับ: คืนค่า accordion -> ตั้ง active จาก URL -> ผูก event เซฟสถานะ
   restoreAccordionState();
-  initializeSidebarActiveState();
-  initializeAccordionStateManagement();
+
+  // รอให้ DOM render เสร็จก่อน
+  setTimeout(() => {
+    initializeSidebarActiveState();
+    initializeAccordionStateManagement();
+  }, 100);
 
   // คลิกแล้วเซฟ + active ที่ลิงก์ปัจจุบัน
   const navLinks = document.querySelectorAll(".sidebar-link, .f-link");
@@ -767,24 +864,18 @@ function loadComponents() {
     navbarElement.innerHTML = createNavbar(navBasePath, currentLang);
   if (footerElement) footerElement.innerHTML = createFooter(basePath);
 
-  // ให้ DOM แทรกเสร็จก่อน ค่อย init
+  // ให้ DOM แทรกเสร็จก่อน ค่อย init แบบ sequential
   setTimeout(() => {
-    restoreAccordionState();
     initializeSidebarActiveStates();
     initializeSidebarToggle();
-  }, 100);
+  }, 200);
 }
 
 /* ============================= Bootstrapping ============================== */
 
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM Content Loaded - initializing components");
   loadComponents();
-
-  setTimeout(() => {
-    restoreAccordionState();
-    initializeSidebarActiveState();
-    initializeSidebarActiveStates();
-  }, 200);
 });
 
 document.addEventListener("visibilitychange", function () {
@@ -804,8 +895,15 @@ window.addEventListener("popstate", function () {
 });
 
 window.addEventListener("load", function () {
+  console.log("Window load event - checking sidebar");
   if (!document.getElementById("sidebar")) {
+    console.log("Sidebar not found, loading components");
     loadComponents();
+  } else {
+    // Force re-initialize active states if sidebar already exists
+    setTimeout(() => {
+      initializeSidebarActiveState();
+    }, 300);
   }
 });
 

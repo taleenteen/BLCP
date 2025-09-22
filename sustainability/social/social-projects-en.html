@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Projects and Activities | BLCP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content below navbar -->
+        <main class="container container-fluid p-0">
+          <section>
+            <div class="card border-0 text-white">
+              <img
+                src="../../assets/aboutus/aboutus-hero.png"
+                alt="aboutus hero"
+              />
+              <div class="card-img-overlay d-flex justify-content-between">
+                <h1 class="card-title">Social Projects and Activities</h1>
+                <div class="d-flex justify-content-end">
+                  <div class="card rounded-pill">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
+                    >
+                      <img
+                        src="../../assets/logo/Facebook.png"
+                        alt="Facebook logo"
+                      />
+                      <img src="../../assets/logo/Line.png" alt="Line logo" />
+                      <img
+                        src="../../assets/logo/Tiktok.png"
+                        alt="Tiktok logo"
+                      />
+                      <img
+                        src="../../assets/logo/YouTube.png"
+                        alt="YouTube logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="blue-linear-bg h-100 p-5">
+            <section class="container px-4 py-2">
+              <div
+                class="d-flex justify-content-between align-items-center flex-column flex-md-row gap-3"
+              >
+                <div>
+                  <h1 class="f-size-96 text-white">
+                    Bio Economy<br />Projects
+                  </h1>
+                  <p class="f-size-64">Bio Economy</p>
+                </div>
+
+                <div>
+                  <img
+                    src="../../assets/sustainability/sustainability-social-section-1.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div
+                class="green-pagination-btn rounded-3 mt-auto mb-1"
+                style="height: 4px; width: 100%"
+              ></div>
+            </section>
+            <section class="container px-5 py-2">
+              <div id="cardsContainer"></div>
+            </section>
+          </section>
+
+          <section class="secondary-bg" style="height: 100px"></section>
+
+          <section class="blue-linear-bg h-100 p-5">
+            <section class="container px-4 py-2">
+              <div
+                class="d-flex justify-content-between align-items-center flex-column flex-md-row gap-3"
+              >
+                <div>
+                  <img
+                    src="../../assets/sustainability/sustainability-social-section-2.png"
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <h1 class="f-size-96 text-white">
+                    Circular Economy<br />Projects
+                  </h1>
+                  <p class="f-size-64">Circular Economy</p>
+                </div>
+              </div>
+              <div
+                class="green-pagination-btn rounded-3 mt-auto mb-1"
+                style="height: 4px; width: 100%"
+              ></div>
+            </section>
+            <section class="container px-5 py-2">
+              <div id="cardsContainer2"></div>
+            </section>
+          </section>
+
+          <section class="secondary-bg" style="height: 100px"></section>
+
+          <section class="blue-linear-bg h-100 p-5">
+            <section class="container px-4 py-2">
+              <div
+                class="d-flex justify-content-between align-items-center flex-column flex-md-row gap-3"
+              >
+                <div>
+                  <h1 class="f-size-96 text-white">
+                    Green Economy<br />Projects
+                  </h1>
+                  <p class="f-size-64">Green Economy</p>
+                </div>
+
+                <div>
+                  <img
+                    src="../../assets/sustainability/sustainability-social-section-3.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div
+                class="green-pagination-btn rounded-3 mt-auto mb-1"
+                style="height: 4px; width: 100%"
+              ></div>
+            </section>
+            <section class="container px-5 py-2">
+              <div id="cardsContainer3"></div>
+            </section>
+          </section>
+
+          <section class="secondary-bg" style="height: 100px"></section>
+
+          <section class="blue-linear-bg h-100 p-5">
+            <section class="container px-4 py-2">
+              <div
+                class="d-flex justify-content-between align-items-center flex-column flex-md-row gap-3"
+              >
+                <div>
+                  <img
+                    src="../../assets/sustainability/sustainability-social-section-4.png"
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <h1 class="f-size-96 text-white">
+                    Educational<br />Support Projects
+                  </h1>
+                  <p class="f-size-64">Educational support projects</p>
+                </div>
+              </div>
+              <div
+                class="green-pagination-btn rounded-3 mt-auto mb-1"
+                style="height: 4px; width: 100%"
+              ></div>
+            </section>
+            <section class="container px-5 py-2">
+              <div id="cardsContainer4"></div>
+            </section>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/card.js"></script>
+    <script>
+      // Data for Social Responsibility Activities
+      const postData = [
+        {
+          id: 1,
+          description: "BLCP Caring for Society COVID-19 Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 2,
+          description: "Raised Vegetable Bed Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 3,
+          description: "Organic Agriculture Self-Sufficiency Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 4,
+          description:
+            "Build, Create, Happiness - Promoting environmental conservation awareness and cooperation from all sectors",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        {
+          id: 5,
+          description:
+            "Have you ever wondered... how does coal power plant electricity reach our homes?",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 6,
+          description: "Sweet mussels from sea... to plate!",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 7,
+          description:
+            "Good maintenance pays off - learn about quality maintenance behind the scenes through this clip!",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 8,
+          description:
+            "Ever wondered... what makes up the electricity bill we pay monthly? See the answer explained simply in 1 minute!",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        {
+          id: 9,
+          description: "Community Income Generation Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 10,
+          description: "Elderly Health Care Activities",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 11,
+          description: "Local Youth Development Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 12,
+          description: "Local Culture Promotion Activities",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        // Additional test data for pagination
+        ...Array.from({ length: 8 }, (_, i) => ({
+          id: i + 13,
+          description: `Social Responsibility Activity ${i + 13}`,
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        })),
+      ];
+
+      // Data for Section 2 - Education
+      const educationData = [
+        {
+          id: 21,
+          description: "Brick Block Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 22,
+          description: "Suspended Mussel Farming Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 23,
+          description: "Aquaculture Breeding Farm Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 24,
+          description: "Youth Science Camp Project",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        {
+          id: 25,
+          description: "Community Reading Promotion Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 26,
+          description: "21st Century Learning Skills Development Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 27,
+          description: "University Exchange Learning Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 28,
+          description: "Local Teacher Development Project",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        {
+          id: 29,
+          description: "Standard Classroom Construction Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+      ];
+
+      const greenData = [
+        {
+          id: 21,
+          description: "Khaem Khong Community Forest Planting Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 22,
+          description: "Tripartite Committee Meeting Organization",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 23,
+          description: "Forest Conservation Project with BLCP",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 24,
+          description: "Marine Ecosystem Restoration Project",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        {
+          id: 25,
+          description: "Seagrass Conservation Project with BLCP",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 26,
+          description: "21st Century Learning Skills Development Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 27,
+          description: "University Exchange Learning Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 28,
+          description: "Local Teacher Development Project",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        {
+          id: 29,
+          description: "Standard Classroom Construction Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+      ];
+
+      const educationSupportData = [
+        {
+          id: 21,
+          description: "Young Tour Guide Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 22,
+          description: "Port Learning Space Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 23,
+          description: "Aquaculture Breeding Farm Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 24,
+          description: "Youth Science Camp Project",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        {
+          id: 25,
+          description: "Community Reading Promotion Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+        {
+          id: 26,
+          description: "21st Century Learning Skills Development Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/second.png",
+        },
+        {
+          id: 27,
+          description: "University Exchange Learning Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/third.png",
+        },
+        {
+          id: 28,
+          description: "Local Teacher Development Project",
+          image: "../../assets/posts/social-responsibility-activities/four.png",
+        },
+        {
+          id: 29,
+          description: "Standard Classroom Construction Project",
+          image:
+            "../../assets/posts/social-responsibility-activities/first.png",
+        },
+      ];
+
+      // Initialize Card Component for Section 1 - Bio Economy
+      let transparentCardComponent = new CardComponent({
+        container: document.getElementById("cardsContainer"),
+        itemsPerPage: 6,
+        cardType: "transparent",
+        onCardClick: (data, index) => {
+          console.log("Bio Economy Card clicked:", data);
+        },
+      });
+
+      // Initialize Card Component for Section 2 - Education
+      let educationCardComponent = new CardComponent({
+        container: document.getElementById("cardsContainer2"),
+        itemsPerPage: 6,
+        cardType: "transparent",
+        onCardClick: (data, index) => {
+          console.log("Education Card clicked:", data);
+        },
+      });
+
+      let greenCardComponent = new CardComponent({
+        container: document.getElementById("cardsContainer3"),
+        itemsPerPage: 6,
+        cardType: "transparent",
+        onCardClick: (data, index) => {
+          console.log("Green Card clicked:", data);
+        },
+      });
+
+      let educationSupportCardComponent = new CardComponent({
+        container: document.getElementById("cardsContainer4"),
+        itemsPerPage: 6,
+        cardType: "transparent",
+        onCardClick: (data, index) => {
+          console.log("Education Support Card clicked:", data);
+        },
+      });
+
+      // Load data for all sections
+      transparentCardComponent.loadData(postData);
+      educationCardComponent.loadData(educationData);
+      greenCardComponent.loadData(greenData);
+      educationSupportCardComponent.loadData(educationSupportData);
+    </script>
+  </body>
+</html>

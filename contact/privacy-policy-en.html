@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | BLCP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* Custom datepicker styles */
+      .flatpickr-calendar {
+        z-index: 9999 !important;
+      }
+      .date-input-wrapper {
+        position: relative;
+      }
+      .clear-date-btn {
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: #6c757d;
+        cursor: pointer;
+        z-index: 5;
+      }
+      .clear-date-btn:hover {
+        color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <div id="sidebar-container"></div>
+      <div class="flex-grow-1">
+        <div id="navbar-container"></div>
+        <main class="container container-fluid p-0">
+          <section>
+            <div class="card border-0 text-white">
+              <img
+                src="../assets/aboutus/aboutus-hero.png"
+                alt="aboutus hero"
+              />
+              <div class="card-img-overlay d-flex justify-content-between">
+                <h1 class="card-title">Privacy Policy</h1>
+                <div class="d-flex justify-content-end">
+                  <div class="card rounded-pill">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
+                    >
+                      <img
+                        src="../assets/logo/Facebook.png"
+                        alt="Facebook logo"
+                      />
+                      <img src="../assets/logo/Line.png" alt="Line logo" />
+                      <img src="../assets/logo/Tiktok.png" alt="Tiktok logo" />
+                      <img
+                        src="../assets/logo/YouTube.png"
+                        alt="YouTube logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="blue-linear-bg-convert container-fluid p-0">
+            <div
+              class="d-flex flex-column gap-3 align-items-center justify-content-center container-fluid p-5"
+            >
+              <div class="tab-container w-100">
+                <div class="d-flex justify-content-center mb-5">
+                  <img
+                    src="../assets/contact/contact-logo.png"
+                    alt="BLCP Logo"
+                  />
+                </div>
+                <div
+                  class="d-flex justify-content-center mb-3 flex-wrap flex-lg-nowrap gap-3 gap-lg-5"
+                >
+                  <button
+                    class="btn btn-primary tab-btn active"
+                    data-tab-name="privacyPolicy"
+                  >
+                    Privacy Policy
+                  </button>
+                  <button class="btn tab-btn" data-tab-name="cookiesPolicy">
+                    Cookies Policy
+                  </button>
+                  <button class="btn tab-btn" data-tab-name="userRights">
+                    User Rights Request
+                  </button>
+                </div>
+                <div id="tab-content" class="tab-content p-5"></div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <div id="footer-container"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/tabs-content.js"></script>
+    <script>
+      // Data for the tabs content
+      const policyData = {
+        privacyPolicy: [
+          {
+            type: "heading",
+            content: "CONTENTS",
+          },
+          {
+            type: "list",
+            listType: "ol",
+            items: [
+              "Introduction/Purpose",
+              "Scope",
+              "Definition",
+              "Responsibilities",
+              "Policy",
+              "Training",
+              "Control of Records",
+              "Review and Audit",
+            ],
+          },
+          {
+            type: "heading",
+            content: "1. INTRODUCTION/PURPOSE",
+          },
+          {
+            type: "paragraph",
+            content:
+              "To comply with the Personal Data Protection Act B.E. 2562 (2019), including any future amendments, modifications, or additions, BLCP Power Company Limited ('Company') respects and prioritizes the privacy rights and personal data protection of data subjects as fundamental rights to personal privacy. Data subjects have the desire for their data to be maintained with security and safety. The Personal Data Protection Act establishes principles and measures to supervise and protect personal data concerning the collection, use, disclosure of personal data, and various rights of data subjects. Therefore, the Company has prepared this policy as a guideline for collecting, using, gathering, or disclosing personal data in various activities of the Company to comply with legal provisions.",
+          },
+          {
+            type: "heading",
+            content: "2. SCOPE",
+          },
+          {
+            type: "paragraph",
+            content:
+              "This policy applies to all Company employees in every department who collect, gather, use, or disclose personal data of employees, directors, executives, workers, job applicants, contractors, contracting parties, external individuals, activity participants, or visitors. All employees must comply with the details specified in this policy.",
+          },
+          {
+            type: "heading",
+            content: "3. DEFINITION",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Various terms appearing herein have the following meanings:",
+          },
+          {
+            type: "heading",
+            content: "Personal Data Protection Law",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Personal Data Protection Act B.E. 2562 (2019) and any amendments, including related rules, regulations, and orders.",
+          },
+          {
+            type: "heading",
+            content: "Personal Data",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Information about an individual that enables identification of that person, whether directly or indirectly, in accordance with the Personal Data Protection Act B.E. 2562 (2019).",
+          },
+          {
+            type: "heading",
+            content: "Data Protection Officer",
+          },
+          {
+            type: "paragraph",
+            content:
+              "An officer appointed by the personal data controller to serve as the data protection officer under the Personal Data Protection Act B.E. 2562 (2019).",
+          },
+          {
+            type: "heading",
+            content: "Company",
+          },
+          {
+            type: "paragraph",
+            content: "BLCP Power Company Limited",
+          },
+          {
+            type: "heading",
+            content: "Data Controller",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company which has decision-making authority regarding personal data of employees, workers, or job applicants, or must perform or comply with contracts with such individuals.",
+          },
+          {
+            type: "heading",
+            content: "Data Processor",
+          },
+          {
+            type: "paragraph",
+            content:
+              "An individual or legal entity that processes personal data collection, use, or disclosure under the orders or on behalf of the data controller.",
+          },
+          {
+            type: "heading",
+            content: "Contracting Party",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Business partners, joint venture partners, suppliers, or any other person who enters into contracts with the Company as business partners or works with the Company.",
+          },
+          {
+            type: "heading",
+            content: "External Individuals",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Individuals external to the Company who are natural persons and have direct or indirect relationships with the Company, including users of the Company's website or other products or services. External individuals for the Company include officials from relevant government or private agencies, Company activity participants, Company advisors, Company website visitors, activity participants, contacts, or other related external individuals.",
+          },
+          {
+            type: "heading",
+            content: "Website",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The website owned or operated by BLCP Power Company Limited, as applicable.",
+          },
+          {
+            type: "heading",
+            content: "5. POLICY",
+          },
+          {
+            type: "paragraph",
+            content:
+              "5.1 Personal Data Collection<br />The Company will use lawful methods for collecting, using, and/or disclosing personal data of data subjects. The Company will collect personal data in a limited manner and only to the extent necessary for the purposes of collection, use, and/or disclosure of personal data and in accordance with legal provisions.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company may collect, use, and/or disclose personal data of data subjects that has been provided or exists with the Company, or that the Company has received or accessed from other reliable sources such as the Ministry of Labor, Social Security Office, Department of Skill Development, business partners, etc.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "In cases where data subjects do not provide personal data or provide incorrect or outdated personal data to the Company, this may affect data subjects who may not be able to conduct transactions with the Company, or may not receive convenience or compliance with existing contracts with the Company, and may cause data subjects to suffer damage or loss of opportunities, and may affect compliance with any laws that data subjects or the Company must comply with.",
+          },
+          {
+            type: "heading",
+            content: "5.2 Types of Personal Data Collected by the Company",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Personal data that the Company collects, uses, and/or discloses is divided into 2 categories as follows:",
+          },
+          {
+            type: "heading",
+            content: "5.2.1 General Personal Data",
+          },
+          {
+            type: "list",
+            listType: "ol",
+            items: [
+              "Personal information such as name, surname, date/month/year of birth, age, gender, photograph, signature, workplace, job position, educational background, work information, training history, employment history, work performance data, marital status, military status, family information or emergency contacts of data subjects, information from copies of documents issued by government agencies such as copies of identity cards, passport copies, house registration copies, etc.",
+              "Contact information such as address, telephone number, email, contact persons, and other information the Company can use to contact, etc.",
+              "Financial information such as bank account copy information, taxpayer identification number, salary, wage, compensation, or other related benefits",
+              "Information used as evidence or for various transactions such as personal data appearing in copies of identity cards, passport copies, name change certificates, house registration copies, driver's license copies, vehicle registration book copies, vehicle registration numbers, land title deed copies, power of attorney copies, company registration certificates, invoices, receipts, payment vouchers, and copies of professional or business licenses, etc.",
+              "Technology data such as computer traffic logs, IP addresses, geographic location data using location technology, browser types, website access logs, referring websites, website usage history, login logs, transaction logs, website access statistics, access times, search or visit data, social media usage data, website function usage, and data collected through cookies or similar technologies, etc.",
+              "Still and moving image recordings, including CCTV recordings, conversation recordings, or other data that can identify individuals",
+            ],
+          },
+          {
+            type: "heading",
+            content: "5.2.2. Sensitive Personal Data",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Refers to personal data that is truly private to the data subject under Section 26 of the Personal Data Protection Act B.E. 2562 (2019), such as biometric data, fingerprint data, face scan/face recognition, religious information as shown in copies of national identity cards (if any), criminal history including alleged or prosecuted offenses, health data, race data, etc.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company has no policy to collect sensitive personal data of data subjects, except:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(1) In cases where the Company has received explicit consent from data subjects, or",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(2) Other cases where the Company may have the right to collect or has a duty to collect as prescribed by law",
+          },
+          {
+            type: "heading",
+            content: "5.3 Personal Data Retention Period",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company will store personal data of data subjects for the period necessary to fulfill the purposes notified to data subjects or according to the purposes specified in this policy. In cases where data subjects terminate their relationship or employment with the Company, or no longer use services or conduct transactions with the Company, the Company will store personal data of data subjects for the specified period thereafter, or store according to the period prescribed by law, or according to the statute of limitations, or for a reasonable period for exercising legal claims. Upon expiration of such personal data storage period, the Company will delete or destroy personal data or make personal data unable to identify the individual who is the data subject. The retention period for personal data will be in accordance with the Company's personal data storage policy. In cases where the retention period cannot be clearly specified, the Company will retain personal data according to collection standards (such as the maximum general legal statute of limitations of 10 years).",
+          },
+          {
+            type: "heading",
+            content: "5.4 Sources of Personal Data",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Sources of personal data that the Company collects and receives include:<br />The Company receives personal data directly from data subjects, such as when data subjects fill out various forms through the Company's website or through other channels provided by the Company, when data subjects enter into contracts with the Company, when data subjects submit documents and copies of various documents containing personal data to the Company, or when data subjects inquire about information, provide opinions or comments, or send complaints to the Company via telephone, email, fax, mail, website or application usage data, cookies usage, IP addresses, etc.<br />The Company receives personal data from external parties or other sources such as government agencies, Department of Business Development website, Revenue Department website, other websites, etc.",
+          },
+          {
+            type: "heading",
+            content:
+              "5.5 Purposes for Personal Data Collection and Data Processing",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company may collect, use, and/or disclose personal data of data subjects for the following purposes:",
+          },
+          {
+            type: "heading",
+            content: "5.5.1 Purposes Requiring Consent",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company may need to rely on data subject consent for collecting, using, and/or disclosing personal data for the following purposes:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(1) Collection, use, and/or disclosure of sensitive personal data of data subjects for the following purposes:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(a) For security maintenance and identity verification and authentication when entering and exiting areas",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(b) For identity verification and authentication, such as identity verification through copies of identity cards or passport copies that may contain religious, blood type, and racial information, etc.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(c) For employment consideration, including screening or selection of individuals to become employees or contractors within the Company",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(d) For providing employee benefits such as health examinations, health insurance, and/or life insurance, or other related benefits, etc.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(e) For compliance with safety, environmental, and occupational health standards in the workplace",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(2) In cases where it is necessary to transfer personal data of data subjects to countries that may not have adequate data protection levels, which the law requires consent",
+          },
+          {
+            type: "heading",
+            content: "5.5.2 Purposes Based on Other Legal Grounds or Criteria",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company may rely on the following legal grounds or criteria to collect, use, disclose personal data of data subjects:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(1) Necessary for contract performance, for entering into employment contracts or performing employment contracts with data subjects",
+          },
+          {
+            type: "paragraph",
+            content: "(2) Legal obligation compliance",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(3) Necessary for legitimate interests of the Company or external parties, balanced with the interests and fundamental rights and freedoms related to personal data protection of data subjects",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(4) For preventing or stopping dangers to life, body, or health of individuals, and",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(5) Public interest, for carrying out public interest missions or performing duties in exercising state authority",
+          },
+          {
+            type: "heading",
+            content:
+              "5.5.3 The Company will rely on legal grounds or criteria in (1) to (5) above for collecting, using, and/or disclosing personal data of data subjects for the following purposes:",
+          },
+          {
+            type: "paragraph",
+            content: "a. Job Applicants",
+          },
+          {
+            type: "paragraph",
+            content:
+              "If data subjects are job applicants, the Company will rely on legal grounds or criteria in items (1) to (5) above for collecting, using, and/or disclosing personal data of data subjects for the following purposes:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Job application consideration, interviews, and personnel selection to become employees according to Company criteria, including selection for student internships<br />Identity verification and contact purposes<br />Salary or compensation determination, and others<br />Emergency contact to designated persons by data subjects<br />Other purposes the Company reasonably requires as specified in job applications or any related documents<br />Future employment contract execution",
+          },
+          {
+            type: "paragraph",
+            content: "b. Company Employees or Workers",
+          },
+          {
+            type: "paragraph",
+            content:
+              "If data subjects are Company employees or workers, the Company will rely on legal grounds or criteria in items (1) to (5) above for collecting, using, and/or disclosing personal data of data subjects for the following purposes:",
+          },
+          {
+            type: "paragraph",
+            content: "Human Resources Management Purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Personnel recruitment, employment decisions, employment type changes, contract execution, document preparation for contracts or related documents such as Work Permits and Visas, internal organizational management such as workforce structure, transfers, job changes, level adjustments, retirement, performance evaluations, personnel development including internal and external training, training registration and certification applications, online learning media, training history maintenance for human resource development, salary and benefit payments, communication and publicity for various work or activities, including HR management channels through electronic or digital methods, statistical and analytical purposes for personnel development and work process improvement, legal obligation compliance or official orders such as labor, occupational health and safety, social security, or disability laws, disciplinary action records for effective management or disciplinary measures when necessary, internal auditing for complaint tracking or claims, monitoring inappropriate employee behavior and preventing fraud, including preventing illegal employee activities or employee negligence, other employment-related purposes such as activities or operations for or on behalf of the Company as specified in employment contracts, work regulations, or any HR-related documents",
+          },
+          {
+            type: "paragraph",
+            content: "Finance and Accounting Operations Purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Various expense transactions according to Company activities such as medical expense reimbursements, pre-employment health examinations including receipt data storage as expense evidence, document or application submissions to relevant financial institutions such as credit card applications, credit rating assessments by credit rating institutions, Company credit bureau processing, account auditing and various activities by external and internal auditors",
+          },
+          {
+            type: "paragraph",
+            content: "Information Technology Operations Purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Database storage for internal and external employee communication, database storage for accessing various operating systems within the Company such as Company computers, email, applications, website operating systems, printing systems, internet systems, cybersecurity monitoring, data and system security control within the Company, access rights limitation to various Company data as necessary and appropriate, data management and data analysis, data backup for recovery",
+          },
+          {
+            type: "paragraph",
+            content: "External Relations Management Purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Publicity for various activities or projects both within and outside the Company, personnel registration or license applications from relevant agencies",
+          },
+          {
+            type: "paragraph",
+            content: "Internal Audit Operations Purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Preparation for various internal assessments such as ISO14001, ISO45001, ISO27001, etc., including database storage for internal auditing and related assessment reporting",
+          },
+          {
+            type: "paragraph",
+            content: "Administrative Operations Purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Use and access to various Company facilities including employee card use instead of cash cards in cafeterias, employee card use for building access, document copying use, other conveniences such as transportation arrangement, document delivery, business card production",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Occupational Health, Safety and Environmental Care Purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Maintaining health and safety standards such as Company access cards, epidemic disease screening questionnaires, insurance processing, CCTV recordings, alcohol testing, face scanning and temperature measurement screening, legal compliance control such as registering officials like pollution controllers, environmental operators, confined space work, welfare promotion such as annual health examinations",
+          },
+          {
+            type: "paragraph",
+            content: "Legal and Corporate Governance Purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Power delegation or receiving delegation for business-related position and Company business activities, contract execution and related contract documents for position duties and Company business, important Company document preparation especially commercial registration documents such as board of directors lists, shareholder lists, including meeting organization and meeting minutes, document or record receipt from government agencies for compliance with orders or laws",
+          },
+          {
+            type: "paragraph",
+            content: "c. Contracting Parties or External Individuals",
+          },
+          {
+            type: "paragraph",
+            content:
+              "For contract preparation and management purposes between the Company and any contracting parties, including Company operations compliance with contracts<br />For procurement purposes or new contracting party registration or similar individuals, as well as processing various requests from contracting parties or similar individuals<br />For Company creditor recording, invoice issuance, tax invoice issuance, Company credit bureau processing, payment processing including various financial transactions and Company accounting operations<br />For identity verification or identification of data subjects when using various services, contract execution, contract obligation performance to ensure service security and confidentiality of all Company communications<br />For communication or coordination purposes in Company operations or missions with external individuals, contractors, or contracting parties, and for administrative work benefits such as transportation arrangement, accommodation booking, document delivery<br />For compliance with laws related to Company business and lawful orders from government agencies and relevant officials such as business registration with Department of Business Development, personnel or related person registration according to law, tax report submission to Revenue Department, accounting audits by auditors, legal training, alcohol or drug testing, etc.<br />For publicity purposes of Company information, news, activities such as training, meetings, seminars, Company projects, relationship-building activities, social activities, etc.<br />For database creation of activity participants, project participants, meeting participants, training participants, or Company seminar participants, including data analysis and behavior surveys<br />For health, occupational health, and safety management of contractors, annual health examinations including general health checks and occupational health checks (risk factor health checks), health insurance, health readiness assessment, including data for reporting, investigation, cause analysis or preventive health management development and accident prevention measures<br />For health protection from dangerous infectious diseases that may spread within the Company through screening individuals entering and exiting premises, including travel tracking and reporting that may create disease spread risks<br />For inspection and security maintenance within Company buildings or premises, security risk assessment including access for work performance in Company premises, building or premise access card exchange, Company premise access data recording, and image recording within buildings or offices or surrounding areas with CCTV<br />For establishing legal claims, legal compliance or exercising legal claims, or defending legal claims, legal proceedings as well as legal enforcement such as investigations and/or inquiries by government officials, case preparation, legal proceedings, and/or court litigation, etc.<br />For inspection or assessment by Company internal auditors or external auditors in business governance compliance with business operation standards and legal or regulatory requirements<br />For Company internal data management and security monitoring in Company systems",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company will not collect, use, and/or disclose personal data of data subjects beyond the purposes notified to data subjects, except:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(1) New purposes are notified to data subjects and consent is obtained from data subjects when law requires consent",
+          },
+          {
+            type: "paragraph",
+            content: "(2) As prescribed by law",
+          },
+          {
+            type: "heading",
+            content: "5.6 Personal Data Disclosure",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company will disclose personal data of data subjects to affiliated companies, business partners, or any other persons only for purposes notified to data subjects. The Company will disclose personal data of data subjects in the following cases:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(1) To enable operations according to personal data collection and processing purposes as specified in this privacy policy",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(2) The Company has received consent from data subjects, or",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(3) Necessary for contract performance or data subject requests, including disclosure to enable transactions or activities of data subjects to achieve data subject purposes, or",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(4) Necessary for legitimate interests such as disclosure to legal entities or organizations for fraud detection and prevention operations, meeting or transaction recording with the Company for Company security, etc., or",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(5) Legal compliance or regulatory compliance or orders from supervisory authorities or government agencies with legal authority such as Ministry of Labor, Social Security Office, Department of Skill Development, Legal Execution Department, Education Loan Fund, National Office for Empowerment of Persons with Disabilities, courts, Legal Execution Department, police, or other government agencies as prescribed by law, etc.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company may disclose to individuals, legal entities, or other organizations related to the above collection purposes as follows:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Service providers and personal data processors assigned or hired by the Company to manage/process personal data for the Company in providing various services such as human resource management, security services, information technology services, accounting audits, or other services related to Company business operations or services that may benefit data subjects, Company advisors, legal advisors, lawyers, auditors, external assessors, instructors, or other experts both internal and external to the Company, etc.<br />Government agencies, regulatory agencies, independent organizations, or other agencies with legal authority, including officials or agencies with legal duties or authority such as courts, police, Department of Labor Welfare and Protection, Department of Skill Development, Office of Social Development and Human Security, Department for Empowerment of Persons with Disabilities, Revenue Department, Social Security Office, Department of Land Transport, Department of Business Development, Department of Industrial Works, Industrial Estate Authority of Thailand, Immigration Bureau, Personal Data Protection Committee Office, Royal Thai Police, Office of the Attorney General, courts, and Legal Execution Department, etc.<br />Business partners, contractors, Company contracting parties where data subjects are contact persons or related to data subject duties or positions, or similar individuals<br />Banks, financial institutions, Bank of Thailand<br />Insurance companies or hospitals for any Company operations<br />Individuals or other agencies where data subjects consent to disclose their personal data to such individuals or agencies",
+          },
+          {
+            type: "heading",
+            content: "5.7 Data Transfer or Transfer Abroad",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company may transfer or send personal data of data subjects abroad. If the Company needs to obtain consent from data subjects for transferring personal data abroad, the Company will obtain consent from data subjects first, and the Company will verify that the destination country, international organization, or foreign data recipient has adequate personal data protection standards and complies with criteria prescribed by personal data protection law. However, the Company may transfer personal data of data subjects abroad without consent in the following cases:",
+          },
+          {
+            type: "paragraph",
+            content: "(1) Legal compliance",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(2) Necessary for contract performance where data subjects are contracting parties or for processing data subject requests before contract execution",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(3) Actions under contracts between the Company and other individuals or legal entities for data subject benefits",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(4) Actions to prevent or stop dangers to data subject life, body, or health, or other persons when data subjects cannot give consent",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(5) Necessary for carrying out important public interest missions",
+          },
+          {
+            type: "heading",
+            content: "5.8 Rights of Data Subjects",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(1) If data subjects wish to know or request copies of personal data about themselves under Company responsibility, or request the Company to disclose acquisition of data where data subjects did not give consent, data subjects can make requests according to criteria and methods specified by the Company",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(2) If data subjects believe that any personal data about themselves is incorrect, outdated, incomplete, or may cause misunderstanding, data subjects can request the Company to make corrections to ensure data accuracy, currency, completeness, and prevent misunderstanding by making requests to the Company according to criteria and methods specified by the Company. If the Company does not act according to data subject requests, the Company will record data subject requests with reasons as evidence for data subject verification",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(3) Data subjects have the right to withdraw consent given to the Company for collecting, using, and/or disclosing their personal data at any time, except withdrawal of consent may be limited by law or contracts benefiting data subjects such as data subjects still having contracts with the Company, or data subjects still having debts or legal obligations with the Company, etc. Such consent withdrawal may prevent data subjects from receiving services or conducting transactions with the Company, or may make services received from the Company less efficient",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(4) Data subjects have the right to receive personal data about themselves from the Company if the Company has made such personal data in a format that can be read or used generally with automated tools or devices and can be used or disclosed through automated methods, and data subjects have the right to request the Company to send or transfer such data to other data controllers when possible through automated methods, or receive data that the Company sends or transfers to other data controllers directly, except when technically impossible",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(5) Data subjects have the right to object to collection, use, or disclosure of personal data about themselves at any time in the following cases:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(a) When data is collected due to necessity for Company public interest missions or necessity for Company legitimate interests, except the Company demonstrates important legal grounds that outweigh, or for establishing legal claims, legal compliance, or exercising legal claims, or defending legal claims",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(b) When collecting, using, or disclosing personal data for direct marketing purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(c) When collecting, using, or disclosing personal data for scientific, historical, or statistical research purposes, except necessity for Company public interest missions",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(6) Data subjects have the right to request the Company to delete, destroy, or make personal data unable to identify data subjects in the following cases:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(a) When personal data is no longer necessary to retain according to collection, use, or disclosure purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(b) When data subjects withdraw consent for collecting, using, or disclosing personal data and the Company has no legal authority to continue collecting, using, or disclosing such personal data",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(c) When data subjects object to collecting, using, or disclosing personal data according to item 5.8 (5) (a) and the Company cannot refuse the objection request, or collecting, using, or disclosing personal data for direct marketing purposes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(d) When personal data has been collected, used, or disclosed unlawfully",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(7) Data subjects have the right to request the Company to suspend personal data use in the following cases:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(a) When the Company is verifying data subject requests to make personal data correct, current, complete, or not misleading",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(b) When personal data should be deleted or destroyed because it was collected, used, or disclosed unlawfully, but data subjects request suspension instead",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(c) When personal data is no longer necessary to retain for collection purposes, but data subjects need to keep it for establishing legal rights, legal compliance, exercising legal claims, or defending legal claims",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(d) When the Company is proving important legal grounds or establishing legal claims, legal compliance, exercising legal claims, or defending legal claims when data subjects exercise objection rights to collecting, using, or disclosing data",
+          },
+          {
+            type: "paragraph",
+            content:
+              "(8) Data subjects have the right to complain to the Expert Committee under personal data protection law if the Company or data processors, including employees or contractors of the Company or data processors, violate or fail to comply with personal data protection law or announcements issued under such law. The Company reserves the right to consider such rights requests and proceed according to personal data protection law requirements, or when personal data cannot identify data subjects, or when the Company has legitimate interests to collect, use, and/or disclose personal data such as data subjects still using services or conducting transactions with the Company, or the Company has legal obligations to comply with such as collecting data subject personal data according to legal timeframes, or for exercising legal claims, even after data subjects have terminated relationships with the Company, etc.",
+          },
+          {
+            type: "heading",
+            content: "5.9 Personal Data Security Measures",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company recognizes the importance of maintaining personal data security of data subjects. The Company therefore establishes appropriate personal data security measures to prevent loss, access, destruction, use, alteration, modification, or disclosure of personal data without authorization or unlawfully. To comply with Company information technology security policies and/or practices, the Company will establish personal data security measures covering administrative protection measures, technical protection measures, and physical protection measures for accessing or controlling personal data use, including at least the following operations:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Controlling access to personal data and devices for storing and processing personal data considering usage and security, authorization or access rights determination for personal data, user access management to control personal data access to authorized persons only, user duties and responsibilities definition to prevent unauthorized personal data access, disclosure, or copying personal data or stealing storage devices or personal data, and providing methods to trace back access, changes, deletion, or transfer of personal data appropriately consistent with personal data processing methods and media. The Company will store personal data according to purposes notified to data subjects and comply with legal requirements. When the Company hires external companies to process personal data, the Company will select companies with standard data protection systems and establish agreements regarding personal data storage compliance with the same policy.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "If personal data breaches occur, the Company will notify the Personal Data Protection Committee Office without delay within 72 hours of becoming aware of the incident as far as possible, except such breaches pose no risk of impact on data subject rights and freedoms. If breaches pose high risk of impact on data subject rights and freedoms, the Company will notify data subjects of breach incidents with remedial guidelines without delay.",
+          },
+          {
+            type: "heading",
+            content: "5.10 Links to External Websites",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The Company website may contain links to external websites, where such external parties may collect some personal data about data subject service usage. The Company cannot be responsible for security or privacy of any data collected by such external websites. Data subjects must exercise caution and check personal data protection policies of such external website products and services themselves.",
+          },
+          {
+            type: "heading",
+            content: "5.11 Information About External Individuals",
+          },
+          {
+            type: "paragraph",
+            content:
+              "If data subjects provide personal data of any external individuals such as spouses, children, fathers, mothers, family members, beneficiaries, emergency contacts, references, and other individuals related to data subjects, data subjects warrant that they have authority to provide such personal data and have duties to obtain consent from such individuals to allow the Company to use such personal data according to this personal data protection policy, and data subjects must be responsible for notifying such individuals of this personal data protection policy and obtaining consent from relevant individuals.",
+          },
+          {
+            type: "heading",
+            content: "5.12 Contact Channels",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Data subjects can contact or inquire about details of personal data collection, use, and/or disclosure, or cancel consent for personal data collection, use, and/or disclosure, or exercise rights as data subjects through the following channels:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Contact address:<br />BLCP Power Company Limited, No. 9 I8 Road, Map Ta Phut Industrial Estate, Map Ta Phut Sub-district, Mueang Rayong District, Rayong Province 21150",
+          },
+          {
+            type: "paragraph",
+            content:
+              "For complaints about the Company, employees or Company staff violating or not complying with law, data subjects can complain to the Personal Data Protection Committee Office as detailed below:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Personal Data Protection Committee Office E-mail address: pdpc@mdes.go.th Tel. 02-142-1033",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Contact address:<br />120 Moo 3, Government Administration Building (Building B), Government Center, Chaeng Watthana, Personal Data Protection Committee Office, Office of the Permanent Secretary, Ministry of Digital Economy and Society, Chaeng Watthana Road, Thung Song Hong Sub-district, Lak Si District, Bangkok 10210",
+          },
+          {
+            type: "heading",
+            content: "6. TRAINING",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Before implementing this policy, the Legal Department must provide training to all relevant departments to understand guidelines for collecting, gathering, using, or disclosing personal data.",
+          },
+          {
+            type: "heading",
+            content: "7. CONTROL OF RECORDS",
+          },
+          {
+            type: "paragraph",
+            content:
+              "For storing this document, original and copy documents should be stored in the Document Control department's document storage room, while electronic copies should be stored in the EDMS system or Company server.",
+          },
+          {
+            type: "heading",
+            content: "8. REVIEW AND AUDIT",
+          },
+          {
+            type: "paragraph",
+            content:
+              "This policy must be reviewed at least once within two years from the effective date, or reviewed when there are changes, amendments, or additions to the Personal Data Protection Act B.E. 2562 (2019) or any other related laws.",
+          },
+        ],
+        cookiesPolicy: [
+          {
+            type: "paragraph",
+            content:
+              "BLCP Power Plant prioritizes establishing measures to protect personal data of customers and/or service users, especially privacy rights of visitors and/or website users, and recognizes expectations of website visitors/users that information provided to the Company through this website will receive appropriate protection. BLCP Power Plant therefore announces this Cookie Policy for this website as follows:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "What are Cookies?<br />Cookies are small data files that browsers store and maintain on your computer or device. Cookies help your browser navigate to various parts within the website. However, cookies cannot collect information stored on your computer or in your files.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "When servers request web browsers to read cookie information<br />Cookie information helps websites provide more user-friendly services or services that better meet user needs. To protect your privacy, browsers only allow websites to access cookies that were sent to you.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Reasons for Using Cookies<br />We use cookies to learn more about how you interact with our website content and to help create experiences that provide greater satisfaction when you visit our website.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Cookies remember your browser type and additional browser programs you have installed.<br />Cookies also remember your preferences such as language and region,<br />which will be automatically set when you return to visit the website.<br />Cookies allow you to rate web pages and fill out comment forms.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Some cookies we use are session cookies and will remain until you close your browser. Other cookies are persistent cookies that are stored on your computer for longer periods.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Details of each type of cookie that may be used on the website are as follows:<br />Strictly Necessary Cookies: These cookies are essential for website operation and cannot be disabled in our systems. Usually, these cookies are set to respond to your service requests such as privacy settings, login, or form filling. You can set your browser to block or alert you about these cookies, but this may prevent some parts of the site from working.<br />Analytic and Performance Cookies: These cookies help us count visits and traffic sources so we can measure and improve our site performance. They also help us know which pages are most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies, we will not know when you visited our site.<br />Functional Cookies: These cookies enable site functionality and personalization such as videos and live chat. These cookies may be set by us or third-party providers whose services we have added to our pages. If you do not allow these cookies, some site functions may not work properly.<br />Targeting Cookies: These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant advertisements on other sites. These cookies work by uniquely identifying your browser and device. If you do not allow these cookies, you will not see targeted advertising on various websites.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Third-Party Cookie Usage<br />Our website uses third-party cookies including Analytic and Performance Cookies such as Google Analytics and Targeting Cookies such as google.com, youtube.com, and facebook.com, which are widely used and trusted analytics and targeting providers that help the Company understand how you use our website and understand ways to improve your website experience.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "However, there may be third-party cookies that we cannot control third-party data usage. Therefore, you can check Privacy Notices and Cookie Policies of third parties, which differ from our website, at those third-party websites.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Changing Cookie Settings<br />You can choose to set each type of cookie except Strictly Necessary Cookies through 'Cookie Settings' or web browser settings such as preventing cookie installation on your device.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "However, BLCP Power Plant informs you that<br />disabling some cookies may affect this website's operation and may prevent you from using various websites efficiently.",
+          },
+        ],
+        userRights: [
+          {
+            type: "heading",
+            content: "For those who wish to exercise data subject rights",
+          },
+          {
+            type: "heading",
+            content: "You can access the Data Subject Requests Web Form",
+          },
+          {
+            type: "heading",
+            content:
+              "Or if you have questions about exercising data subject rights and personal data protection policy",
+          },
+          {
+            type: "heading",
+            content: "You can contact and inquire at",
+          },
+          {
+            type: "heading",
+            content:
+              "Data Protection Officer (DPO)<br />E-mail: dpo@blcp.co.th",
+          },
+        ],
+      };
+
+      // Initialize the tabs content component
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabsComponent = new TabsContentComponent(
+          ".tab-container",
+          policyData,
+          {
+            defaultTab: "privacyPolicy",
+            contentContainerClass: "tab-content",
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
