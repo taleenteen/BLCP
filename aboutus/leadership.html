@@ -10,91 +10,47 @@
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <div class="d-flex">
-      <!-- Sidebar Container -->
       <div id="sidebar-container"></div>
 
       <div class="flex-grow-1">
-        <!-- Navbar Container -->
         <div id="navbar-container"></div>
 
-        <!-- Main content below navbar -->
-        <main class="container container-fluid p-0">
-          <section>
-            <div class="card border-0 text-primary">
-              <img
-                src="../assets/aboutus/aboutus-hero.png"
-                alt="aboutus hero"
-              />
-              <div class="card-img-overlay d-flex justify-content-between">
-                <h1 class="card-title text-white">คณะบริหาร</h1>
-                <div class="d-flex justify-content-end">
-                  <div class="card rounded-pill">
-                    <div
-                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
-                    >
-                      <img
-                        src="../assets/logo/Facebook.png"
-                        alt="Facebook logo"
-                      />
-                      <img src="../assets/logo/Line.png" alt="Line logo" />
-                      <img src="../assets/logo/Tiktok.png" alt="Tiktok logo" />
-                      <img
-                        src="../assets/logo/YouTube.png"
-                        alt="YouTube logo"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+        <main class="container-fluid p-0">
+          <div id="hero-banner-container"></div>
 
-          <section class="secondary-bg h-100">
-            <div class="container d-flex flex-column p-5">
-              <div>
-                <h1 class="text-primary f-vision-title text-start">
-                  กรรมการบริษัท บีแอลซีพี เพาเวอร์ จำกัด
-                </h1>
-                <h2 class="text-primary f-vision-title text-start ms-3 mt-3">
-                  ฝ่าย บริษัท บ้านปู จำกัด (มหาชน)
-                </h2>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                  <div class="container mt-5">
-                    <div
-                      class="row justify-content-center"
-                      id="card-container"
-                    ></div>
-                  </div>
-                </div>
-                <h2 class="text-primary f-vision-title text-start ms-3 mt-3">
-                  ฝ่าย บริษัท ผลิตไฟฟ้า จำกัด (มหาชน) หรือ เอ็กโก กรุ๊ป
-                </h2>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                  <div class="container mt-5">
-                    <div
-                      class="row justify-content-center"
-                      id="card-egco-container"
-                    ></div>
-                  </div>
-                </div>
+          <section class="secondary-bg">
+            <div class="container py-3 px-3 py-md-5 px-md-5">
+              <h1 class="text-primary f-vision-title text-start">
+                กรรมการบริษัท บีแอลซีพี เพาเวอร์ จำกัด
+              </h1>
 
-                <h2 class="text-primary f-vision-title text-start ms-3 mt-3">
-                  ผู้บริหารระดับสูง บริษัท บีแอลซีพี เพาเวอร์ จำกัด
-                </h2>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                  <div class="container mt-5">
-                    <div
-                      class="row justify-content-center"
-                      id="card-blc-container"
-                    ></div>
-                  </div>
-                </div>
-              </div>
+              <h2 class="text-primary f-vision-title text-start ms-md-3 mt-4">
+                ฝ่าย บริษัท บ้านปู จำกัด (มหาชน)
+              </h2>
+              <div
+                class="row justify-content-center mt-3 g-4"
+                id="card-container"
+              ></div>
+
+              <h2 class="text-primary f-vision-title text-start ms-md-3 mt-5">
+                ฝ่าย บริษัท ผลิตไฟฟ้า จำกัด (มหาชน) หรือ เอ็กโก กรุ๊ป
+              </h2>
+              <div
+                class="row justify-content-center mt-3 g-4"
+                id="card-egco-container"
+              ></div>
+
+              <h2 class="text-primary f-vision-title text-start ms-md-3 mt-5">
+                ผู้บริหารระดับสูง บริษัท บีแอลซีพี เพาเวอร์ จำกัด
+              </h2>
+              <div
+                class="row justify-content-center mt-3 g-4"
+                id="card-blc-container"
+              ></div>
             </div>
           </section>
 
@@ -102,8 +58,9 @@
             <div
               class="container d-flex flex-column justify-content-center align-items-center p-5"
             >
-              <h1 class="text-white f-vision-title text-start">
-                คณะกรรมการตรวจสอบ
+              <h1 class="text-white f-vision-title text-center">
+                โครงสร้างองค์กร <br />
+                BLCP Qrganization Chart
               </h1>
               <div class="d-flex flex-wrap justify-content-center gap-3">
                 <div class="container mt-5">
@@ -114,7 +71,6 @@
           </section>
         </main>
 
-        <!-- Footer Container -->
         <div id="footer-container"></div>
       </div>
     </div>
@@ -125,5 +81,110 @@
     ></script>
     <script src="../assets/js/components.js"></script>
     <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/leaders-cards.js"></script>
+    <script src="../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "คณะบริหาร",
+          basePath: "..",
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- ชุดข้อมูลที่ 1: ฝ่ายบ้านปู ---
+        const banpuTeam = [
+          {
+            name: "นาย ชนินท์ ว่องกุศลกิจ",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-1.png",
+          },
+          {
+            name: "นาย วรวุฒิ ลีนานนท์",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-2.png",
+          },
+          {
+            name: "นาย อิศรา นิโรภาส",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-3.png",
+          },
+          {
+            name: "ดร. กิรณ ลิมปพยอม",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-4.png",
+          },
+          {
+            name: "นาย ภานุวัฒน์ พิทักษ์ธีระธรรม",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-5.png",
+          },
+        ];
+
+        // --- ชุดข้อมูลที่ 2: ฝ่ายเอ็กโก กรุ๊ป ---
+        const egcoTeam = [
+          {
+            name: "ดร. จิราพร ศิริคำ",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-6.png",
+          },
+          {
+            name: "ดร. กัมปนาท บำรุงกิจ",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-7.png",
+          },
+          {
+            name: "นาย สมเกียรติ สุทธิวานิช",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-8.png",
+          },
+          {
+            name: "นาย ธวัช หิรัณจารุกร",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-9.png",
+          },
+          {
+            name: "นาย ประสิทธิ์ เลาหวิรภาพ",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-10.png",
+          },
+        ];
+
+        // --- ชุดข้อมูลที่ 3: ผู้บริหารระดับสูง บีแอลซีพี ---
+        const blcpTeam = [
+          {
+            name: "นายยุทธนา เจริญวงศ์",
+            position: "ผู้บริหารระดับสูง",
+            photo: "../assets/aboutus/leadership-11.png",
+          },
+          {
+            name: "นายอดุลย์ อุดมวรวุฒิ",
+            position: "ผู้บริหารระดับสูง",
+            photo: "../assets/aboutus/leadership-12.png",
+          },
+          {
+            name: "นายทรงปัญญา วิดานัย",
+            position: "ผู้บริหารระดับสูง",
+            photo: "../assets/aboutus/leadership-13.png",
+          },
+          {
+            name: "นายอดิศร วังมูล",
+            position: "ผู้บริหารระดับสูง",
+            photo: "../assets/aboutus/leadership-14.png",
+          },
+          {
+            name: "นายสุรเชษฐ์ รัตนาประเสริฐ",
+            position: "กรรมการ",
+            photo: "../assets/aboutus/leadership-15.png",
+          },
+        ];
+
+        createTeamCards(banpuTeam, "card-container");
+        createTeamCards(egcoTeam, "card-egco-container");
+        createTeamCards(blcpTeam, "card-blc-container");
+      });
+    </script>
   </body>
 </html>

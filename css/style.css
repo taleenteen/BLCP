@@ -53,6 +53,12 @@
   visibility: visible;
 }
 
+.social-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
 /* Main Content Adjustments */
 .flex-grow-1 {
   margin-left: 0;

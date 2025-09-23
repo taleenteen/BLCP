@@ -113,6 +113,10 @@ class CardComponent {
     // กำหนด class ตามประเภท card
     if (this.cardType === "transparent") {
       cardWrapper.className = "col-12 col-md-6 col-lg-4 mb-4 d-flex"; // เพิ่ม d-flex สำหรับ equal height
+    }
+    if (this.cardType === "team") {
+      cardWrapper.className =
+        "col-12 col-sm-6 col-md-4 d-flex justify-content-center"; // แถวละ 3 สำหรับ team
     } else {
       cardWrapper.className = "col-12 col-sm-6 col-md-4 col-lg-3"; // แถวละ 4 สำหรับ card อื่นๆ
     }
@@ -309,38 +313,14 @@ class CardComponent {
       <div class="card h-100 shadow-sm border-0 card-hover text-center">
         ${
           data.photo
-            ? `<img src="${data.photo}" class="card-img-top rounded-circle mx-auto mt-3" alt="${data.name}" style="width: 120px; height: 120px; object-fit: cover;">`
+            ? `<img src="${data.photo}" class="card-img-top" alt="${data.name}" style=" object-fit: cover;">`
             : ""
         }
         <div class="card-body d-flex flex-column">
-          <h6 class="card-title">${data.name}</h6>
-          <p class="card-text text-muted">${data.position}</p>
+          <h5 class="card-title">${data.name || data.title}</h5>
           <p class="card-text flex-grow-1 small">${
-            data.bio || data.description
+            data.position || data.description
           }</p>
-          ${
-            data.social
-              ? `
-            <div class="social-links mt-auto">
-              ${
-                data.social.facebook
-                  ? `<a href="${data.social.facebook}" class="text-decoration-none me-2">📘</a>`
-                  : ""
-              }
-              ${
-                data.social.twitter
-                  ? `<a href="${data.social.twitter}" class="text-decoration-none me-2">🐦</a>`
-                  : ""
-              }
-              ${
-                data.social.linkedin
-                  ? `<a href="${data.social.linkedin}" class="text-decoration-none">💼</a>`
-                  : ""
-              }
-            </div>
-          `
-              : ""
-          }
         </div>
       </div>
     `;
