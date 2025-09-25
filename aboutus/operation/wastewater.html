@@ -23,38 +23,7 @@
 
         <!-- Main content below navbar -->
         <main class="container container-fluid p-0">
-          <section>
-            <div class="card border-0 text-white">
-              <img
-                src="../../assets/aboutus/aboutus-hero.png"
-                alt="aboutus hero"
-              />
-              <div class="card-img-overlay d-flex justify-content-between">
-                <h1 class="card-title">การจัดการน้ำเสีย</h1>
-                <div class="d-flex justify-content-end">
-                  <div class="card rounded-pill">
-                    <div
-                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
-                    >
-                      <img
-                        src="../../assets/logo/Facebook.png"
-                        alt="Facebook logo"
-                      />
-                      <img src="../../assets/logo/Line.png" alt="Line logo" />
-                      <img
-                        src="../../assets/logo/Tiktok.png"
-                        alt="Tiktok logo"
-                      />
-                      <img
-                        src="../../assets/logo/YouTube.png"
-                        alt="YouTube logo"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <div id="hero-banner-container"></div>
 
           <section class="blue-linear-bg-convert h-100">
             <div class="d-flex justify-content-start p-5">
@@ -152,7 +121,7 @@
                     จุดปล่อยน้ำทิ้งของโรงไฟฟ้า (Sea Water Outfall)
                     โดยระบบมีคุณสมบัติ:
                   </p>
-                  <div class="d-flex">
+                  <div class="d-flex flex-wrap">
                     <div>
                       <p class="text-white f-aboutus-text text-start px-4">
                         <strong class="me-3">&bull;</strong>
@@ -210,5 +179,15 @@
     ></script>
     <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "การจัดการน้ำเสีย",
+          basePath: "../..",
+        });
+      });
+    </script>
   </body>
 </html>

@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <div class="d-flex">
@@ -24,44 +24,11 @@
 
         <!-- Main content below navbar -->
         <main class="container container-fluid p-0">
-          <section>
-            <div class="card border-0 text-white">
-              <img
-                src="../../assets/aboutus/aboutus-hero.png"
-                alt="aboutus hero"
-              />
-              <div class="card-img-overlay d-flex justify-content-between">
-                <h1 class="card-title">
-                  นโยบาย สิ่งแวดล้อม สังคม และ ธรรมภิบาล (ESG)
-                </h1>
-                <div class="d-flex justify-content-end">
-                  <div class="card rounded-pill">
-                    <div
-                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
-                    >
-                      <img
-                        src="../../assets/logo/Facebook.png"
-                        alt="Facebook logo"
-                      />
-                      <img src="../../assets/logo/Line.png" alt="Line logo" />
-                      <img
-                        src="../../assets/logo/Tiktok.png"
-                        alt="Tiktok logo"
-                      />
-                      <img
-                        src="../../assets/logo/YouTube.png"
-                        alt="YouTube logo"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <div id="hero-banner-container"></div>
 
           <section>
             <img
-              src="../../assets/aboutus/environment-index.png"
+              src="../assets/aboutus/environment-index.png"
               alt="aboutus five"
               class="w-100"
             />
@@ -77,7 +44,17 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    <script src="../../assets/js/components.js"></script>
-    <script src="../../assets/js/script.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "นโยบาย สิ่งแวดล้อม สังคม และ ธรรมภิบาล (ESG)",
+          basePath: "..",
+        });
+      });
+    </script>
   </body>
 </html>

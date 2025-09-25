@@ -61,7 +61,7 @@ function createFooter(basePath = "../..") {
         <div class="d-flex justify-content-center align-items-center flex-column gap-3 mb-4">
           <button
             type="button"
-            class="btn rounded-pill light-green-bg text-white f-btn-click"
+            class="post-btn border-0 rounded-pill light-green-bg text-white f-btn-click"
             style="max-width: 448px; height: 50px; width: 100%;"
           >
             FAQ เรื่องพลังงานที่นี่
@@ -137,7 +137,9 @@ function createSidebar(basePath = "../..") {
     
     <!-- Sidebar -->
     <aside class="sidebar d-lg-block border-end" id="sidebar" style="min-width: 220px; max-width: 320px; transform: translateX(-100%);">
-      <img src="${basePath}/assets/logo/BLCP-01.png" alt="Sidebar Logo" class="img-fluid" style="max-width: 300px; height: auto" />
+      <a href="${basePath}/index.html">
+  <img src="${basePath}/assets/logo/BLCP-01.png" alt="Sidebar Logo" class="img-fluid" style=" height: auto" />
+      </a>
       <div class="accordion border-none" id="accordionExample">
         <ul class="list-unstyled sidebar-menu">
           <!-- Tab 1 -->
@@ -418,12 +420,50 @@ function createSidebar(basePath = "../..") {
             </div>
           </li>
         </ul>
+        <div class="card text-white rounded-3 border-0">
+  <img 
+    src="${basePath}/assets/sidebar/sidebar-pic.png" 
+    class="card-img" 
+    alt="รายงานคุณภาพอากาศ" 
+  />
 
-        <div class="d-flex flex-column justify-content-center text-center p-3">
-          <h1 class="f-size-30 text-primary">รายงานคุณภาพอากาศ</h1>
-          <p class="f-size-22 text-primary">19 .พค. 68 เวลา 08.00 น.</p>
-          <img src="${basePath}/assets/navbar/Sidebar-report.png" alt="รายงานคุณภาพอากาศ" />
+  <div class="card-img-overlay d-flex gap-2 justify-content-center align-items-center text-center p-2 px-5">
+    
+    <div class="p-2 rounded-4" style="background: rgba(255, 255, 255, 0.4);">
+      <h5 class="card-title fw-bold mb-2 text-dark" style="font-size: clamp(14px, 2.5vw, 18px); line-height: 120%;">UNIT 1</h5>
+      <div class="d-flex gap-2 align-items-center justify-content-center">
+        <p class="my-auto text-dark fw-bold">NOx :</p>
+        <div class="card d-flex justify-content-center align-items-center bg-success text-white" style="min-width: 80px;">
+            201.93
         </div>
+      </div>
+      <div class="d-flex gap-2 align-items-center justify-content-center">
+        <p class="my-auto text-dark fw-bold">NOx :</p>
+        <div class="card d-flex justify-content-center align-items-center bg-success text-white" style="min-width: 80px;">
+            201.93
+        </div>
+      </div>
+    </div>
+    
+    <div class="p-2 rounded-4" style="background: rgba(255, 255, 255, 0.4);">
+      <h5 class="card-title fw-bold mb-2 text-dark" style="font-size: clamp(14px, 2.5vw, 18px); line-height: 120%;">UNIT 2</h5>
+      <div class="d-flex gap-2 align-items-center justify-content-center">
+        <p class="my-auto text-dark fw-bold">NOx :</p>
+        <div class="card d-flex justify-content-center align-items-center bg-success text-white " style="min-width: 80px;">
+            215.47
+        </div>
+      </div>
+      <div class="d-flex gap-2 align-items-center justify-content-center">
+        <p class="my-auto text-dark fw-bold">NOx :</p>
+        <div class="card d-flex justify-content-center align-items-center bg-success text-white" style="min-width: 80px;">
+            201.93
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+        
       </div>
     </aside>
   `;

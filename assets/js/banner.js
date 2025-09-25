@@ -30,7 +30,7 @@ function createHeroBanner(containerId, options) {
             
             <h1 class="card-title text-white">${title}</h1>
   
-            <div class="card rounded-4 shadow-sm" style="width: fit-content">
+            <div class="card rounded-pill shadow-sm" style="width: fit-content">
               <div class="card-body d-flex flex-row flex-lg-column justify-content-center align-items-center gap-3 p-2">
                 <a href="#"><img
                   src="${basePath}/assets/logo/Facebook.png"

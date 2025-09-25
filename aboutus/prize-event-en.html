@@ -40,8 +40,9 @@
 
         <!-- Main content below navbar -->
         <main class="container container-fluid p-0">
+          <div id="hero-banner-container"></div>
           <section class="blue-linear-bg-convert h-100 p-5">
-            <div class="d-flex flex-md-column justify-content-center mb-4">
+            <div class="d-flex flex-column justify-content-center mb-4">
               <h1 class="f-size-40 text-white align-self-center">
                 Awards and Significant Events
               </h1>
@@ -334,6 +335,16 @@
 
       // Initialize category filter
       initializeCategoryFilter();
+    </script>
+    <script src="../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "Prizes and Significant Events",
+          basePath: "..",
+        });
+      });
     </script>
   </body>
 </html>

@@ -12,6 +12,33 @@
     />
 
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .first-img {
+        position: static;
+      }
+
+      @media screen and (min-width: 1420px) {
+        .first-img {
+          position: absolute;
+          top: -10%;
+          right: 5px;
+          z-index: 1;
+        }
+      }
+
+      .second-img {
+        position: static;
+        margin-bottom: 15px;
+      }
+      @media screen and (min-width: 1420px) {
+        .second-img {
+          position: absolute;
+          top: -100px;
+          right: 70px;
+          z-index: 1;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="d-flex">
@@ -23,42 +50,12 @@
         <div id="navbar-container"></div>
 
         <!-- Main content below navbar -->
-        <main class="container container-fluid p-0">
-          <section>
-            <div class="card border-0 text-white">
-              <img
-                src="../assets/aboutus/aboutus-hero.png"
-                alt="aboutus hero"
-              />
-              <div class="card-img-overlay d-flex justify-content-between">
-                <h1 class="card-title">ประวัติ และความเป็นมาขององค์กร</h1>
-                <div class="d-flex justify-content-end">
-                  <div class="card rounded-pill">
-                    <div
-                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
-                    >
-                      <img
-                        src="../assets/logo/Facebook.png"
-                        alt="Facebook logo"
-                      />
-                      <img src="../assets/logo/Line.png" alt="Line logo" />
-                      <img src="../assets/logo/Tiktok.png" alt="Tiktok logo" />
-                      <img
-                        src="../assets/logo/YouTube.png"
-                        alt="YouTube logo"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+        <main class="container-fluid p-0">
+          <div id="hero-banner-container"></div>
 
-          <section class="blue-linear-bg h-100" style="max-height: 1121px">
-            <div
-              class="container d-flex flex-column justify-content-center align-items-center p-5"
-            >
-              <h2 class="text-white f-title">
+          <section class="blue-linear-bg">
+            <div class="container p-5">
+              <h2 class="text-white f-title text-center text-lg-start">
                 โรงไฟฟ้าบีแอลซีพี หรือ บริษัท บีแอลซีพี เพาเวอร์ จำกัด
                 เป็นบริษัท ร่วมทุนไทย (50:50) <br />
                 ระหว่างกลุ่มบริษัทบ้านปู (บริษัท บ้านปู โคล เพาเวอร์ จำกัด และ
@@ -67,45 +64,39 @@
               </h2>
 
               <div
-                class="d-flex justify-content-center w-100 mt-3"
+                class="row mt-4 mt-lg-5 align-items-center"
                 style="position: relative"
               >
-                <div class="container container-fluid">
-                  <div class="row">
-                    <div class="col-12 col-lg-6">
-                      <h2 class="text-white f-aboutus-text mt-5">
-                        โรงไฟฟ้าบีแอลซีพีดำเนินธุรกิจผลิตกระแสไฟฟ้า <br />
-                        โดยใช้อุปกรณ์และเทคโนโลยีการผลิตที่ทันสมัย <br />
-                        ควบคู่กับการบริหารจัดการด้านสิ่งแวดล้อมที่เข้มงวด <br />
-                        เพื่อให้สอดคล้องกับมาตรฐานของภาครัฐ <br />
-                        โดยคำนึงถึงความรู้สึก และความต้องการของชุมชนเป็นสำคัญ
-                        <br />
-                        โรงไฟฟ้าบีแอลซีพีใช้ถ่านหินคุณภาพดี <br />
-                        ประเภทบิทูบินัสเป็นเชื้อเพลิง <br />
-                        ซึ่งส่วนใหญ่นำเข้ามาจากประเทศออสเตรเลีย <br />
-                        มีกำลังการผลิตรวม 1,434 เมกะวัตต์
-                      </h2>
-                    </div>
-                  </div>
+                <div class="col-lg-7">
+                  <h2 class="text-white f-aboutus-text text-center text-lg-end">
+                    โรงไฟฟ้าบีแอลซีพีดำเนินธุรกิจผลิตกระแสไฟฟ้า <br />
+                    โดยใช้อุปกรณ์และเทคโนโลยีการผลิตที่ทันสมัย <br />
+                    ควบคู่กับการบริหารจัดการด้านสิ่งแวดล้อมที่เข้มงวด <br />
+                    เพื่อให้สอดคล้องกับมาตรฐานของภาครัฐ <br />
+                    โดยคำนึงถึงความรู้สึก และความต้องการของชุมชนเป็นสำคัญ
+                    <br />
+                    โรงไฟฟ้าบีแอลซีพีใช้ถ่านหินคุณภาพดี <br />
+                    ประเภทบิทูบินัสเป็นเชื้อเพลิง <br />
+                    ซึ่งส่วนใหญ่นำเข้ามาจากประเทศออสเตรเลีย <br />
+                    มีกำลังการผลิตรวม 1,434 เมกะวัตต์
+                  </h2>
                 </div>
-                <img
-                  src="../assets/aboutus/aboutus-second.png"
-                  alt="aboutus second"
-                  class="img-fluid rounded-4"
-                  width="452"
-                  height="520"
-                  style="position: absolute; top: 0; right: 100px; z-index: 1"
-                />
+
+                <div class="col-lg-5 d-flex justify-content-center">
+                  <img
+                    src="../assets/aboutus/aboutus-second.png"
+                    alt="aboutus second"
+                    class="img-fluid rounded-4 first-img"
+                    style="max-width: 452px"
+                  />
+                </div>
               </div>
             </div>
           </section>
 
           <section class="secondary-bg" style="height: 100px"></section>
 
-          <section
-            class="blue-linear-bg-convert h-100"
-            style="max-height: 1121px"
-          >
+          <section class="blue-linear-bg-convert h-100">
             <div
               class="container container-fluid d-flex flex-column justify-content-center align-items-center p-5"
             >
@@ -172,152 +163,106 @@
 
           <section class="secondary-bg" style="height: 100px"></section>
 
-          <section class="blue-linear-bg h-100">
-            <div
-              class="container d-flex flex-column justify-content-center align-items-center p-5"
-            >
-              <div
-                class="d-flex justify-content-center w-100"
-                style="position: relative"
-              >
-                <div class="container container-fluid">
-                  <div class="row">
-                    <div class="col-12 col-lg-6 d-flex flex-column gap-5">
-                      <h2 class="text-white f-title text-end">
-                        สถานีไฟฟ้าบีแอลซีพีได้ลงนามใน <br />
-                        สัญญาซื้อขายไฟฟ้า (PPA) <br />
-                        กับการไฟฟ้าฝ่ายผลิตแห่งประเทศไทย (กฟผ.) <br />
-                        เมื่อวันที่ 19 พฤศจิกายน 2540 <br />
-                        (อายุสัญญา 25 ปี)
-                      </h2>
+          <section class="blue-linear-bg">
+            <div class="container py-5 px-3">
+              <div class="row" style="position: relative">
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <div class="d-flex flex-column gap-4 gap-lg-5">
+                    <h2 class="text-white f-title text-center text-lg-end">
+                      สถานีไฟฟ้าบีแอลซีพีได้ลงนามใน <br />
+                      สัญญาซื้อขายไฟฟ้า (PPA) <br />
+                      กับการไฟฟ้าฝ่ายผลิตแห่งประเทศไทย (กฟผ.) <br />
+                      เมื่อวันที่ 19 พฤศจิกายน 2540 <br />
+                      (อายุสัญญา 25 ปี)
+                    </h2>
 
-                      <h2 class="text-white f-aboutus-text text-end">
-                        โรงไฟฟ้าบีแอลซีพีถือได้ว่ามีกำลังการผลิตกระแสไฟฟ้าใหญ่
-                        <br />
-                        เป็ันดับ 5 ของประเทศชึ่งกำลังการผลิต และการเปิดดำเนินการ
-                        <br />
-                        ทั้งสองหน่วยผลิตนี้มีความสอดคล้องกับแผนพัฒนากำลังผลิต
-                        <br />
-                        ไฟฟ้า (Power Development Plan-PDP) ของประเทศไทย
-                      </h2>
-                    </div>
-
-                    <div
-                      class="col-12 d-flex flex-column align-items-center mt-5 gap-5"
+                    <h2
+                      class="text-white f-aboutus-text text-center text-lg-end"
                     >
-                      <div>
-                        <h3 class="text-white text-start f-aboutus-text">
-                          ทั้งนี้เพื่อช่วยเสริมสร้างเสถียรภาพของระบบไฟฟ้า
-                          (System Stability)
-                          และเพื่อรักษาความสมดุลของปริมาณการผลิต <br />
-                          และปริมาณการใช้ไฟฟ้าของประเทศ (Reserve Margin)
-                          นอกจากนี้โรงไฟฟ้าบีแอลซีพียังมีต้นทุนการผลิตต่อหน่วย
-                          <br />
-                          ในระดับที่จะมีส่วนช่วยลดต้นทุนการผลิตโดยรวมของประเทศ
-                          (Cost Stability) รวมทั้งช่วยชะลอการขึ้นราคาปลีก <br />
-                          ของค่าไฟฟ้าภายในประเทศ (Price Stability)
-                          ท่ามกลางสถานการณ์น้ำมันแพงที่ผันผวนตามตลาดโลกในปัจจุบัน
-                        </h3>
-
-                        <h3 class="text-white text-start f-aboutus-text mt-5">
-                          ที่สำคัญโรงไฟฟ้าบีแอลซีพียังมีส่วนช่วยส่งเสริมนโยบายการกระจายการใช้เชื้อเพลิงเพื่อให้หลากหลายแก่ประเทศ
-                          <br />
-                          ทั้งนี้เพื่อช่วยลดความเสี่ยงและป้องกันการกระจุกตัวของประเภทเชื้อเพลิงในการผลิตไฟฟ้าของประเทศในอนาคต
-                          (Fuel <br />
-                          Diversification Policy)
-                        </h3>
-
-                        <h3 class="text-white text-start f-aboutus-text mt-5">
-                          และจากนโยบายภาครัฐที่ส่งเสริมการอนุรักษ์พลังงานและรักษาสิ่งแวดล้อม
-                          รวมถึงนโยบายในการแก้ไขปัญหาน้ำมันปาล์มดิบ<br />
-                          ล้นตลาด โรงไฟฟ้าบีแอลซีพี
-                          เป็นอีกหนึ่งผู้ประกอบการที่สนับสนุนนโยบายภาครัฐ
-                          เพื่อร่วมรักษาสิ่งแวดล้อมที่ดี <br />
-                          โดยโรงไฟฟ้าบีแอลซีพี ได้สั่งซื้อน้ำมันดีเซล B20
-                          รวมจำนวน 1,367,000 ลิตร จำนวน 2 ครั้งเมื่อปลายปี
-                          พ.ศ.2562 <br />
-                          และเมื่อวันที่ 29 เมษายน 2563
-                        </h3>
-
-                        <h3 class="text-white text-start f-aboutus-text mt-5">
-                          เมื่อคิดเป็นสัดส่วนของไบโอดีเซลจากน้ำมันปาล์มบริสุทธิ์
-                          จำนวนทั้งสิ้น 273,400 ลิตร
-                          เพื่อทดแทนการใช้เชื้อเพลิงในการ <br />
-                          start up และ shutdown
-                          โรงไฟฟ้าจากที่เคยใช้น้ำมันดีเซลปกติ
-                          เพื่อให้เป็นตามที่กระทรวงพลังงานได้ให้ความสำคัญ <br />
-                          ต่อการส่งเสริมนโยบายพลังงาน
-                          เพื่อประชากรทุกระดับตามนโยบาย Energy For All
-                          และให้มีการส่งเสริมการใช้ไบโอดีเซล <br />
-                          ผสมในน้ำมันดีเซลเพิ่มขึ้น
-                          ทั้งยังเป็นการช่วยเหลือเกษตรกรผู้ปลูกปาล์มน้ำมันอีกด้วย
-                        </h3>
-                      </div>
-                    </div>
+                      โรงไฟฟ้าบีแอลซีพีถือได้ว่ามีกำลังการผลิตกระแสไฟฟ้าใหญ่
+                      <br />
+                      เป็ันดับ 5 ของประเทศชึ่งกำลังการผลิต และการเปิดดำเนินการ
+                      <br />
+                      ทั้งสองหน่วยผลิตนี้มีความสอดคล้องกับแผนพัฒนากำลังผลิต
+                      <br />
+                      ไฟฟ้า (Power Development Plan-PDP) ของประเทศไทย
+                    </h2>
                   </div>
                 </div>
-                <img
-                  src="../assets/aboutus/aboutus-four.png"
-                  alt="aboutus four"
-                  class="img-fluid rounded-4"
-                  width="452"
-                  height="520"
-                  style="
-                    position: absolute;
-                    top: -100px;
-                    right: 100px;
-                    z-index: 1;
-                  "
-                />
+
+                <div
+                  class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center"
+                >
+                  <img
+                    src="../assets/aboutus/aboutus-four.png"
+                    alt="aboutus four"
+                    class="img-fluid rounded-4 second-img"
+                  />
+                </div>
               </div>
-            </div>
 
-            <section>
-              <img
-                src="../assets/aboutus/aboutus-five.png"
-                alt="aboutus five"
-                class="w-100"
-              />
-            </section>
-
-            <section>
-              <div class="container container-fluid p-5">
-                <div class="p-5">
-                  <h2 class="text-white f-title text-start">
-                    โรงไฟฟ้าบีแอลซีพี
-                  </h2>
-                  <h3 class="text-white text-start f-aboutus-text mt-5">
-                    โรงไฟฟ้าบีแอลซีพี ยังคงพัฒนาต่อไปอย่างต่อเนื่อง
-                    พร้อมกับความรับผิดชอบต่อสังคม โดยในปี พ.ศ.2563 <br />
-                    และได้สนองต่อนโยบายรัฐและการนิคมอุตสาหกรรมแห่งประเทศไทย หรือ
-                    กนอ. ในลดการใช้น้ำดิบได้ถึง 100% <br />
-                    เพื่อให้เกษตรกรและชาวระยองมีน้ำใช้อย่างเพียงพอช่วงวิกฤตภัยแล้ง
-                    โดยทางโรงไฟฟ้าบีแอลซีพีได้มีมาตรการ <br />
-                    ลดการใช้น้ำ และมีนโยบายผลิตน้ำประปาและน้ำดิบจากน้ำทะเล
-                    (Reverse Osmosis Sea water Desalination <br />
-                    Plant: RO Water) ไว้ใช้ภายในโรงไฟฟ้า
-                    แม้ว่าการดำเนินการจะมีต้นทุนค่อนข้างสูงกว่าการใช้น้ำดิบก็ตาม
+              <div class="row justify-content-center mt-4 mt-lg-5">
+                <div class="col-lg-10">
+                  <h3
+                    class="text-white text-center text-lg-start f-aboutus-text"
+                  >
+                    ทั้งนี้เพื่อช่วยเสริมสร้างเสถียรภาพของระบบไฟฟ้า (System
+                    Stability) และเพื่อรักษาความสมดุลของปริมาณการผลิต <br />
+                    และปริมาณการใช้ไฟฟ้าของประเทศ (Reserve Margin)
+                    นอกจากนี้โรงไฟฟ้าบีแอลซีพียังมีต้นทุนการผลิตต่อหน่วย <br />
+                    ในระดับที่จะมีส่วนช่วยลดต้นทุนการผลิตโดยรวมของประเทศ (Cost
+                    Stability) รวมทั้งช่วยชะลอการขึ้นราคาปลีก <br />
+                    ของค่าไฟฟ้าภายในประเทศ (Price Stability)
+                    ท่ามกลางสถานการณ์น้ำมันแพงที่ผันผวนตามตลาดโลกในปัจจุบัน
                   </h3>
 
-                  <h3 class="text-white text-start f-aboutus-text mt-5">
-                    โดยในเดือนมกราคม 2563 ใช้น้ำดิบอยู่ที่ 20,205 ลบ.ม. <br />
-                    กุมภาพันธ์ 2563 ลดลงเหลือ 5,054 ลบ.ม. และตั้งแต่วันที่ 15
-                    กุมภาพันธ์ 2563 เป็นต้นมา โรงไฟฟ้าบีแอลซีพี
-                    ได้แจ้งความประสงค์หยุดรับน้ำดิบ <br />
-                    จากอีสวอเตอร์โดยการนำน้ำทะเลมาผลิตเป็นน้ำจืด (RO Water)
-                  </h3>
-
-                  <h3 class="text-white text-start f-aboutus-text mt-5">
-                    เพื่อใช้ทดแทนน้ำดิบที่ใช้ในกระบวนการผลิตไฟฟ้า
-                    รวมถึงใช้สำหรับสาธารณูปโภค และใช้รดน้ำต้นไม้ ซึ่งเป็นพื้นที่
+                  <h3
+                    class="text-white text-center text-lg-start f-aboutus-text mt-4 mt-lg-5"
+                  >
+                    ที่สำคัญโรงไฟฟ้าบีแอลซีพียังมีส่วนช่วยส่งเสริมนโยบายการกระจายการใช้เชื้อเพลิงเพื่อให้หลากหลายแก่ประเทศ
                     <br />
-                    สีเขียวภายในโรงไฟฟ้าทั้งหมด
-                    จนทำให้สามารถลดปริมาณการใช้น้ำดิบจากอีสวอเตอร์ ‘เหลือศูนย์’
-                    จนถึงปัจจุบัน
+                    ทั้งนี้เพื่อช่วยลดความเสี่ยงและป้องกันการกระจุกตัวของประเภทเชื้อเพลิงในการผลิตไฟฟ้าของประเทศในอนาคต
+                    (Fuel <br />
+                    Diversification Policy)
+                  </h3>
+
+                  <h3
+                    class="text-white text-center text-lg-start f-aboutus-text mt-4 mt-lg-5"
+                  >
+                    และจากนโยบายภาครัฐที่ส่งเสริมการอนุรักษ์พลังงานและรักษาสิ่งแวดล้อม
+                    รวมถึงนโยบายในการแก้ไขปัญหาน้ำมันปาล์มดิบ<br />
+                    ล้นตลาด โรงไฟฟ้าบีแอลซีพี
+                    เป็นอีกหนึ่งผู้ประกอบการที่สนับสนุนนโยบายภาครัฐ
+                    เพื่อร่วมรักษาสิ่งแวดล้อมที่ดี <br />
+                    โดยโรงไฟฟ้าบีแอลซีพี ได้สั่งซื้อน้ำมันดีเซล B20 รวมจำนวน
+                    1,367,000 ลิตร จำนวน 2 ครั้งเมื่อปลายปี พ.ศ.2562 <br />
+                    และเมื่อวันที่ 29 เมษายน 2563
+                  </h3>
+
+                  <h3
+                    class="text-white text-center text-lg-start f-aboutus-text mt-4 mt-lg-5"
+                  >
+                    เมื่อคิดเป็นสัดส่วนของไบโอดีเซลจากน้ำมันปาล์มบริสุทธิ์
+                    จำนวนทั้งสิ้น 273,400 ลิตร เพื่อทดแทนการใช้เชื้อเพลิงในการ
+                    <br />
+                    start up และ shutdown โรงไฟฟ้าจากที่เคยใช้น้ำมันดีเซลปกติ
+                    เพื่อให้เป็นตามที่กระทรวงพลังงานได้ให้ความสำคัญ <br />
+                    ต่อการส่งเสริมนโยบายพลังงาน เพื่อประชากรทุกระดับตามนโยบาย
+                    Energy For All และให้มีการส่งเสริมการใช้ไบโอดีเซล <br />
+                    ผสมในน้ำมันดีเซลเพิ่มขึ้น
+                    ทั้งยังเป็นการช่วยเหลือเกษตรกรผู้ปลูกปาล์มน้ำมันอีกด้วย
                   </h3>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
+
+          <section>
+            <img
+              src="../assets/aboutus/aboutus-five.png"
+              alt="aboutus five"
+              class="img-fluid w-100"
+            />
           </section>
 
           <section
@@ -352,41 +297,6 @@
                     2540-2549
                   </button>
                 </div>
-                <!-- <div
-                  class="col-12 col-md-3 d-flex justify-content-center align-items-center"
-                >
-                  <h1 class="text-white f-size-36 mb-0">ปีพุทธศักราช</h1>
-                </div>
-                <div class="col-12 col-md-9 d-flex gap-3">
-                  <button
-                    type="button"
-                    class="btn btn-primary post-btn green-linear-bg-btn f-btn-click text-primary border-0"
-                  >
-                    2540-2549
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary post-btn green-linear-bg-btn f-btn-click border-0"
-                    style="
-                      background: rgba(245, 245, 254, 1);
-                      color: rgba(139, 139, 139, 1);
-                      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                    "
-                  >
-                    2540-2549
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary post-btn green-linear-bg-btn f-btn-click border-0"
-                    style="
-                      background: rgba(245, 245, 254, 1);
-                      color: rgba(139, 139, 139, 1);
-                      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-                    "
-                  >
-                    2540-2549
-                  </button>
-                </div> -->
               </div>
             </div>
             <div
@@ -408,5 +318,15 @@
     <script src="../assets/js/components.js"></script>
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/posts.js"></script>
+    <script src="../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "ประวัติ และความเป็นมาขององค์กร",
+          basePath: "..",
+        });
+      });
+    </script>
   </body>
 </html>

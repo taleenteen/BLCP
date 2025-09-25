@@ -4,6 +4,14 @@
   font-weight: normal;
   font-style: normal;
 }
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+html {
+  background-color: var(--my-primary-color);
+}
 
 :root {
   --bs-primary-rgb: 14, 63, 100;
@@ -15,7 +23,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 280px;
+  width: 320px;
   height: 100vh;
   background: white;
   border-right: 1px solid #dee2e6;
@@ -770,4 +778,19 @@ h2.f-vision-title {
     font-size: 20px;
     right: 0.875rem;
   }
+}
+
+/*
+ * Sidebar Chevron Animation
+ *----------------------------------*/
+
+/* 1. กำหนดให้ chevron มี animation เวลามีการเปลี่ยนแปลง */
+.sidebar-link .chevron-icon {
+  transition: transform 0.25s ease-in-out;
+}
+
+/* 2. เมื่อปุ่ม sidebar-link "ไม่" มีคลาส .collapsed (คือเมื่อเมนูถูกเปิด) */
+.sidebar-link:not(.collapsed) .chevron-icon {
+  /* ให้หมุน chevron ไป 90 องศา */
+  transform: rotate(90deg);
 }

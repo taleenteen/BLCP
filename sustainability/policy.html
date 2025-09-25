@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <style>
       /* Custom datepicker styles */
       .flatpickr-calendar {
@@ -60,38 +60,7 @@
         <div id="navbar-container"></div>
 
         <main class="container container-fluid p-0">
-          <section>
-            <div class="card border-0 text-white">
-              <img
-                src="../../assets/aboutus/aboutus-hero.png"
-                alt="aboutus hero"
-              />
-              <div class="card-img-overlay d-flex justify-content-between">
-                <h1 class="card-title">นโยบายบริษัท</h1>
-                <div class="d-flex justify-content-end">
-                  <div class="card rounded-pill">
-                    <div
-                      class="card-body d-flex flex-column justify-content-center gap-2 p-2"
-                    >
-                      <img
-                        src="../../assets/logo/Facebook.png"
-                        alt="Facebook logo"
-                      />
-                      <img src="../../assets/logo/Line.png" alt="Line logo" />
-                      <img
-                        src="../../assets/logo/Tiktok.png"
-                        alt="Tiktok logo"
-                      />
-                      <img
-                        src="../../assets/logo/YouTube.png"
-                        alt="YouTube logo"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          <div id="hero-banner-container"></div>
 
           <section class="white-linear-bg container-fluid p-0">
             <div
@@ -214,6 +183,16 @@
       }
 
       document.addEventListener("DOMContentLoaded", renderPolicies);
+    </script>
+    <script src="../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "นโยบายบริษัท",
+          basePath: "..",
+        });
+      });
     </script>
   </body>
 </html>

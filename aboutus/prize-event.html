@@ -11,7 +11,7 @@
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
     <style>
       /* Custom styles for active tab */
@@ -42,8 +42,10 @@
 
         <!-- Main content below navbar -->
         <main class="container container-fluid p-0">
+          <div id="hero-banner-container"></div>
+
           <section class="blue-linear-bg-convert h-100 p-5">
-            <div class="d-flex flex-md-column justify-content-center mb-4">
+            <div class="d-flex flex-column justify-content-center mb-4">
               <h1 class="f-size-40 text-white align-self-center">
                 รางวัล และเหตุการณ์สำคัญ
               </h1>
@@ -363,6 +365,16 @@
 
       // เรียกใช้ search feature (ถ้าต้องการ)
       // addSearchFeature();
+    </script>
+    <script src="../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "รางวัล และเหตุการณ์สำคัญ",
+          basePath: "..",
+        });
+      });
     </script>
   </body>
 </html>
