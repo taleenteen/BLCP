@@ -19,6 +19,41 @@ html {
 }
 
 /* Responsive Sidebar Styles */
+/* สร้าง Class หลักสำหรับกล่องข้อมูล */
+.info-box {
+  width: 118px;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.4);
+  /* ใช้ Flexbox จัดการเนื้อหาภายในให้ง่ายขึ้น */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+  align-items: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+}
+
+/* Class สำหรับ Title (UNIT 1, UNIT 2) */
+.info-box-title {
+  font-weight: 700;
+  color: #212529; /* text-dark */
+  font-size: 13px; /* ลดขนาด Font ลง */
+  line-height: 1.1; /* ลดระยะห่างบรรทัด */
+}
+
+/* Class สำหรับ Label (NOx :) */
+.info-box-label {
+  font-weight: 700;
+  color: #212529; /* text-dark */
+  font-size: 11px;
+}
+
+/* Class สำหรับกล่องแสดงค่าตัวเลข */
+.info-box-value {
+  min-width: 55px; /* ลดความกว้างขั้นต่ำลง */
+  font-size: 12px;
+  padding: 2px 4px; /* ปรับ Padding ให้เล็กลง */
+  border-radius: 0.25rem; /* ทำให้มุมมนเล็กน้อย */
+}
+
 .sidebar {
   position: fixed;
   top: 0;

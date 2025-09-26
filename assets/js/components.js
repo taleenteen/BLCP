@@ -333,7 +333,7 @@ function createSidebar(basePath = "../..") {
                     </span>
                   </button>
                   <div class="collapse" id="submenu5">
-                    <a href="${basePath}/news/careers.html" class="d-block py-1 ps-5 f-link">ตำแหน่งว่าง</a>
+                    <a href="${basePath}/news/career/job-avaliable.html" class="d-block py-1 ps-5 f-link">ตำแหน่งว่าง</a>
                   </div>
                 </li>
               </ul>
@@ -420,46 +420,51 @@ function createSidebar(basePath = "../..") {
             </div>
           </li>
         </ul>
-        <div class="card text-white rounded-3 border-0">
+        <div class="d-flex justify-content-center align-items-center flex-column ">
+        <h5 class="f-size-30 text-primary mb-0">รายงานคุณภาพอากาศ</h5>
+        <p class="f-size-24 text-primary mb-0">19 พ.ค 68 เวลา 08.00 น.</p>
+        </div>
+       <div class="card text-white rounded-3 border-0 p-2">
   <img 
     src="${basePath}/assets/sidebar/sidebar-pic.png" 
     class="card-img" 
     alt="รายงานคุณภาพอากาศ" 
   />
 
-  <div class="card-img-overlay d-flex gap-2 justify-content-center align-items-center text-center p-2 px-5">
+  <div class="card-img-overlay d-flex gap-2 justify-content-center text-center mt-3 p-2">
     
-    <div class="p-2 rounded-4" style="background: rgba(255, 255, 255, 0.4);">
-      <h5 class="card-title fw-bold mb-2 text-dark" style="font-size: clamp(14px, 2.5vw, 18px); line-height: 120%;">UNIT 1</h5>
+    <div class="p-1 gap-1 rounded-4 info-box">
+      <h5 class="mb-0 info-box-title text-white">UNIT 1</h5>
       <div class="d-flex gap-2 align-items-center justify-content-center">
-        <p class="my-auto text-dark fw-bold">NOx :</p>
-        <div class="card d-flex justify-content-center align-items-center bg-success text-white" style="min-width: 80px;">
+        <p class="m-0 info-box-label text-white">NOx :</p>
+        <div class="d-flex justify-content-center align-items-center text-white info-box-value rounded-pill post-btn border-0">
             201.93
         </div>
       </div>
       <div class="d-flex gap-2 align-items-center justify-content-center">
-        <p class="my-auto text-dark fw-bold">NOx :</p>
-        <div class="card d-flex justify-content-center align-items-center bg-success text-white" style="min-width: 80px;">
+        <p class="m-0 info-box-label text-white">SOx :</p> <div class="d-flex justify-content-center align-items-center text-white info-box-value rounded-pill post-btn border-0">
             201.93
         </div>
       </div>
     </div>
     
-    <div class="p-2 rounded-4" style="background: rgba(255, 255, 255, 0.4);">
-      <h5 class="card-title fw-bold mb-2 text-dark" style="font-size: clamp(14px, 2.5vw, 18px); line-height: 120%;">UNIT 2</h5>
+    <div class="p-1 gap-1 rounded-4 info-box">
+      <h5 class="mb-0 info-box-title text-white">UNIT 2</h5>
       <div class="d-flex gap-2 align-items-center justify-content-center">
-        <p class="my-auto text-dark fw-bold">NOx :</p>
-        <div class="card d-flex justify-content-center align-items-center bg-success text-white " style="min-width: 80px;">
+        <p class="m-0 info-box-label text-white">NOx :</p>
+        <div class="d-flex justify-content-center align-items-center text-white info-box-value rounded-pill post-btn border-0">
             215.47
         </div>
       </div>
       <div class="d-flex gap-2 align-items-center justify-content-center">
-        <p class="my-auto text-dark fw-bold">NOx :</p>
-        <div class="card d-flex justify-content-center align-items-center bg-success text-white" style="min-width: 80px;">
+        <p class="m-0 info-box-label text-white">SOx :</p> <div class="d-flex justify-content-center align-items-center text-white info-box-value rounded-pill post-btn border-0">
             201.93
         </div>
       </div>
     </div>
+
+  </div>
+</div>
 
   </div>
 </div>
@@ -873,7 +878,8 @@ function loadComponents() {
     currentPath.includes("/aboutus/operation/") ||
     currentPath.includes("/sustainability/environment/") ||
     currentPath.includes("/sustainability/social/") ||
-    currentPath.includes("/sustainability/sustainability-report/")
+    currentPath.includes("/sustainability/sustainability-report/") ||
+    currentPath.includes("/news/career/")
   ) {
     basePath = "../..";
     navBasePath = "../..";

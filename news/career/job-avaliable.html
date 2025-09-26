@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>บริษัทของเรา | Our Company</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        .divider {
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
+            width: 70%;
+        }
+        .divider-small {
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
+            width: 40%;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content below navbar -->
+        <main class="container container-fluid p-0">
+          <div id="hero-banner-container"></div>
+
+          <section class="blue-linear-bg-convert h-100">
+            <div class="d-flex justify-content-start px-5">
+              <div class="container container-fluid">
+                <h2 class="text-white f-vision-title text-center p-4">
+                  BLCP Career
+                </h2>
+                <p class="text-white f-aboutus-text text-center">
+                  View our job offer
+                </p>
+
+                <div class="input-group mb-3 px-5">
+                  <input
+                    type="text"
+                    class="form-control rounded-3"
+                    placeholder="Search by keyword"
+                    aria-label="Example text with button addon"
+                    aria-describedby="button-addon1"
+                  />
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center gap-3">
+                    <div class="divider-small"></div> <p class="f-size-24 text-nowrap text-white">Sort by</p> <div class="divider-small"></div>
+                </div>
+                <div class="d-flex justify-content-between gap-3 container px-5">
+                    <div class="input-group mb-3 px-3">
+                        <select class="form-select rounded-3" id="inputGroupSelect01">
+                          <option selected>Job Function</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="input-group mb-3 px-3">
+                        <select class="form-select rounded-3" id="inputGroupSelect02">
+                          <option selected>Employment Type</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="d-flex justify-content-center mt-4 mb-5">
+                    <button class="post-btn border-0 rounded-3 f-size-24 text-white py-1 px-3">Search Jobs</button>
+                </div>
+
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <h1 class="text-white">Open positions</h1>
+                    <div class="divider"></div>
+                </div>
+
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "ตำแหน่งที่รับสมัคร",
+          basePath: "../..",
+        });
+      });
+    </script>
+  </body>
+</html>

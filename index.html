@@ -12,6 +12,393 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <!-- Chatbot -->
+  <div
+    id="chatbot-container"
+    class="position-fixed"
+    style="bottom: 20px; right: 20px; z-index: 1000"
+  >
+    <!-- Chatbot Button -->
+    <div id="chatbot-button" class="position-relative">
+      <!-- Tooltip Card -->
+      <div
+        id="chatbot-tooltip"
+        class="position-absolute bg-white rounded-3 shadow-lg p-2 px-3 mb-2"
+        style="
+          bottom: 80px;
+          right: 0;
+          min-width: 120px;
+          opacity: 0;
+          transform: scale(0.8);
+          transition: all 0.3s ease;
+        "
+      >
+        <div class="text-center">
+          <small class="text-primary fw-bold">ติดต่อเรา</small>
+          <div
+            class="position-absolute"
+            style="
+              bottom: -8px;
+              right: 20px;
+              width: 0;
+              height: 0;
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-top: 8px solid white;
+            "
+          ></div>
+        </div>
+      </div>
+
+      <!-- Main Button -->
+      <button
+        id="chatbot-btn"
+        class="rounded-circle d-flex align-items-center justify-content-center position-relative overflow-hidden p-0 border-0"
+        style="
+          width: 90px;
+          height: 90px;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        "
+      >
+        <!-- Chat Logo -->
+        <img
+          src="assets/logo/chatbot-logo.png"
+          alt="Chatbot"
+          style="
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+          "
+        />
+
+        <!-- Close Icon (hidden initially) -->
+        <svg
+          id="close-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentColor"
+          viewBox="0 0 16 16"
+          style="position: absolute; opacity: 0; transition: opacity 0.3s ease"
+        >
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Chat Window -->
+    <div
+      id="chatbot-window"
+      class="position-absolute bg-white rounded-4 shadow-lg"
+      style="
+        bottom: 0;
+        right: 0;
+        width: 350px;
+        height: 500px;
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        transition: all 0.3s ease;
+        pointer-events: none;
+        transform-origin: bottom right;
+      "
+    >
+      <!-- Chat Header -->
+      <div
+        class="bg-primary text-white p-3 rounded-top-4 d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <h6 class="mb-0 fw-bold">ติดต่อเรา</h6>
+          <small class="opacity-75">พร้อมให้บริการ</small>
+        </div>
+        <button
+          id="close-chat"
+          class="btn btn-sm text-white p-0 border-0"
+          style="background: transparent"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Chat Body -->
+      <div class="p-3 h-100" style="padding-bottom: 80px !important">
+        <div id="chat-messages" class="h-100 overflow-auto">
+          <!-- Welcome Message -->
+          <div class="mb-3">
+            <div
+              class="bg-light rounded-3 p-3 d-inline-block"
+              style="max-width: 80%"
+            >
+              <p class="mb-1 small">
+                สวัสดีครับ! ยินดีต้อนรับสู่โรงไฟฟ้าบีแอลซีพี
+              </p>
+              <p class="mb-0 small">มีอะไรให้ช่วยเหลือไหมครับ?</p>
+            </div>
+          </div>
+
+          <!-- Quick Options -->
+          <div class="mb-3">
+            <p class="small text-muted mb-2">ตัวเลือกด่วน:</p>
+            <div class="d-flex flex-column gap-2">
+              <button
+                class="btn btn-outline-primary btn-sm text-start quick-option"
+                data-message="ติดต่อสอบถาม"
+              >
+                📞 ติดต่อสอบถาม
+              </button>
+              <button
+                class="btn btn-outline-primary btn-sm text-start quick-option"
+                data-message="เยี่ยมชมโรงไฟฟ้า"
+              >
+                🏭 เยี่ยมชมโรงไฟฟ้า
+              </button>
+              <button
+                class="btn btn-outline-primary btn-sm text-start quick-option"
+                data-message="ข้อมูลบริษัท"
+              >
+                📋 ข้อมูลบริษัท
+              </button>
+              <button
+                class="btn btn-outline-primary btn-sm text-start quick-option"
+                data-message="แบบฟอร์มร้องเรียน"
+              >
+                📝 แบบฟอร์มร้องเรียน
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <div
+        class="position-absolute bottom-0 left-0 right-0 p-3 bg-white rounded-bottom-4"
+        style="border-top: 1px solid #eee"
+      >
+        <div class="input-group">
+          <input
+            type="text"
+            id="chat-input"
+            class="form-control border-0 bg-light"
+            placeholder="พิมพ์ข้อความ..."
+          />
+          <button class="btn btn-primary" type="button" id="send-message">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Chatbot Styles */
+    #chatbot-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    #chatbot-button:hover #chatbot-tooltip {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .chat-message {
+      margin-bottom: 1rem;
+    }
+
+    .chat-message.user {
+      text-align: right;
+    }
+
+    .chat-message.user .message-content {
+      background-color: #007bff;
+      color: white;
+      margin-left: auto;
+    }
+
+    .chat-message.bot .message-content {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .message-content {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    #chat-messages::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    #chat-messages::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    #chat-messages::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 2px;
+    }
+
+    .quick-option:hover {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+
+    @media (max-width: 768px) {
+      #chatbot-window {
+        width: 300px;
+        height: 400px;
+      }
+
+      #chatbot-container {
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const chatbotBtn = document.getElementById("chatbot-btn");
+      const chatbotWindow = document.getElementById("chatbot-window");
+      const closeChatBtn = document.getElementById("close-chat");
+      const chatInput = document.getElementById("chat-input");
+      const sendBtn = document.getElementById("send-message");
+      const chatMessages = document.getElementById("chat-messages");
+      const closeIcon = document.getElementById("close-icon");
+      const quickOptions = document.querySelectorAll(".quick-option");
+
+      let isChatOpen = false;
+
+      // Toggle chat window
+      function toggleChat() {
+        isChatOpen = !isChatOpen;
+
+        if (isChatOpen) {
+          chatbotWindow.style.opacity = "1";
+          chatbotWindow.style.transform = "scale(1) translateY(0)";
+          chatbotWindow.style.pointerEvents = "auto";
+          closeIcon.style.opacity = "1";
+          chatbotBtn.querySelector("img").style.opacity = "0";
+        } else {
+          chatbotWindow.style.opacity = "0";
+          chatbotWindow.style.transform = "scale(0.8) translateY(20px)";
+          chatbotWindow.style.pointerEvents = "none";
+          closeIcon.style.opacity = "0";
+          chatbotBtn.querySelector("img").style.opacity = "1";
+        }
+      }
+
+      // Add message to chat
+      function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `chat-message ${isUser ? "user" : "bot"}`;
+
+        const messageContent = document.createElement("div");
+        messageContent.className = "message-content small";
+        messageContent.textContent = message;
+
+        messageDiv.appendChild(messageContent);
+        chatMessages.appendChild(messageDiv);
+
+        // Scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      // Handle bot responses
+      function getBotResponse(message) {
+        const responses = {
+          ติดต่อสอบถาม:
+            "สำหรับการติดต่อสอบถาม กรุณาโทร 038-925100 หรือส่งอีเมลมาที่ info@blcp.co.th",
+          เยี่ยมชมโรงไฟฟ้า:
+            "ท่านสามารถจองเยี่ยมชมโรงไฟฟ้าได้โดยติดต่อล่วงหน้า 7 วัน ที่หมายเลข 038-925100",
+          ข้อมูลบริษัท:
+            "บริษัท บีแอลซีพี เพาเวอร์ จำกัด เป็นบริษัทร่วมทุนไทยผลิตไฟฟ้า กำลังการผลิต 1,434 เมกะวัตต์",
+          แบบฟอร์มร้องเรียน:
+            "ท่านสามารถยื่นแบบฟอร์มร้องเรียนได้ที่เว็บไซต์ หรือโทร 081-000-7362",
+          default:
+            "ขอบคุณสำหรับข้อความ เจ้าหน้าที่จะติดต่อกลับในเร็วๆ นี้ หรือท่านสามารถโทร 038-925100",
+        };
+
+        return responses[message] || responses["default"];
+      }
+
+      // Send message
+      function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        addMessage(message, true);
+        chatInput.value = "";
+
+        // Simulate bot response
+        setTimeout(() => {
+          const response = getBotResponse(message);
+          addMessage(response, false);
+        }, 1000);
+      }
+
+      // Event listeners
+      chatbotBtn.addEventListener("click", toggleChat);
+      closeChatBtn.addEventListener("click", toggleChat);
+      sendBtn.addEventListener("click", sendMessage);
+
+      chatInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          sendMessage();
+        }
+      });
+
+      // Quick option handlers
+      quickOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          const message = this.dataset.message;
+          addMessage(message, true);
+
+          setTimeout(() => {
+            const response = getBotResponse(message);
+            addMessage(response, false);
+          }, 500);
+        });
+      });
+
+      // Close chat when clicking outside
+      document.addEventListener("click", function (e) {
+        if (
+          isChatOpen &&
+          !document.getElementById("chatbot-container").contains(e.target)
+        ) {
+          toggleChat();
+        }
+      });
+    });
+  </script>
   <body>
     <div class="d-flex position-relative">
       <!-- Sidebar Container -->
