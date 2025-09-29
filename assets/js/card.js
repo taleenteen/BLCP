@@ -113,10 +113,11 @@ class CardComponent {
     // กำหนด class ตามประเภท card
     if (this.cardType === "transparent") {
       cardWrapper.className = "col-12 col-md-6 col-lg-4 mb-4 d-flex"; // เพิ่ม d-flex สำหรับ equal height
-    }
-    if (this.cardType === "team") {
+    } else if (this.cardType === "team") {
       cardWrapper.className =
         "col-12 col-sm-6 col-md-4 d-flex justify-content-center"; // แถวละ 3 สำหรับ team
+    } else if (this.cardType === "jobs") {
+      cardWrapper.className = "w-100"; // Jobs cards จะเป็น full width
     } else {
       cardWrapper.className = "col-12 col-sm-6 col-md-4 col-lg-3"; // แถวละ 4 สำหรับ card อื่นๆ
     }
@@ -144,6 +145,9 @@ class CardComponent {
         break;
       case "transparent":
         cardHTML = this.createTransparentCard(data, index);
+        break;
+      case "jobs":
+        cardHTML = this.createJobsCard(data, index);
         break;
       default:
         cardHTML = this.createDefaultCard(data, index);
@@ -444,6 +448,124 @@ class CardComponent {
   }
 
   /**
+   * Card แบบ Jobs (สำหรับแสดงตำแหน่งงาน)
+   */
+  createJobsCard(data, index) {
+    const statusClass =
+      data.status === "เปิดรับสมัคร" ? "bg-success" : "bg-secondary";
+    const statusText = data.status || "เปิดรับสมัคร";
+
+    return `
+      <div class="card shadow-sm border-0 card-hover job-card w-100">
+        <div class="card-body p-3">
+          <div class="d-flex align-items-center justify-content-between">
+            <!-- Left: Job Icon/Logo -->
+            <div class="d-flex align-items-center flex-shrink-0 me-3">
+              <div class="job-icon-wrapper d-flex align-items-center justify-content-center rounded-4 bg-light" 
+                   style="width: 80px; height: 80px;">
+                ${
+                  data.icon
+                    ? `<span class="material-icons text-primary" style="font-size: 60px;">${data.icon}</span>`
+                    : `<span class="material-icons text-primary" style="font-size: 60px;">work</span>`
+                }
+              </div>
+            </div>
+  
+            <!-- Center: Job Title and Details -->
+            <div class="flex-grow-1 me-3">
+              <h1 class=" mb-0 text-primary fw-bold f-size-32">${
+                data.title || "ไม่ระบุตำแหน่ง"
+              }</h1>
+              ${
+                data.department
+                  ? `<p class="job-department mb-1 text-muted small">${data.department}</p>`
+                  : ""
+              }
+              ${
+                data.location
+                  ? `<p class="job-location mb-0 text-muted small">
+                     <span class="material-icons me-1" style="font-size: 12px; vertical-align: middle;">location_on</span>
+                     ${data.location}
+                   </p>`
+                  : ""
+              }
+            </div>
+  
+            <!-- Right: Date Information -->
+            <div class="d-flex flex-column align-items-start me-3 flex-shrink-0">
+              ${
+                data.postDate
+                  ? `<div class="d-flex align-items-center text-muted small mb-1">
+                     <span class="material-icons me-1 f-size-20 text-grey" >event</span>
+                     <span class="f-size-20 text-grey">Date ${data.postDate}</span>
+                   </div>`
+                  : ""
+              }
+              <span class=" ${statusClass} rounded-2 px-3 py-1 mb-0 f-size-16 green-btn-wo-border">
+                ${statusText}
+              </span>
+            </div>
+  
+            <!-- Status Badge -->
+            <div class="d-flex flex-column align-items-center me-3 flex-shrink-0">
+              ${
+                data.urgent
+                  ? `<span class="badge bg-danger rounded-pill px-2 py-1 small">
+                     <span class="material-icons me-1" style="font-size: 10px;">priority_high</span>
+                     ด่วน
+                   </span>`
+                  : ""
+              }
+            </div>
+  
+            <!-- View Details Button -->
+            <div class="flex-shrink-0">
+              <button class="green-btn-wo-border border-0 job-detail-btn d-flex align-items-center justify-content-center rounded-circle" 
+                      style="width: 45px; height: 45px;" 
+                      data-job-id="${data.id || index}"
+                      title="ดูรายละเอียด">
+                <span class="material-icons" style="font-size: 32px;">east</span>
+              </button>
+            </div>
+          </div>
+  
+          <!-- Additional Job Info (Optional) -->
+          ${
+            data.salary || data.workType || data.experience
+              ? `<div class="d-flex flex-wrap gap-2 mt-3 pt-3 border-top">
+                 ${
+                   data.salary
+                     ? `<span class="badge bg-light text-dark border">
+                        <span class="material-icons me-1" style="font-size: 12px;">attach_money</span>
+                        ${data.salary}
+                      </span>`
+                     : ""
+                 }
+                 ${
+                   data.workType
+                     ? `<span class="badge bg-light text-dark border">
+                        <span class="material-icons me-1" style="font-size: 12px;">schedule</span>
+                        ${data.workType}
+                      </span>`
+                     : ""
+                 }
+                 ${
+                   data.experience
+                     ? `<span class="badge bg-light text-dark border">
+                        <span class="material-icons me-1" style="font-size: 12px;">psychology</span>
+                        ${data.experience}
+                      </span>`
+                     : ""
+                 }
+               </div>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
+  }
+
+  /**
    * แสดง pagination
    */
   renderPagination() {
@@ -611,6 +733,9 @@ class CardComponent {
 
 // CSS Styles สำหรับ card hover effects
 const cardStyles = `
+<!-- Import Google Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <style>
 .card-hover {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -620,6 +745,91 @@ const cardStyles = `
 .card-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Jobs Card Specific Styles */
+.job-card {
+  border-left: 4px solid #007bff;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.job-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.15) !important;
+  border-left-color: #0056b3;
+}
+
+.job-icon-wrapper {
+  max-width: 80px;
+  max-height: 80px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(246, 246, 255, 1) !important;
+  transition: all 0.3s ease;
+  box-shadow: 4px 4px 4px 0px rgba(0, 102, 179, 0.1);
+}
+
+.job-card:hover .job-icon-wrapper {
+  border-color: #007bff;
+  background-color: #f8f9ff !important;
+}
+
+.job-title {
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.job-detail-btn {
+  transition: all 0.3s ease;
+}
+
+.job-detail-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Material Icons alignment */
+.material-icons {
+  vertical-align: middle;
+}
+
+/* Responsive adjustments for jobs card */
+@media (max-width: 768px) {
+  .job-card .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .job-card .flex-shrink-0:first-child {
+    align-self: center;
+  }
+  
+  .job-card .flex-grow-1 {
+    text-align: center;
+  }
+  
+  .job-icon-wrapper {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .job-icon-wrapper .material-icons {
+    font-size: 24px !important;
+  }
+  
+  .job-title {
+    font-size: 1rem;
+  }
+  
+  .job-detail-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .job-detail-btn .material-icons {
+    font-size: 16px !important;
+  }
 }
 
 .pagination .page-link {
@@ -647,34 +857,6 @@ const cardStyles = `
 
 .cards-container {
   min-height: 300px;
-}
-
-.tags .badge {
-  font-size: 0.7em;
-}
-
-.social-links a {
-  font-size: 1.2em;
-}
-
-/* Text clamping for transparent cards */
-.text-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5;
-  min-height: calc(1.5em * 3); /* รับประกันความสูงขั้นต่ำ */
-}
-
-/* Ensure equal height for card rows */
-.cards-container.row.g-4 > [class*="col-"] {
-  display: flex;
-  flex-direction: column;
-}
-
-.cards-container.row.g-4 .card {
-  flex: 1;
 }
 </style>
 `;
