@@ -240,6 +240,13 @@ img {
   border-radius: 0;
 }
 
+/* Input */
+.input-field {
+  background: rgba(246, 246, 255, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 102, 179, 0.1);
+  border-radius: 15px;
+}
+
 /* Border */
 .border-15 {
   border-radius: 15px;
@@ -360,6 +367,20 @@ img {
   /* 4. ใส่ prefix เพื่อรองรับการทำงานกับเบราว์เซอร์อื่นๆ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.f-size-64-og {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 64px;
+  line-height: 100%;
+}
+
+.f-size-70 {
+  font-weight: 700;
+  font-style: 75 Bd;
+  font-size: 70px;
+  line-height: 100%;
 }
 
 .f-size-80 {

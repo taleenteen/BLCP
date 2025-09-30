@@ -69,8 +69,19 @@
       }
 
       .form-control:focus {
-        border-color: #4caf50;
-        box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+        box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+      }
+
+      input::placeholder {
+        padding: 15px;
+        color: rgba(181, 181, 181, 1) !important;
+        }
+
+      .green-linear-bg-btn:hover {
+        color: white !important;
+        background: linear-gradient(90deg, #D0D0D0 0%, #6A6A6A 100%);
+        transform: translateY(-2px);
+        box-shadow: 0px 4px 4px 0px rgba(0, 102, 179, 0.1);
       }
 
       .btn-apply {
@@ -123,8 +134,11 @@
                   <div class="">
                     <img src="../../assets/logo/BLCP-01.png" alt="BLCP Logo" />
                     <div class="text-center mb-4">
-                      <h3 class="mt-2 mb-1 text-primary f-size-80">
-                        Mechanical Engineer (Material Handling Maintenance)
+                      <h3
+                        class="mt-2 mb-1 text-primary f-size-80"
+                        id="jobTitle"
+                      >
+                        Loading...
                       </h3>
                       <div
                         class="d-flex flex-column justify-content-center align-items-center me-3 flex-shrink-0 gap-4"
@@ -135,98 +149,78 @@
                           <span class="material-icons me-1 f-size-20 text-grey"
                             >event</span
                           >
-                          <span class="f-size-20 text-grey"
-                            >Date 7 Jun 68
-                          </span>
+                          <span class="f-size-20 text-grey" id="jobDate"
+                            >Loading...</span
+                          >
                         </div>
                         <span
                           class="rounded-2 px-3 py-1 mb-0 f-size-16 green-btn-wo-border"
+                          id="jobStatus"
                         >
-                          เปิดรับสมัคร
+                          Loading...
                         </span>
-                        <p class="mb-0 f-size-32 text-primary">
-                          ผู้สนใจสามารถสอบถามรายละเอียดเพิ่มเติมหรือส่งใบสมัคร
-                          <br />
-                          resume ได้ที่ ฝ่ายทรัพยากรบุคคล โทร. 038-918583
+                        <p class="mb-0 f-size-32 text-primary" id="contactInfo">
+                          Loading...
                         </p>
+                        <button
+                          class="green-linear-bg-btn text-primary f-size-40 rounded-4 border-0 card-post-shadow px-5 py-3"
+                        >
+                          กลับสู่หน้าตำแหน่งว่าง
+                        </button>
                       </div>
+                      <p class="f-size-64-og text-primary text-start px-5 mt-5 mb-0">
+                        Apply Form
+                      </p>
                     </div>
 
-                    <form class="p-4" id="jobApplicationForm">
+                    <form class="p-5" id="jobApplicationForm">
                       <div class="mb-3">
-                        <label for="fullName" class="form-label"
-                          >ชื่อ-นามสกุล *</label
+                        <label for="fullName" class="form-label f-size-24 text-primary"
+                          >ชื่อ นามสกุล :</label
                         >
                         <input
                           type="text"
-                          class="form-control"
+                          class="form-control input-field f-size-24"
                           id="fullName"
                           name="fullName"
+                          placeholder="โปรดกรอกชื่อ-นามสกุล"
                           required
                         />
                       </div>
 
                       <div class="mb-3">
-                        <label for="email" class="form-label">อีเมล *</label>
+                        <label for="email" class="form-label f-size-24 text-primary">Email :</label>
                         <input
                           type="email"
-                          class="form-control"
+                          class="form-control input-field f-size-24"
                           id="email"
                           name="email"
+                          placeholder="โปรดกรอกอีเมล์"
                           required
                         />
                       </div>
 
                       <div class="mb-3">
-                        <label for="phone" class="form-label"
-                          >เบอร์โทรศัพท์ *</label
+                        <label for="phone" class="form-label f-size-24 text-primary"
+                          >เบอร์ติดต่อ :</label
                         >
                         <input
                           type="tel"
-                          class="form-control"
+                          class="form-control input-field f-size-24"
                           id="phone"
                           name="phone"
+                          placeholder="โปรดกรอกเบอร์ติดต่อ"
                           required
                         />
                       </div>
 
                       <div class="mb-3">
-                        <label for="experience" class="form-label"
-                          >ประสบการณ์ทำงาน (ปี)</label
-                        >
-                        <select
-                          class="form-control"
-                          id="experience"
-                          name="experience"
-                        >
-                          <option value="">เลือกประสบการณ์</option>
-                          <option value="0-1">0-1 ปี</option>
-                          <option value="1-3">1-3 ปี</option>
-                          <option value="3-5">3-5 ปี</option>
-                          <option value="5+">มากกว่า 5 ปี</option>
-                        </select>
-                      </div>
-
-                      <div class="mb-3">
-                        <label for="expectedSalary" class="form-label"
-                          >เงินเดือนที่คาดหวัง</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="expectedSalary"
-                          name="expectedSalary"
-                          placeholder="เช่น 30,000 - 40,000"
-                        />
-                      </div>
-
-                      <div class="mb-3">
-                        <label for="resume" class="form-label"
+                        <label for="resume" class="form-label f-size-24 text-primary"
                           >อัปโหลดเรซูเม่ *</label
                         >
                         <input
                           type="file"
-                          class="form-control"
+                          class="form-control input-field f-size-24"
                           id="resume"
                           name="resume"
                           accept=".pdf,.doc,.docx"
@@ -238,29 +232,26 @@
                       </div>
 
                       <div class="mb-4">
-                        <label for="coverLetter" class="form-label"
-                          >จดหมายสมัครงาน</label
+                        <label for="coverLetter" class="form-label f-size-24 text-primary"
+                          >Link to Portfolio Other :</label
                         >
-                        <textarea
-                          class="form-control"
+                        <input
+                          class="form-control input-field f-size-24"
                           id="coverLetter"
                           name="coverLetter"
                           rows="4"
-                          placeholder="แนะนำตัวและบอกเหตุผลที่สนใจตำแหน่งนี้"
-                        ></textarea>
+                          placeholder="โปรดกรอกลิงก์พอร์ตฟอลิโอเพิ่มเติม"
+                        ></input>
                       </div>
 
-                      <button
+                      <div class="d-flex justify-content-center">
+                        <button
                         type="submit"
-                        class="btn btn-apply text-white w-100"
+                        class="green-btn text-white border-0 rounded-3 f-size-24 px-5 py-2"
                       >
-                        <span
-                          class="material-icons me-2"
-                          style="font-size: 18px"
-                          >send</span
-                        >
-                        ส่งใบสมัคร
+                        ยืนยัน
                       </button>
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -272,16 +263,33 @@
               <div class="p-4">
                 <!-- Job Overview -->
                 <section class="mb-4">
-                  <h3 class="text-primary mb-3">Job Description :</h3>
-                  <p class="lead">
-                    เรากำลังมองหา Software Engineer
-                    ที่มีความสามารถและความกระตือรือร้นในการพัฒนาระบบและแอปพลิเคชัน
-                    เพื่อร่วมงานกับทีมพัฒนาที่แข็งแกร่งของเรา
-                    คุณจะได้มีส่วนร่วมในการสร้างสรรค์โซลูชันที่ทันสมัยและมีคุณภาพสูง
-                  </p>
+                  <h3 class="text-primary f-size-64-og mb-3">Job Description :</h3>
+                  <div class="f-size-32 text-primary px-5 py-4" id="jobDescriptionContent">
+                    <div class="text-center py-4">
+                      <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
+                  </div>
                 </section>
 
-                <div class="divider"></div>
+                <!-- Qualifications -->
+                <section class="mb-4">
+                  <h3 class="text-primary f-size-64-og mb-3">Qualifications :</h3>
+                  <div class="f-size-32 text-primary px-5 py-4" id="qualificationsContent">
+                    <div class="text-center py-4">
+                      <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="mt-4">
+                  <p class="f-size-20 p-5" style="color: rgba(118, 118, 118, 1);">
+                    บริษัท บีแอลซีพี เพาเวอร์ จำกัด (“บริษัท”) จะทำการเก็บรวบรวมข้อมูลส่วนบุคคลของท่านซึ่งเป็นผู้สมัครงาน <br class="d-none d-md-block"> โดยทางบริษัทจะเก็บรวบรวมข้อมูลอันได้แก่ ชื่อ นามสกุล เลขบัตรประจำตัวประชาชน ที่อยู่ เพศ อายุ เบอร์โทรศัพท์ และอีเมล์ <br class="d-none d-md-block"> เพื่อใช้เป็นข้อมูลพื้นฐานในการพิจารณาคัดเลือกผู้สมัครและเพื่อการติดต่อประสานงานกับผู้สมัครงาน <br class="d-none d-md-block"> โดยทางบริษัทจะไม่เปิดเผยข้อมูลของท่านให้แก่บุคคลอื่นที่ไม่เกี่ยวข้อง <br class="d-none d-md-block"> กับกิจการที่ติดต่อนั้น เว้นแต่กรณีการเปิดเผยให้เจ้าหน้าที่ตรวจสอบภายในและภายนอกองค์กร (Auditor) <br class="d-none d-md-block"> หรือคู่สัญญาหรือบุคคลภายนอกที่เกี่ยวข้องกับกิจการดังกล่าว หรือหน่วยงานราชการที่เกี่ยวข้อง <br class="d-none d-md-block"> หรือเปิดเผยตามกฎหมายหรือระเบียบหรือคำสั่งของรัฐ ทั้งนี้ บริษัทจะเก็บข้อมูลส่วนบุคคลของท่านไว้เป็นระยะไม่เกิน 1 ปี <br class="d-none d-md-block"> นับแต่วันที่กระบวนการรับสมัครงานในตำแหน่งงานนี้เสร็จสิ้น <br class="d-none d-md-block"> หากท่านต้องการใช้สิทธิในฐานะเจ้าของข้อมูลส่วนบุคคลของท่านหรือมีข้อสงสัยโปรดติดต่อ <br class="d-none d-md-block"> บริษัท บีแอลซีพี เพาเวอร์ จำกัด เลขที่ 9 ถนนไอแปด นิคมอุตสาหกรรมมาบตาพุด ต.มาบตาพุด อ.เมือง จ.ระยอง <br class="d-none d-md-block"> หรือทางอีเมล์ dpo@blcp.co.th และท่านสามารถศึกษารายละเอียดเกี่ยวกับการเก็บรวบรวมข้อมูลส่วนบุคคลของท่านไปใช้หรือเปิดเผย รวมถึงมาตรการในการรักษาความปลอดภัยของข้อมูลส่วนบุคคลเพื่อคุ้มครองสิทธิเสรีภาพและประโยชน์ของท่าน <br class="d-none d-md-block"> ได้ที่ <a style="color: rgba(118, 118, 118, 1);" href="http://www.blcp.co.th/web/Privacy-Policy">http://www.blcp.co.th/web/Privacy-Policy</a>
+                  </p>
+                </section>
               </div>
             </div>
           </div>
@@ -292,46 +300,146 @@
       </div>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/job-data.js"></script>
+    <script src="../../assets/js/job-service.js"></script>
 
     <script>
-      // Form submission handler
+      class JobDetailPage {
+        constructor() {
+          this.jobId = this.getJobIdFromUrl();
+          this.jobData = null;
+          this.init();
+        }
+
+        getJobIdFromUrl() {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get("id") || "mechanical-engineer"; // Default fallback
+        }
+
+        async init() {
+          try {
+            this.showLoading();
+            this.jobData = await jobService.getJobById(this.jobId);
+
+            if (this.jobData) {
+              this.renderJobData();
+            } else {
+              this.showError();
+            }
+          } catch (error) {
+            console.error("Error initializing job detail page:", error);
+            this.showError();
+          }
+        }
+
+        showLoading() {
+          document.getElementById("jobTitle").textContent = "Loading...";
+          document.getElementById("jobDate").textContent = "Loading...";
+          document.getElementById("jobStatus").textContent = "Loading...";
+        }
+
+        showError() {
+          document.getElementById("jobTitle").textContent =
+            "ไม่พบข้อมูลตำแหน่งงาน";
+          document.getElementById("jobDescriptionContent").innerHTML =
+            '<div class="alert alert-warning">ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง</div>';
+          document.getElementById("qualificationsContent").innerHTML =
+            '<div class="alert alert-warning">ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง</div>';
+        }
+
+        renderJobData() {
+          // Update header information
+          document.getElementById("jobTitle").textContent = this.jobData.title;
+          document.getElementById(
+            "jobDate"
+          ).textContent = `Date ${this.formatDate(this.jobData.posted_date)}`;
+          document.getElementById("jobStatus").textContent =
+            this.jobData.status;
+          document.getElementById(
+            "contactInfo"
+          ).innerHTML = `ผู้สนใจสามารถสอบถามรายละเอียดเพิ่มเติมหรือส่งใบสมัคร<br/>resume ได้ที่ ${this.jobData.contact.department} โทร. ${this.jobData.contact.phone}`;
+
+          // Render job description
+          this.renderSection(
+            "jobDescriptionContent",
+            this.jobData.job_description
+          );
+
+          // Render qualifications
+          this.renderSection(
+            "qualificationsContent",
+            this.jobData.qualifications
+          );
+
+          // Update page title
+          document.title = `${this.jobData.title} | บริษัทของเรา`;
+        }
+
+        renderSection(containerId, items) {
+          const container = document.getElementById(containerId);
+          const content = items
+            .map((item) => {
+              if (item.startsWith("<li>")) {
+                return `<ul class="ms-3"><li class="">${item
+                  .replace("<li>", "")
+                  .replace("</li>", "")}</li></ul>`;
+              } else {
+                return `<p class="mb-2">${item}</p>`;
+              }
+            })
+            .join("");
+
+          container.innerHTML = content;
+        }
+
+        formatDate(dateString) {
+          const date = new Date(dateString);
+          const day = date.getDate();
+          const months = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ];
+          const month = months[date.getMonth()];
+          const year = (date.getFullYear() + 543).toString().slice(-2);
+
+          return `${day} ${month} ${year}`;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        new JobDetailPage();
+      });
+
       document
         .getElementById("jobApplicationForm")
-        .addEventListener("submit", function (e) {
+        ?.addEventListener("submit", function (e) {
           e.preventDefault();
 
           // Validate form
           const formData = new FormData(this);
           const data = Object.fromEntries(formData);
 
-          // Simple validation
           if (!data.fullName || !data.email || !data.phone || !data.resume) {
             alert("กรุณากรอกข้อมูลที่จำเป็นให้ครบถ้วน");
             return;
           }
-
-          // Show success message
           alert("ส่งใบสมัครเรียบร้อยแล้ว! เราจะติดต่อกลับภายใน 3-5 วันทำการ");
-
-          // Here you would normally send data to server
           console.log("Application data:", data);
         });
-
-      // Get job ID from URL parameter if available
-      const urlParams = new URLSearchParams(window.location.search);
-      const jobId = urlParams.get("id");
-
-      if (jobId) {
-        console.log("Job ID:", jobId);
-        // Load specific job data based on ID
-      }
     </script>
   </body>
 </html>
