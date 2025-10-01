@@ -122,25 +122,178 @@
         >EN</a
       >
 
-      <button
-        class="btn btn-primary bg-white btn-lg rounded-pill p-1 text-primary fw-bold d-flex align-items-center px-2"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
+      <!-- Updated Search functionality -->
+      <div class="search-wrapper">
+        <button
+          id="searchToggle"
+          class="search-toggle-btn btn btn-primary bg-white btn-lg rounded-pill p-1 text-primary fw-bold d-flex align-items-center px-2"
         >
-          <path
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2.5"
-            d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"
-          />
-        </svg>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"
+            />
+          </svg>
+        </button>
+
+        <div id="searchWrapper" class="search-input-wrapper">
+          <div class="search-input-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="ค้นหาข้อมูล..."
+              autocomplete="off"
+            />
+            <button id="closeSearch" class="close-search-btn">✕</button>
+          </div>
+          <div
+            id="searchSuggestions"
+            class="search-suggestions"
+            style="display: none"
+          >
+            <div class="search-results"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchToggle = document.getElementById("searchToggle");
+    const searchWrapper = document.getElementById("searchWrapper");
+    const searchInputBox = document.querySelector(".search-input-box");
+    const searchInput = document.getElementById("searchInput");
+    const closeSearch = document.getElementById("closeSearch");
+    const searchSuggestions = document.getElementById("searchSuggestions");
+
+    let isSearchOpen = false;
+    let searchTimeout;
+
+    function openSearch() {
+      if (isSearchOpen) return;
+
+      isSearchOpen = true;
+      searchWrapper.style.visibility = "visible";
+      searchWrapper.style.opacity = "1";
+      searchWrapper.style.transform = "translateY(-50%) translateX(0)";
+
+      setTimeout(() => {
+        searchInputBox.classList.add("expanded");
+        setTimeout(() => {
+          searchInput.style.opacity = "1";
+          closeSearch.style.opacity = "1";
+          searchInput.focus();
+        }, 200);
+      }, 50);
+    }
+
+    function closeSearchFunc() {
+      if (!isSearchOpen) return;
+
+      isSearchOpen = false;
+      searchInput.style.opacity = "0";
+      closeSearch.style.opacity = "0";
+      searchSuggestions.style.display = "none";
+
+      setTimeout(() => {
+        searchInputBox.classList.remove("expanded");
+        setTimeout(() => {
+          searchWrapper.style.opacity = "0";
+          searchWrapper.style.visibility = "hidden";
+          searchWrapper.style.transform = "translateY(-50%) translateX(20px)";
+          searchInput.value = "";
+        }, 300);
+      }, 100);
+    }
+
+    // Search functionality
+    function performSearch(query) {
+      if (query.length < 2) {
+        searchSuggestions.style.display = "none";
+        return;
+      }
+
+      // Simulated search results - replace with actual search logic
+      const mockResults = [
+        "เกี่ยวกับเรา",
+        "วิสัยทัศน์และพันธกิจ",
+        "ผู้นำองค์กร",
+        "ข่าวสาร",
+        "ความยั่งยืน",
+        "นโยบายสิ่งแวดล้อม",
+        "รายงานผลการดำเนินงาน",
+        "ติดต่อเรา",
+      ].filter((item) => item.toLowerCase().includes(query.toLowerCase()));
+
+      if (mockResults.length > 0) {
+        const resultsHTML = mockResults
+          .map(
+            (result) =>
+              `<div class="search-suggestion-item" onclick="selectSearchResult('${result}')">${result}</div>`
+          )
+          .join("");
+
+        document.querySelector(".search-results").innerHTML = resultsHTML;
+        searchSuggestions.style.display = "block";
+      } else {
+        searchSuggestions.style.display = "none";
+      }
+    }
+
+    function selectSearchResult(result) {
+      searchInput.value = result;
+      searchSuggestions.style.display = "none";
+      // Add navigation logic here based on selected result
+      console.log("Selected:", result);
+    }
+
+    // Event listeners
+    searchToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openSearch();
+    });
+
+    closeSearch.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeSearchFunc();
+    });
+
+    searchInput.addEventListener("input", (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        performSearch(e.target.value);
+      }, 300);
+    });
+
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeSearchFunc();
+      }
+    });
+
+    // Close search when clicking outside
+    document.addEventListener("click", (e) => {
+      if (
+        isSearchOpen &&
+        !searchWrapper.contains(e.target) &&
+        !searchToggle.contains(e.target)
+      ) {
+        closeSearchFunc();
+      }
+    });
+
+    // Make selectSearchResult globally available
+    window.selectSearchResult = selectSearchResult;
+  });
+</script>

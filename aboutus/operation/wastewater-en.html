@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Company | Our Company</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+
+        <!-- Main content below navbar -->
+        <main class="container container-fluid p-0">
+          <div id="hero-banner-container"></div>
+
+          <section class="blue-linear-bg-convert h-100">
+            <div class="d-flex justify-content-start p-5">
+              <div class="container container-fluid">
+                <h2 class="text-white f-vision-title text-start">
+                  BLCP Power Plant Wastewater Management
+                </h2>
+
+                <!-- section 1 -->
+                <div class="px-5">
+                  <p class="text-white f-aboutus-text text-start">
+                    BLCP Power Plant Wastewater Management<br />
+                    BLCP Power Plant has a wastewater treatment system capable of handling approximately 
+                    1,700 cubic meters per day, divided into 2 main parts:<br />
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong
+                    >Wastewater from power generation process: 1,500 cubic meters/day
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong
+                    >Wastewater from employees and general activities: 200 cubic meters/day
+                  </p>
+
+                  <p class="text-white f-aboutus-text text-start mt-5">
+                    🔧 1. Wastewater from Power Generation Process (1,500 cubic meters/day)
+                  </p>
+                  <p class="text-white f-aboutus-text text-start">
+                    Sources of wastewater in this section come from:
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong
+                    >Sedimentation tanks in water quality improvement system: 95 cubic meters/day
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong>Water Treatment System: 110 cubic meters/day
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong>Floor washing water from various areas: 200 cubic meters/day
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong
+                    >Plant Cycle Blowdown: 785 cubic meters/day
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong>Service Water: 300 cubic meters/day
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong
+                    >Wastewater from chemical laboratory: 10 cubic meters/day
+                  </p>
+
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    👉 Wastewater Treatment Approach
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong>Wastewater with imbalanced pH 
+                    (not equal to 7) will be sent to the Neutralization System
+                  </p>
+                  <p class="text-white f-aboutus-text text-start px-4">
+                    <strong class="me-3">&bull;</strong
+                    >Wastewater contaminated with oil or grease from machinery 
+                    will be treated with Oil Separator system<br />
+                    The separated oil residue will be managed by authorized external companies for hazardous waste disposal
+                  </p>
+                  <p class="text-white f-aboutus-text text-start">
+                    Additionally, there is some wastewater generated from the sulfur dioxide 
+                    (SO₂) capture process using Sea Water FGD system<br />
+                    which will be sent through an Aeration Pond 
+                    before being discharged back to the sea
+                  </p>
+
+                  <p class="text-white f-aboutus-text text-start mt-5">
+                    🚻 2. Wastewater from Employees and General Activities (Sewage) (200 cubic meters/day)
+                  </p>
+
+                  <p class="text-white f-aboutus-text text-start">
+                    Wastewater from restrooms and indoor activities will be sent to 
+                    Biological Wastewater Treatment Process<br />
+                    to meet the wastewater discharge standards set by the Department of Industrial Works
+                  </p>
+
+                  <!-- photo section -->
+                  <p class="text-white f-aboutus-text text-start mt-5">
+                    🌊 Wastewater Discharge to the Sea<br />
+                    All types of treated wastewater will be discharged to the sea through<br />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Load components -->
+    <script>
+      $(document).ready(function () {
+        // Load sidebar
+        $("#sidebar-container").load("../../components/sidebar.html");
+
+        // Load navbar
+        $("#navbar-container").load("../../components/navbar.html");
+
+        // Load footer
+        $("#footer-container").load("../../components/footer.html");
+
+        // Load hero banner
+        $("#hero-banner-container").load(
+          "../../components/hero-banner-aboutus.html"
+        );
+      });
+    </script>
+  </body>
+</html>

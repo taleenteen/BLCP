@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Our Company</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar Container -->
+      <div id="sidebar-container"></div>
+      
+      <div class="flex-grow-1">
+        <!-- Navbar Container -->
+        <div id="navbar-container"></div>
+        
+        <!-- Main content below navbar -->
+        <main class="container container-fluid p-0">
+          <div id="hero-banner-container"></div>
+
+          <section class="blue-linear-bg h-100">
+            <div
+              class="container d-flex flex-column justify-content-center align-items-center"
+            >
+              <div
+                class="d-flex flex-column justify-content-center align-items-center gap-3"
+              >
+              </div>
+            </div>
+            <div class="d-flex justify-content-start p-5">
+              <div class="container container-fluid">
+                <h2 class="text-white f-vision-title text-start">
+                  Water Management at BLCP Power Plant
+                </h2>
+                <p class="text-white f-aboutus-text text-start p-4">
+                 For sustainability, the power plant employs efficient water management approaches as follows:
+                </p>
+
+                <!-- section 1 -->
+                <div class="px-5">
+                <p class="text-white f-aboutus-text text-start">
+                 <strong class="me-3">&bull;</strong>Treated wastewater: The power plant reuses up to 1,500 cubic meters per day<br> of water that has been treated to meet quality standards suitable for system operations
+                </p>
+                <p class="text-white f-aboutus-text text-start">
+                 <strong class="me-3">&bull;</strong>Freshwater from industrial estate: Receives water from Dok Krai and Nong Pla Lai reservoirs through pipeline systems<br> using approximately 700 cubic meters of freshwater per day, which is divided into:
+                </p>
+                <ul class="text-white f-aboutus-text text-start list-unstyled px-4">
+                  <li><strong class="me-3">&bull;</strong> 300 cubic meters/day for office consumption and domestic use</li>
+                  <li><strong class="me-3">&bull;</strong> 2,100 cubic meters/day for electricity generation processes and dust control from coal yards and ash systems</li>
+                </ul>
+                <p class="text-white f-link text-start">
+                (Note: Although the combined figures appear to exceed 2,200 cubic meters/day, in practice there is water recycling, and the average figures are estimates based on time periods)
+                </p>
+            
+                </div>
+                <!-- section 2 -->
+            
+              </div>
+            </div>
+          </section>
+
+          <section class="blue-linear-bg-convert h-100">
+            <div class="row p-5">
+              <div class="col-12 col-lg-6">
+                <div
+                  class="container d-flex flex-column justify-content-center align-items-start"
+                >
+                  <p class="text-white f-aboutus-text text-start px-4">
+                        Additionally, the power plant has installed<br> a seawater desalination system using Reverse Osmosis<br> (Desalination Reverse Osmosis)<br> with a production capacity of up to 4,000 cubic meters/day<br> This system can replace all raw water sources in case<br>of water shortage or drought conditions, 
+helping the power plant operate continuously
+and securely in all circumstances</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+                <img
+  src="../../assets/aboutus/vision-waterfresh.png"
+  alt="freshwater management"
+  class="img-fluid rounded-5"
+/>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer Container -->
+        <div id="footer-container"></div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/components.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/banner.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        createHeroBanner("hero-banner-container", {
+          title: "Freshwater Management",
+          basePath: "../..",
+        });
+      });
+    </script>
+  </body>
+</html>

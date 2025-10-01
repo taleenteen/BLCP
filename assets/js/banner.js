@@ -28,7 +28,7 @@ function createHeroBanner(containerId, options) {
           />
           <div class="card-img-overlay d-flex justify-content-between align-items-center p-3 p-md-4">
             
-            <h1 class="card-title text-white">${title}</h1>
+            <h1 class="card-title text-white align-self-start">${title}</h1>
   
             <div class="card rounded-pill shadow-sm" style="width: fit-content">
               <div class="card-body d-flex flex-row flex-lg-column justify-content-center align-items-center gap-3 p-2">
